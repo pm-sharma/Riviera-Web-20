@@ -50,7 +50,15 @@
             padding-left: 42px;
         }
         }
-
+        @media (max-width: 780px) {
+        .hellobro{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+    }
         /* .navbar-nav>.active>a {
             color: aqua;
             background-color: chartreuse;
@@ -84,7 +92,7 @@
         .navbar-expand-lg{
             background-color: #F83B03
         }
-        
+
     </style>
 </head>
 
@@ -94,7 +102,7 @@
         <div class="container">
             <div class="x">
                 <!--Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark hellobro" >
 
                     <!-- Navbar brand -->
                     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
