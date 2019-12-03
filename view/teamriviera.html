@@ -62,6 +62,12 @@
                 left: 0;
                 z-index: 1030;
             }
+            .topnavwidth{
+                width: 102%;
+            }
+            .regbtn{
+                margin-top:-5px;
+            }
         }
 
         /* .navbar-nav>.active>a {
@@ -102,20 +108,7 @@
             background-color: #F29123
         }
 
-        .regbtn {
-            margin: .375rem;
-            color: inherit;
-            text-transform: uppercase;
-            word-wrap: break-word;
-            white-space: normal;
-            cursor: pointer;
-            border: 0;
-            border-radius: .125rem;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-            padding: auto 2.14rem;
-            font-size: .81rem;
-        }
+        
         .teamDetails{
             background-color: #3D3C3C
         }
@@ -125,7 +118,7 @@
 <body >
     <div style="height: 45vh;border-bottom: 2px solid #F29123;" class="sec-one">
         <div style="position : relative ; ">
-            <div class="container" style="position: absolute; right : 0; transform : translateX(2%)">
+            <div class="container topnavwidth" style="position: absolute; right : 0; transform : translateX(2%)">
                 <div class="x">
                     <!--Navbar-->
                     <nav class="navbar navbar-expand-lg navbar-dark hellobro">
@@ -152,12 +145,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                        <a class="nav-link" href="./view/events.html">
+                                        <a class="nav-link" href="./events.html">
                                             <p class="headings">Events</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="./view/proshow.html">
+                                        <a class="nav-link" href="./proshow.html">
                                             <p class="headings">Proshows</p>
                                         </a>
                                     </li>
@@ -211,12 +204,12 @@
 
             </div>
 
-            <div style="float: left;height: 48px">
-                <button style="height: 48px;border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px" type="button"
-                    class="btn btn-primary-outline">Register</button>
+            <div style="float: left">
+                <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px" type="button"
+                    class="btn regbtn btn-primary-outline">Register</button>
             </div>
         </div>
-        <div style="margin: auto auto;position:relative;color:white;text-align: center;width: 100vw;height: 100vh; ">
+        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
             <div style="margin: auto auto; padding-top : 200px ">
                 <div><h1>Team Riviera</h1></div>
                 
@@ -227,8 +220,8 @@
 
 
     <div class="teamDetails" class="container-fluid">
-        <div class="row sec-one-cont">
-            <div class="col-sm-12 " style="height: 650px;">
+        <div class="sec-one-cont">
+            <div class="col-12 " style="height: 650px;">
                 <div style=" margin-bottom: 2vh;">
                     <p style="font-size: 1.4em; text-align: left">Hello</p>
                 </div>
