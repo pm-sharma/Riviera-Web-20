@@ -31,24 +31,51 @@
         crossorigin="anonymous">
     <title>Riviera 2020</title>
     <style>
-    .x{
-        margin-left: 0;
-        color: white;
-        padding: 5px 10px;
-        transform: skewX(-15deg);
-        flex-wrap: wrap;
-    }
+        .x {
+            margin-left: 0;
+            color: white;
+            transform: skewX(-15deg);
+            flex-wrap: wrap;
+        }
+
+        /* .navbar-nav>.active>a {
+            color: aqua;
+            background-color: chartreuse;
+        }
+
+        .nav-item>a:hover {
+            color: aqua;
+        } */
+        .navbar-nav{
+            padding: 10px
+        }
+        ul{
+            text-align: center
+        }
+
+        .sec-one {
+            background: url("./assets/images/goalConf.jpg") center center no-repeat;
+            background-size: cover;
+        }
+
+        .sec-one-cont {
+            height: auto;
+            color: white;
+        }
+
     </style>
 </head>
 
 <body>
+    <div style="height: 99vh" class="sec-one">
+    
     <div class="container">
         <div class="x">
             <!--Navbar-->
             <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">Navbar</a>
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -61,20 +88,31 @@
 
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Home</p>
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">
+                                <p style="transform: skewX(15deg);">Events</p>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Proshows</p></a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Team Riviera</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Campus Ambassador</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Sponsers & Partners</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Infusion</p></a>
+                        </li>
                         <!-- Dropdown
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -89,11 +127,9 @@
                     </ul>
                     <!-- Links -->
 
-                    <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                    </form>
+                    <!-- <div class="md-form my-0">
+                                <button type="button" class="btn btn-primary">Register</button>
+                        </div> -->
                 </div>
                 <!-- Collapsible content -->
 
@@ -101,6 +137,26 @@
             <!--/.Navbar-->
         </div>
     </div>
+    <div style="margin: auto auto;position:relative;color:white;text-align: center;width: 100vw;height: 100vh;">
+            <div style="margin: auto auto;position: absolute;top: 38%;left:50%;transform: translate(-50%,-50%);">
+                <img height="100px" src="./assets/vit-img/aas.jpg" />
+                <div>Riviera 2020</div>
+                <button type="button" class="btn btn-primary">Register</button><br>
+
+                <button type="button" class="btn btn-primary">Register</button>
+            </div>
+    </div>
+</div>
+    <div class="container-fluid">
+            <div class="row sec-one-cont">
+                <div class="col-sm-12 " style="height: 650px;">
+                    <div style=" margin-bottom: 2vh;">
+                        <p style="font-size: 1.4em; text-align: left">Hello</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
