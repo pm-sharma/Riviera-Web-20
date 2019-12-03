@@ -31,13 +31,17 @@
         crossorigin="anonymous">
     <title>Riviera 2020</title>
     <style>
-        .x {
-            margin-left: 0;
-            color: white;
-            transform: skewX(-15deg);
-            flex-wrap: wrap;
+        @media (min-width: 780px){
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+            .headings{
+                transform: skewX(15deg);
+            }
         }
-
         /* .navbar-nav>.active>a {
             color: aqua;
             background-color: chartreuse;
@@ -89,29 +93,29 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Home</p>
+                            <a class="nav-link" href="#"><p class="headings">Home</p>
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <p style="transform: skewX(15deg);">Events</p>
+                                <p class="headings">Events</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Proshows</p></a>
+                            <a class="nav-link" href="#"><p class="headings">Proshows</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Team Riviera</p></a>
+                            <a class="nav-link" href="#"><p class="headings">Team Riviera</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Campus Ambassador</p></a>
+                            <a class="nav-link" href="#"><p class="headings">Campus Ambassador</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Sponsers & Partners</p></a>
+                            <a class="nav-link" href="#"><p class="headings">Sponsers & Partners</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p style="transform: skewX(15deg);">Infusion</p></a>
+                            <a class="nav-link" href="#"><p class="headings">Infusion</p></a>
                         </li>
                         <!-- Dropdown
                         <li class="nav-item dropdown">
