@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/proshows.css" >
+    <link rel="stylesheet" href="../css/proshows.css">
     <title>Riviera 2020</title>
     <style>
         @media (min-width: 780px) {
@@ -47,9 +47,14 @@
                 transform: skewX(15deg);
             }
 
-            li {
+            li,
+            .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
+            }
+
+            .sportsImg {
+                background-image: url("../assets/images/sports.png");
             }
 
         }
@@ -62,11 +67,13 @@
                 left: 0;
                 z-index: 1030;
             }
-            .topnavwidth{
+
+            .topnavwidth {
                 width: 102%;
             }
-            .regbtn{
-                margin-top:-5px;
+
+            .regbtn {
+                margin-top: -5px;
             }
         }
 
@@ -108,14 +115,32 @@
             background-color: #F83B03
         }
 
-        
-        .eventsDetails{
-            background-color: #19003D
+
+        .eventsDetails {
+            background-color: 19003D
+        }
+
+        body {
+            overflow-x: hidden
+        }
+
+        .eventinfo {
+            border-right: 4px solid #F83B03;
+            border-bottom: 4px solid #F83B03;
+        }
+
+        .redbg {
+            padding: 5px 15px;
+            cursor: pointer;
+            text-align: center;
+            background-color: red;
+            clip-path: polygon(17% 0, 100% 0%, 100% 99%, 0% 100%);
+
         }
     </style>
 </head>
 
-<body >
+<body>
     <div style="height: 45vh;border-bottom: 2px solid #F83B03;" class="sec-one">
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
@@ -205,14 +230,16 @@
             </div>
 
             <div style="float: right;">
-                <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px" type="button"
-                    class="btn regbtn btn-primary-outline">Register</button>
+                <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px"
+                    type="button" class="btn regbtn btn-primary-outline">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
             <div style="margin: auto auto; padding-top : 200px ">
-                <div><h1>Events</h1></div>
-                
+                <div>
+                    <h1>Events</h1>
+                </div>
+
             </div>
         </div>
     </div>
@@ -221,12 +248,77 @@
 
     <div class="eventsDetails" class="container-fluid">
         <div class="sec-one-cont">
-            <div class="col-12 " style="height: 650px;">
-                <div style=" margin-bottom: 2vh;">
-                    <p style="font-size: 1.4em; text-align: left">Hello</p>
+            <div class="row eventinfo" style="background-color: #270655;">
+
+                <div class="col-3 sportsImg" style="height: auto;">
+
                 </div>
-                
-                
+                <div class="col-9" style="">
+                    <h1 style="text-align: left">Cricket</h1>
+                    <div style="margin-top: 30px">
+                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
+                        <div class="sportsdetails" style="display: inline-block">11th February</div>
+                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
+                        <div class="sportsdetails" style="display: inline-block">1000</div>
+                        <div class="redbg" style="float: right">
+                            Enter
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row eventinfo" style="background-color: #270655;">
+
+                <div class="col-3 sportsImg" style="height: auto;">
+
+                </div>
+                <div class="col-9" style="">
+                    <h1 style="text-align: left">Cricket</h1>
+                    <div style="margin-top: 30px">
+                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
+                        <div class="sportsdetails" style="display: inline-block">11th February</div>
+                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
+                        <div class="sportsdetails" style="display: inline-block">1000</div>
+                        <div class="redbg" style="float: right">
+                            Enter
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row eventinfo" style="background-color: #270655;">
+
+                <div class="col-3 sportsImg" style="height: auto;">
+
+                </div>
+                <div class="col-9" style="">
+                    <h1 style="text-align: left">Cricket</h1>
+                    <div style="margin-top: 30px">
+                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
+                        <div class="sportsdetails" style="display: inline-block">11th February</div>
+                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
+                        <div class="sportsdetails" style="display: inline-block">1000</div>
+                        <div class="redbg" style="float: right">
+                            Enter
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row eventinfo" style="background-color: #270655;">
+
+                <div class="col-3 sportsImg" style="height: auto;">
+
+                </div>
+                <div class="col-9" style="">
+                    <h1 style="text-align: left">Cricket</h1>
+                    <div style="margin-top: 30px">
+                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
+                        <div class="sportsdetails" style="display: inline-block">11th February</div>
+                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
+                        <div class="sportsdetails" style="display: inline-block">1000</div>
+                        <div class="redbg" style="float: right">
+                            Enter
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
