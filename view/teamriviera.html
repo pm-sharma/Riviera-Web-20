@@ -51,6 +51,9 @@
                 margin-left: 22px;
                 margin-right: 22px;
             }
+            .regdiv{
+                float: left
+            }
 
         }
 
@@ -61,6 +64,7 @@
                 right: 0;
                 left: 0;
                 z-index: 1030;
+                width: 98%
             }
 
             .topnavwidth {
@@ -68,7 +72,10 @@
             }
 
             .regbtn {
-                margin-top: -5px;
+                margin-top: -5.5px;
+            }
+            .regdiv{
+                float: right
             }
         }
 
@@ -133,7 +140,7 @@
 <body>
     <div style="height: 45vh;border-bottom: 2px solid #F29123;" class="sec-one">
         <div style="position : relative ; ">
-            <div class="container topnavwidth" style="position: absolute; right : 0; transform : translateX(2%)">
+            <div class="container topnavwidth" style="position: absolute; right : 0; transform : translateX(2%);">
                 <div class="x">
                     <!--Navbar-->
                     <nav class="navbar navbar-expand-lg navbar-dark hellobro">
@@ -219,7 +226,7 @@
 
             </div>
 
-            <div style="float: left">
+            <div class="regdiv">
                 <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px"
                     type="button" class="btn regbtn btn-primary-outline">Register</button>
             </div>
