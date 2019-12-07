@@ -52,9 +52,13 @@
                 margin-left: 22px;
                 margin-right: 22px;
             }
+            .details{
+                margin: 0 15px;
+            }
 
             .sportsImg {
-                background-image: url("../assets/images/sports.png");
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
             }
 
         }
@@ -76,7 +80,7 @@
                 margin-top: -5.5px;
             }
             .sportsImg {
-                background-image: url("../assets/images/sportsmob.png");
+                background-image: url("../assets/images/sports1.png");
             }
         }
 
@@ -100,7 +104,7 @@
         }
 
         .sec-one {
-            background: url("../assets/images/eventsbg.png") center center no-repeat;
+            background: url("../assets/images/eventsback.png") center center no-repeat;
             background-size: cover;
         }
 
@@ -115,12 +119,12 @@
         }
 
         .navbar-expand-lg {
-            background-color: #F83B03
+            background-color: #121212
         }
 
 
         .eventsDetails {
-            background-color: #19003D
+            background-color: #121212
         }
 
         body {
@@ -128,9 +132,11 @@
         }
 
         .eventinfo {
-            border-right: 4px solid #F83B03;
-            border-bottom: 4px solid #F83B03;
+            /* border-right: 4px solid #F83B03; */
+            /* border-bottom: 4px solid #F83B03; */
             /* margin-right: 15px;margin-left: 15px; */
+            height: 18vh;
+            background-color: #282828;
             margin-top:20px;
             margin-left : 50px;
             margin-right: 50px;
@@ -138,11 +144,17 @@
         }
 
         .redbg {
+            width: 15vh;
             padding: 8px 18px;
             cursor: pointer;
             text-align: center;
-            background-color: red;
-            clip-path: polygon(17% 0, 100% 0%, 100% 99%, 0% 100%);
+            background: #FF6639 0% 0% no-repeat padding-box;
+            opacity: 1;
+            border-radius: 20px;
+            float: right;
+            margin-right: 15vh;
+            /* background-color: red; */
+            /* clip-path: polygon(17% 0, 100% 0%, 100% 99%, 0% 100%); */
 
         }
         .redbgtri{
@@ -155,6 +167,22 @@
         }
         .col-9 {
             padding-right : 0
+        }
+        .dropdown{
+            text-align: center;
+            padding-top: 10px;
+        }
+        .filter{
+            background-color: #282828 !important;
+            border-radius: 20px;
+            border: 2px solid #FFFFFF;
+        }
+        .search{
+            background-color: #282828 !important;
+            /* border-radius: 20px; */
+            /* border: 2px solid #FFFFFF; */
+            width: 30vh;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -266,77 +294,108 @@
 
 
     <div class="eventsDetails container-fluid" style="transform : translateY(-5%)" >
-        <div class="sec-one-cont" style="padding-top:20px"">
-            <div class="row eventinfo" style="background-color: #270655;">
+
+        <div class="row">
+            <div class="col s6">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           All
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col s6">
+                <div class="input-group mb-3 search">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sec-one-cont" style="padding-top:20px">
+            <div class="row eventinfo" >
 
                 <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
                     <h2 style="text-align: left">Cricket</h2>
-                    <div style="margin-top: 30px">
-                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
-                        <div class="sportsdetails" style="display: inline-block">11th February</div>
-                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
-                        <div class="sportsdetails" style="display: inline-block">1000</div>
-                        <div class="redbg" style="float: right">
-                            Enter
+                    <div class="row">
+                        <div  class="sportsdetails col s6">
+                            <div class ="details" style="display: inline-block;">5 hours</div>
+                            <div class ="details" style="display: inline-block">11th February</div>
+                            <div class ="details" style="display: inline-block">11th feb</div>
+                            <div class ="details" style="display: inline-block">1000</div>
                         </div>
-                    </div>
+                        <div class="col s6">
+                               <div class="redbg"> Register </div>
+                        </div>
+                    </div>  
                 </div>
             </div>
-            <div class="row eventinfo" style="background-color: #270655;">
+            <div class="row eventinfo">
 
                 <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
                         <h2 style="text-align: left">Cricket</h2>
-                        <div style="margin-top: 30px">
-                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
-                        <div class="sportsdetails" style="display: inline-block">11th February</div>
-                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
-                        <div class="sportsdetails" style="display: inline-block">1000</div>
-                        <div class="redbg" style="float: right">
-                            Enter
-                        </div>
-                    </div>
+                        <div class="row">
+                            <div  class="sportsdetails col s6">
+                                <div class ="details" style="display: inline-block;">5 hours</div>
+                                <div class ="details" style="display: inline-block">11th February</div>
+                                <div class ="details" style="display: inline-block">11th feb</div>
+                                <div class ="details" style="display: inline-block">1000</div>
+                            </div>
+                            <div class="col s6">
+                                   <div class="redbg"> Register </div>
+                            </div>
+                        </div>   
                 </div>
             </div>
-            <div class="row eventinfo" style="background-color: #270655;">
+            <div class="row eventinfo" >
 
                 <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
                         <h2 style="text-align: left">Cricket</h2>
-                        <div style="margin-top: 30px">
-                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
-                        <div class="sportsdetails" style="display: inline-block">11th February</div>
-                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
-                        <div class="sportsdetails" style="display: inline-block">1000</div>
-                        <div class="redbg" style="float: right">
-                            Enter
-                        </div>
-                    </div>
+                        <div class="row">
+                            <div  class="sportsdetails col s6">
+                                <div class ="details" style="display: inline-block;">5 hours</div>
+                                <div class ="details" style="display: inline-block">11th February</div>
+                                <div class ="details" style="display: inline-block">11th feb</div>
+                                <div class ="details" style="display: inline-block">1000</div>
+                            </div>
+                            <div class="col s6">
+                                   <div class="redbg"> Register </div>
+                            </div>
+                        </div>  
                 </div>
             </div>
-            <div class="row eventinfo" style="background-color: #270655;">
+            <div class="row eventinfo">
 
                 <div class="col-3  sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
                         <h2 style="text-align: left">Cricket</h2>
-                        <div style="margin-top: 30px">
-                        <div class="sportsdetails" style="display: inline-block">5 hours</div>
-                        <div class="sportsdetails" style="display: inline-block">11th February</div>
-                        <div class="sportsdetails" style="display: inline-block">11th feb</div>
-                        <div class="sportsdetails" style="display: inline-block">1000</div>
-                        <div class="redbgtri" style="float: right"><br>
-                            <b style="font-size: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</b>
-                        </div>
-                    </div>
+                        <div class="row">
+                            <div  class="sportsdetails col s6">
+                                <div class ="details" style="display: inline-block;">5 hours</div>
+                                <div class ="details" style="display: inline-block">11th February</div>
+                                <div class ="details" style="display: inline-block">11th feb</div>
+                                <div class ="details" style="display: inline-block">1000</div>
+                            </div>
+                            <div class="col s6">
+                                   <div class="redbg"> Register </div>
+                            </div>
+                        </div>  
                 </div>
             </div>
         </div>
