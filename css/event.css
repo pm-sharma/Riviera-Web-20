@@ -1,0 +1,38 @@
+
+
+.headingsmid {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    /* padding: 300px 0; */
+    animation: background 20s linear infinite;
+    background: linear-gradient(90deg,rgba(199,201,88,1) 10%,#ffffff 90%,rgba(28,147,46,1) 20%,rgba(74,165,168,1) 30%,rgba(89,90,165,1) 40%,#ffffff 90%,rgba(82,175,183,1) 70%,rgba(78,170,76,1) 80%,rgba(199,201,88,1) 100%);
+    background-size: 1000% 100%;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    position: absolute;
+    top: 30%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+  }
+  .headingname {
+    /* display: block; */
+  }
+  .headingname:nth-child(1) {
+    /* font-size: 214%; */
+    /* line-height: 85%; */
+    text-indent: -0.33em;
+  }
+  .headingname:nth-child(2) {
+    /* font-size: 292%; */
+    /* line-height: 69%; */
+    word-spacing: -0.2em;
+    text-indent: -0.07em;
+  }
+  
+  @keyframes background {
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+  }
