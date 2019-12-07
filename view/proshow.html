@@ -92,19 +92,10 @@
             .regbtn {
                 margin-top: -5px;
             }
+            .vl,.circle{
+                display: none;
+            }
         }
-
-        /* .navbar-nav>.active>a {
-            color: aqua;
-            background-color: chartreuse;
-        }
-
-        .nav-item>a:hover {
-            color: aqua;
-        } */
-        /* .navbar-nav {
-            padding: 10px 0;
-        } */
         .navbar {
             padding: 0 1rem;
         }
@@ -135,6 +126,43 @@
 
         .proshowDetails {
             background-color: #121212
+        }
+        .card-body{
+            background-color: #282828;
+        }
+        .card-title{
+            color: #FFFFFF;
+        }
+        .card-text{
+            color: #FFFFFF;
+        }
+        .timeline{
+            margin-top: 25px;
+        }
+        .card{
+            margin-right: 50px;
+        }
+        .row{
+            width: 130%;
+        }
+        .vl {
+            border-left: 6px solid #FF6639;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 35%;
+        }
+        .circle{
+            border-radius: 100%;
+            border: 6px solid #FF6639;
+            width: 50px;
+            height: 50px;
+            /* position: absolute;
+            left: 38%;
+            top: 29%; */
+            margin: auto;
+            transform: translateY(75%);
         }
     </style>
 </head>
@@ -198,23 +226,9 @@
                                         <p class="headings">Infusion</p>
                                     </a>
                                 </li>
-                                <!-- Dropdown
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li> -->
 
                             </ul>
-                            <!-- Links -->
 
-                            <!-- <div class="md-form my-0">
-                                <button type="button" class="btn btn-primary">Register</button>
-                        </div> -->
                         </div>
                         <!-- Collapsible content -->
 
@@ -247,54 +261,62 @@
 
     <div class="proshowDetails" class="container-fluid">
         <div class="sec-one-cont">
-            <div class="col-sm-12 " style="height: 650px;">
-                <!-- <div style=" margin-bottom: 2vh;">
-                    <p style="font-size: 1.4em; text-align: left">Hello</p>
-                </div> -->
-
+            <!-- <div class="col-sm-12 " style="height: 650px;"> -->
                 <main>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-10 col-lg-5 timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sonu Nigam</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
                             </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum  long bois lotsa pats blep. What a ni
+                            <div class="col-sm-10 col-lg-5 timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ayushmann Khurrana</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
+                            <div class="col-sm-2 col-lg-2 timeline">
+                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
+                                <div class="vl"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
+                        <div class="row">
+                            <div class="col-sm-10 col-lg-5  timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sonu Nigam</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
                             </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
+                            <div class="col-sm-10 col-lg-5  timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ayushmann Khurrana</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-sm-2 timeline">
+                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
+                                <div class="vl"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                    </main>
-            </div>
+                    </div>
+                </main>
+            <!-- </div> -->
         </div>
     </div>
 
