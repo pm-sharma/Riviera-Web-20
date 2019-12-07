@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/proshows.css">
+    <link rel="stylesheet" href="../css/event.css">
     <title>Riviera 2020</title>
     <!-- SEO -->
     <meta property="og:locale" content="en_US">
@@ -69,9 +69,18 @@
                 transform: skewX(15deg);
             }
 
-            li {
+            li,
+            .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
+            }
+            .details{
+                margin: 0 15px;
+            }
+
+            .sportsImg {
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
             }
 
         }
@@ -90,21 +99,14 @@
             }
 
             .regbtn {
-                margin-top: -5px;
+                margin-top: -5.5px;
+            }
+
+            .sportsImg {
+                background-image: url("../assets/images/sports1.png");
             }
         }
 
-        /* .navbar-nav>.active>a {
-            color: aqua;
-            background-color: chartreuse;
-        }
-
-        .nav-item>a:hover {
-            color: aqua;
-        } */
-        /* .navbar-nav {
-            padding: 10px 0;
-        } */
         .navbar {
             padding: 0 1rem;
         }
@@ -133,14 +135,26 @@
         }
 
 
-        .proshowDetails {
+        .eventsDetails {
             background-color: #121212
+        }
+
+        body {
+            overflow-x: hidden
+        }
+
+        .col-9 {
+            padding-right: 0
+        }
+
+        .btn-secondary.dropdown-toggle {
+            background-color: red!important;
         }
     </style>
 </head>
 
 <body>
-    <div style="height: 45vh;border-bottom: 4px solid #FF6639;" class="sec-one">
+    <div style="height: 45vh;border-bottom: 2px solid #F83B03;" class="sec-one">
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -168,14 +182,14 @@
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./events.html">
-                                        <p class="headings">Events</p>
-                                    </a>
-                                </li>
                                 <li style="background-color: white;color: #F29123" class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <p style=" color: #F29123" class="headings">Proshows</p>
+                                        <p style=" color: #F29123" class="headings">Events</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./proshow.html">
+                                        <p class="headings">Proshows</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -198,23 +212,9 @@
                                         <p class="headings">Infusion</p>
                                     </a>
                                 </li>
-                                <!-- Dropdown
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li> -->
 
                             </ul>
-                            <!-- Links -->
 
-                            <!-- <div class="md-form my-0">
-                                <button type="button" class="btn btn-primary">Register</button>
-                        </div> -->
                         </div>
                         <!-- Collapsible content -->
 
@@ -227,83 +227,18 @@
 
 
             </div>
-
             <div style="float: right;">
-                <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px"
-                    type="button" class="btn regbtn btn-primary-outline">Register</button>
-            </div>
-        </div>
-        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
-            <div style="margin: auto auto; padding-top : 200px ">
-                <div>
-                    <h1>ProShows</h1>
+                    <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px"
+                        type="button" class="btn regbtn btn-primary-outline">Register</button>
                 </div>
-
+            </div>
+            <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
+                <div style="margin: auto auto; padding-top : 150px ">
+                    <div>
+                        <h1 class="headingsmid"><span class="headingname">Ambassador</span></h1>
+                    </div>
+    
+                </div>
             </div>
         </div>
-    </div>
 
-
-
-    <div class="proshowDetails" class="container-fluid">
-        <div class="sec-one-cont">
-            <div class="col-sm-12 " style="height: 650px;">
-                <!-- <div style=" margin-bottom: 2vh;">
-                    <p style="font-size: 1.4em; text-align: left">Hello</p>
-                </div> -->
-
-                <main>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum  long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div style="display: inline-block">
-                                Doggo ipsum long bois lotsa
-                            </div>
-                            <div style="display: inline-block">
-                                Hello Doggo ipsum long bois lotsa pats blep. What a ni
-                            </div>
-                        </div>
-                    </main>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>

@@ -55,56 +55,16 @@
     <meta name="theme-color" content="#F83B03">
     <meta name="robots" content="index, follow">
     <style>
-        @media (min-width: 780px) {
-
-
-            .x {
-                margin-left: 0;
-                color: white;
-                transform: skewX(-15deg);
-                flex-wrap: wrap;
-            }
-
-            .headings {
-                transform: skewX(15deg);
-            }
-
-            li,
-            .sportsdetails {
-                margin-left: 22px;
-                margin-right: 22px;
-            }
-            .details{
-                margin: 0 15px;
-            }
-
-            .sportsImg {
-                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
-                background-image: url("../assets/images/sports1.png");
-            }
-
-        }
-
-        @media (max-width: 780px) {
-            .hellobro {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                z-index: 1030;
-            }
-
-            .topnavwidth {
-                width: 102%;
-            }
-
-            .regbtn {
-                margin-top: -5.5px;
-            }
-
-            .sportsImg {
-                background-image: url("../assets/images/sports1.png");
-            }
+        .redbg {
+            width: 15vh;
+            padding: 8px 18px;
+            cursor: pointer;
+            text-align: center;
+            background: #FF6639 0% 0% no-repeat padding-box;
+            opacity: 1;
+            border-radius: 20px;
+            float: right;
+            margin-right: 15vh;
         }
 
         /* .navbar-nav>.active>a {
@@ -160,25 +120,10 @@
             /* margin-right: 15px;margin-left: 15px; */
             height: 18vh;
             background-color: #282828;
-            margin-top:20px;
-            margin-left : 50px;
+            margin-top: 20px;
+            margin-left: 50px;
             margin-right: 50px;
             padding-top: 2px
-        }
-
-        .redbg {
-            width: 15vh;
-            padding: 8px 18px;
-            cursor: pointer;
-            text-align: center;
-            background: #FF6639 0% 0% no-repeat padding-box;
-            opacity: 1;
-            border-radius: 20px;
-            float: right;
-            margin-right: 15vh;
-            /* background-color: red; */
-            /* clip-path: polygon(17% 0, 100% 0%, 100% 99%, 0% 100%); */
-
         }
 
         .redbgtri {
@@ -193,24 +138,100 @@
         .col-9 {
             padding-right: 0
         }
-        .dropdown{
+
+        .dropdown {
             text-align: center;
             padding-top: 10px;
         }
-        .filter{
+
+        .filter {
             background-color: #282828 !important;
             border-radius: 20px;
             border: 2px solid #FFFFFF;
         }
-        .search{
+
+        .search {
             background-color: #282828 !important;
             /* border-radius: 20px; */
             /* border: 2px solid #FFFFFF; */
             width: 30vh;
+            margin: auto;
             margin-top: 20px;
         }
+
         .btn-secondary.dropdown-toggle {
-            background-color: red!important;
+            width: 30vh;
+            background-color: #121212 !important;
+        }
+
+        .btn-secondary.dropdown-toggle:hover,
+        .btn-secondary.dropdown-toggle:focus,
+        .btn-secondary.dropdown-toggle:active {
+            background-color: #121212 !important;
+        }
+
+        .show>.btn-secondary.dropdown-toggle {
+            background-color: #121212;
+        }
+
+        @media (min-width: 780px) {
+
+
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+
+            .headings {
+                transform: skewX(15deg);
+            }
+
+            li,
+            .sportsdetails {
+                margin-left: 22px;
+                margin-right: 22px;
+            }
+
+            .details {
+                margin: 0 15px;
+            }
+
+            .sportsImg {
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
+            }
+
+        }
+
+        @media (max-width: 780px) {
+            .hellobro {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1030;
+            }
+
+            .topnavwidth {
+                width: 102%;
+            }
+
+            .regbtn {
+                margin-top: -5.5px;
+            }
+
+            .sportsImg {
+                background-image: url("../assets/images/sports1.png");
+            }
+
+            .redbg {
+                float: none;
+            }
+        }
+        .dropdown-menu.show{
+            width: 30vh !important;
         }
     </style>
 </head>
@@ -260,17 +281,17 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./ambassador.html">
                                         <p class="headings">Campus Ambassador</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <p class="headings">Sponsers & Partners</p>
+                                        <p class="headings">Sponsors & Partners</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./infusion.html">
                                         <p class="headings">Infusion</p>
                                     </a>
                                 </li>
@@ -321,109 +342,111 @@
 
 
 
-    <div class="eventsDetails container-fluid" style="transform : translateY(-5%)" >
+    <div class="eventsDetails container-fluid">
 
         <div class="row">
-            <div class="col s6">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           All
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+            <div class="col l6 s12">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        All
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                </div>
             </div>
-            <div class="col s6">
+            <div class="col  l6 s12">
                 <div class="input-group mb-3 search">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Username"
+                        aria-describedby="basic-addon1" style="background-color: #121212;">
                     <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon1">@</span>
+                        <span class="input-group-text" id="basic-addon1" style="background-color: #121212;">@</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="sec-one-cont" style="padding-top:20px">
-            <div class="row eventinfo" >
+            <div class="row eventinfo">
 
-            <div class="col-3 sportsImg" style="height: auto;">
+                <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
                     <h2 style="text-align: left">Cricket</h2>
                     <div class="row">
-                        <div  class="sportsdetails col s6">
-                            <div class ="details" style="display: inline-block;">5 hours</div>
-                            <div class ="details" style="display: inline-block">11th February</div>
-                            <div class ="details" style="display: inline-block">11th feb</div>
-                            <div class ="details" style="display: inline-block">1000</div>
+                        <div class="sportsdetails col s6">
+                            <div class="details" style="display: inline-block;">5 hours</div>
+                            <div class="details" style="display: inline-block">11th February</div>
+                            <div class="details" style="display: inline-block">11th feb</div>
+                            <div class="details" style="display: inline-block">1000</div>
                         </div>
                         <div class="col s6">
-                               <div class="redbg"> Register </div>
+                            <div class="redbg"> Register </div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
             <div class="row eventinfo">
 
-            <div class="col-3 sportsImg" style="height: auto;">
+                <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
-                        <h2 style="text-align: left">Cricket</h2>
-                        <div class="row">
-                            <div  class="sportsdetails col s6">
-                                <div class ="details" style="display: inline-block;">5 hours</div>
-                                <div class ="details" style="display: inline-block">11th February</div>
-                                <div class ="details" style="display: inline-block">11th feb</div>
-                                <div class ="details" style="display: inline-block">1000</div>
-                            </div>
-                            <div class="col s6">
-                                   <div class="redbg"> Register </div>
-                            </div>
-                        </div>   
-                </div>
-            </div>
-            <div class="row eventinfo" >
-
-            <div class="col-3 sportsImg" style="height: auto;">
-
-                </div>
-                <div class="col-9" style="padding-top:10px">
-                        <h2 style="text-align: left">Cricket</h2>
-                        <div class="row">
-                            <div  class="sportsdetails col s6">
-                                <div class ="details" style="display: inline-block;">5 hours</div>
-                                <div class ="details" style="display: inline-block">11th February</div>
-                                <div class ="details" style="display: inline-block">11th feb</div>
-                                <div class ="details" style="display: inline-block">1000</div>
-                            </div>
-                            <div class="col s6">
-                                   <div class="redbg"> Register </div>
-                            </div>
-                        </div>  
+                    <h2 style="text-align: left">Cricket</h2>
+                    <div class="row">
+                        <div class="sportsdetails col s6">
+                            <div class="details" style="display: inline-block;">5 hours</div>
+                            <div class="details" style="display: inline-block">11th February</div>
+                            <div class="details" style="display: inline-block">11th feb</div>
+                            <div class="details" style="display: inline-block">1000</div>
+                        </div>
+                        <div class="col s6">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row eventinfo">
 
-            <div class="col-3  sportsImg" style="height: auto;">
+                <div class="col-3 sportsImg" style="height: auto;">
 
                 </div>
                 <div class="col-9" style="padding-top:10px">
-                        <h2 style="text-align: left">Cricket</h2>
-                        <div class="row">
-                            <div  class="sportsdetails col s6">
-                                <div class ="details" style="display: inline-block;">5 hours</div>
-                                <div class ="details" style="display: inline-block">11th February</div>
-                                <div class ="details" style="display: inline-block">11th feb</div>
-                                <div class ="details" style="display: inline-block">1000</div>
-                            </div>
-                            <div class="col s6">
-                                   <div class="redbg"> Register </div>
-                            </div>
-                        </div>  
+                    <h2 style="text-align: left">Cricket</h2>
+                    <div class="row">
+                        <div class="sportsdetails col s6">
+                            <div class="details" style="display: inline-block;">5 hours</div>
+                            <div class="details" style="display: inline-block">11th February</div>
+                            <div class="details" style="display: inline-block">11th feb</div>
+                            <div class="details" style="display: inline-block">1000</div>
+                        </div>
+                        <div class="col s6">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row eventinfo">
+
+                <div class="col-3  sportsImg" style="height: auto;">
+
+                </div>
+                <div class="col-9" style="padding-top:10px">
+                    <h2 style="text-align: left">Cricket</h2>
+                    <div class="row">
+                        <div class="sportsdetails col s6">
+                            <div class="details" style="display: inline-block;">5 hours</div>
+                            <div class="details" style="display: inline-block">11th February</div>
+                            <div class="details" style="display: inline-block">11th feb</div>
+                            <div class="details" style="display: inline-block">1000</div>
+                        </div>
+                        <div class="col s6">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
