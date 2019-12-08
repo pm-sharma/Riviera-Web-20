@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/proshows.css">
+    <link rel="stylesheet" href="../css/event.css">
     <title>Riviera 2020</title>
     <!-- SEO -->
     <meta property="og:locale" content="en_US">
@@ -73,9 +73,18 @@
                 transform: skewX(15deg);
             }
 
-            li {
+            li,
+            .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
+            }
+            .details{
+                margin: 0 15px;
+            }
+
+            .sportsImg {
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
             }
 
         }
@@ -86,8 +95,8 @@
                 top: 0;
                 right: 0;
                 left: 0;
-                z-index: 1030;
                 min-height: 7vh;
+                z-index: 1030;
             }
 
             .topnavwidth {
@@ -95,12 +104,14 @@
             }
 
             .regbtn {
-                margin-top: -5px;
+                margin-top: -5.5px;
             }
-            .vl,.circle{
-                display: none;
+
+            .sportsImg {
+                background-image: url("../assets/images/sports1.png");
             }
         }
+
         .navbar {
             padding: 0 1rem;
         }
@@ -129,51 +140,26 @@
         }
 
 
-        .proshowDetails {
+        .eventsDetails {
             background-color: #121212
         }
-        .card-body{
-            background-color: #282828;
+
+        body {
+            overflow-x: hidden
         }
-        .card-title{
-            color: #FFFFFF;
+
+        .col-9 {
+            padding-right: 0
         }
-        .card-text{
-            color: #FFFFFF;
-        }
-        .timeline{
-            margin-top: 25px;
-        }
-        .card{
-            margin-right: 50px;
-        }
-        .row{
-            width: 130%;
-        }
-        .vl {
-            border-left: 6px solid #FF6639;
-            height: 300px;
-            position: absolute;
-            left: 50%;
-            margin-left: -3px;
-            top: 35%;
-        }
-        .circle{
-            border-radius: 100%;
-            border: 6px solid #FF6639;
-            width: 50px;
-            height: 50px;
-            /* position: absolute;
-            left: 38%;
-            top: 29%; */
-            margin: auto;
-            transform: translateY(75%);
+
+        .btn-secondary.dropdown-toggle {
+            background-color: red!important;
         }
     </style>
 </head>
 
 <body>
-    <div style="height: 45vh;border-bottom: 4px solid #FF6639;" class="sec-one">
+    <div style="height: 45vh;border-bottom: 2px solid #F83B03;" class="sec-one">
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -202,13 +188,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./events.html">
+                                    <a class="nav-link" href="#">
                                         <p class="headings">Events</p>
                                     </a>
                                 </li>
-                                <li style="background-color: white;color: #F29123" class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <p style=" color: #F29123" class="headings">Proshows</p>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./proshow.html">
+                                        <p class="headings">Proshows</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -216,9 +202,9 @@
                                         <p class="headings">Team Riviera</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li style="background-color: white;color: #F29123" class="nav-item">
                                     <a class="nav-link" href="./ambassador.html">
-                                        <p class="headings">Campus Ambassador</p>
+                                        <p style=" color: #F29123" class="headings">Campus Ambassador</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -246,91 +232,18 @@
 
 
             </div>
-
             <div style="float: right;">
-                <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
-                    type="button" class="btn regbtn btn-primary-outline">Register</button>
-            </div>
-        </div>
-        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
-            <div style="margin: auto auto; padding-top : 200px ">
-                <div>
-                    <h1>ProShows</h1>
+                    <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
+                        type="button" class="btn regbtn btn-primary-outline">Register</button>
                 </div>
-
+            </div>
+            <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
+                <div style="margin: auto auto; padding-top : 150px ">
+                    <div>
+                        <h1 class="headingsmid"><span class="headingname">Ambassador</span></h1>
+                    </div>
+    
+                </div>
             </div>
         </div>
-    </div>
 
-
-
-    <div class="proshowDetails" class="container-fluid">
-        <div class="sec-one-cont">
-            <!-- <div class="col-sm-12 " style="height: 650px;"> -->
-                <main>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-10 col-lg-5 timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Sonu Nigam</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-10 col-lg-5 timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ayushmann Khurrana</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-2 col-lg-2 timeline">
-                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
-                                <div class="vl"></div>
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-10 col-lg-5  timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Sonu Nigam</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-10 col-lg-5  timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ayushmann Khurrana</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-2 timeline">
-                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
-                                <div class="vl"></div>
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            <!-- </div> -->
-        </div>
-    </div>
-
-
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
