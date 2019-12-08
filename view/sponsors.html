@@ -30,8 +30,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/proshows.css">
-    <title>Riviera 2K20</title>
+    <link rel="stylesheet" href="../css/event.css">
+    <title>Riviera 2020</title>
     <!-- SEO -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
@@ -54,8 +54,6 @@
     <meta name="msapplication-TileColor" content="#F83B03">
     <meta name="theme-color" content="#F83B03">
     <meta name="robots" content="index, follow">
-
-
     <style>
         @media (min-width: 780px) {
 
@@ -71,13 +69,18 @@
                 transform: skewX(15deg);
             }
 
-            li {
+            li,
+            .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
             }
+            .details{
+                margin: 0 15px;
+            }
 
-            .regdiv {
-                float: left
+            .sportsImg {
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
             }
 
         }
@@ -90,7 +93,6 @@
                 left: 0;
                 min-height: 7vh;
                 z-index: 1030;
-                width: 98%
             }
 
             .topnavwidth {
@@ -101,22 +103,11 @@
                 margin-top: -5.5px;
             }
 
-            .regdiv {
-                float: right
+            .sportsImg {
+                background-image: url("../assets/images/sports1.png");
             }
         }
 
-        /* .navbar-nav>.active>a {
-            color: aqua;
-            background-color: chartreuse;
-        }
-
-        .nav-item>a:hover {
-            color: aqua;
-        } */
-        /* .navbar-nav {
-            padding: 10px 0;
-        } */
         .navbar {
             padding: 0 1rem;
         }
@@ -126,7 +117,7 @@
         }
 
         .sec-one {
-            background: url("../assets/images/teambg.png") center center no-repeat;
+            background: url("../assets/images/eventsback.png") center center no-repeat;
             background-size: cover;
         }
 
@@ -141,36 +132,32 @@
         }
 
         .navbar-expand-lg {
-            background-color: #F29123
+            background-color: #121212
         }
 
 
-        .teamDetails {
-            background-color: #3D3C3C
-        }
-
-        .cor-name {
-            text-align: center;
-            color: white
-        }
-
-        .cor-circle {
-            text-align: center
+        .eventsDetails {
+            background-color: #121212
         }
 
         body {
             overflow-x: hidden
         }
-        .cor-circle:hover{
-            transform: scale(1.1);
+
+        .col-9 {
+            padding-right: 0
+        }
+
+        .btn-secondary.dropdown-toggle {
+            background-color: red!important;
         }
     </style>
 </head>
 
 <body>
-    <div style="height: 45vh;border-bottom: 2px solid #F29123;" class="sec-one">
+    <div style="height: 45vh;border-bottom: 2px solid #F83B03;" class="sec-one">
         <div style="position : relative ; ">
-            <div class="container topnavwidth" style="position: absolute; right : 0; transform : translateX(2%);">
+            <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
                     <!--Navbar-->
                     <nav class="navbar navbar-expand-lg navbar-dark hellobro">
@@ -197,7 +184,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./events.html">
+                                    <a class="nav-link" href="#">
                                         <p class="headings">Events</p>
                                     </a>
                                 </li>
@@ -206,8 +193,8 @@
                                         <p class="headings">Proshows</p>
                                     </a>
                                 </li>
-                                <li  class="nav-item">
-                                    <a class="nav-link" href="#">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./teamriviera.html">
                                         <p class="headings">Team Riviera</p>
                                     </a>
                                 </li>
@@ -226,23 +213,9 @@
                                         <p class="headings">Infusion</p>
                                     </a>
                                 </li>
-                                <!-- Dropdown
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li> -->
 
                             </ul>
-                            <!-- Links -->
 
-                            <!-- <div class="md-form my-0">
-                                <button type="button" class="btn btn-primary">Register</button>
-                        </div> -->
                         </div>
                         <!-- Collapsible content -->
 
@@ -255,18 +228,18 @@
 
 
             </div>
-
-            <div class="regdiv">
-                <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
-                    type="button" class="btn regbtn btn-primary-outline">Register</button>
-            </div>
-        </div>
-        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
-            <div style="margin: auto auto; padding-top : 200px ">
-                <div>
-                    <h1>Sponsors and Partners</h1>
+            <div style="float: right;">
+                    <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
+                        type="button" class="btn regbtn btn-primary-outline">Register</button>
                 </div>
-
+            </div>
+            <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
+                <div style="margin: auto auto; padding-top : 150px ">
+                    <div>
+                        <h1 class="headingsmid"><span class="headingname">Sponsors and Partners</span></h1>
+                    </div>
+    
+                </div>
             </div>
         </div>
-    </div>
+
