@@ -65,6 +65,7 @@
             border-radius: 20px;
             float: right;
             margin-right: 15vh;
+            margin-bottom: 2vh;
         }
 
         /* .navbar-nav>.active>a {
@@ -151,12 +152,22 @@
         }
 
         .search {
-            background-color: #282828 !important;
-            /* border-radius: 20px; */
-            /* border: 2px solid #FFFFFF; */
+            background-color: #121212 !important;
+            border-radius: 20px;
+            border: 2px solid #FFFFFF;
             width: 30vh;
+            height: auto;
             margin: auto;
             margin-top: 20px;
+        }
+        .search:focus{
+            outline: none;
+            box-shadow: none;
+            border-color: #FFFFFF;
+        }
+        .search::placeholder{
+            color: #FFFFFF;
+            text-align: center;
         }
 
         .btn-secondary.dropdown-toggle {
@@ -166,12 +177,14 @@
 
         .btn-secondary.dropdown-toggle:hover,
         .btn-secondary.dropdown-toggle:focus,
-        .btn-secondary.dropdown-toggle:active {
+        .btn-secondary.dropdown-toggle:active,
+        .btn-secondary.dropdown-toggle:focus-within{
             background-color: #121212 !important;
         }
 
-        .show>.btn-secondary.dropdown-toggle {
-            background-color: #121212;
+        .show>.btn-secondary.dropdown-toggle,
+        .btn-secondary:not([disabled]):not(.disabled):active {
+            background-color: #121212 !important;
         }
 
         @media (min-width: 780px) {
@@ -228,6 +241,7 @@
 
             .redbg {
                 float: none;
+                margin: 1vh 0 1vh 0;
             }
         }
         .dropdown-menu.show{
@@ -237,7 +251,7 @@
 </head>
 
 <body>
-    <div style="height: 45vh;border-bottom: 2px solid #F83B03;" class="sec-one">
+    <div style="height: 45vh;border-bottom: 2px solid #FF6639;" class="sec-one">
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -359,13 +373,15 @@
                 </div>
             </div>
             <div class="col  l6 s12">
-                <div class="input-group mb-3 search">
+                <!-- <div class="input-group mb-3 search">
                     <input type="text" class="form-control" placeholder="Search" aria-label="Username"
                         aria-describedby="basic-addon1" style="background-color: #121212;">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon1" style="background-color: #121212;">@</span>
                     </div>
-                </div>
+                </div> -->
+                <input class="form-control search" type="text" placeholder="Search">
+                <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
         <div class="sec-one-cont" style="padding-top:20px">
