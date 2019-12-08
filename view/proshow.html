@@ -59,6 +59,87 @@
 
 
     <style>
+        .navbar {
+            padding: 0 1rem;
+        }
+
+        ul {
+            text-align: center
+        }
+
+        .sec-one {
+            background: url("../assets/images/eventsback.png") center center no-repeat;
+            background-size: cover;
+        }
+
+        .sec-one-cont {
+            height: auto;
+            color: white;
+        }
+
+        p {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .navbar-expand-lg {
+            background-color: #121212
+        }
+
+
+        .proshowDetails {
+            padding-bottom: 60px;
+            background-color: #121212
+        }
+
+        .card-body {
+            background-color: #282828;
+        }
+
+        .card-title {
+            color: #FFFFFF;
+        }
+
+        .card-text {
+            color: #FFFFFF;
+        }
+
+        .timeline {
+            margin-top: 25px;
+        }
+
+        .card {
+            margin-right: 50px;
+        }
+
+        .row {
+            width: 130%;
+        }
+
+        .vl {
+            border-left: 6px solid #FF6639;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 35%;
+        }
+
+        .circle {
+            border-radius: 100%;
+            border: 6px solid #FF6639;
+            width: 50px;
+            height: 50px;
+            /* position: absolute;
+            left: 38%;
+            top: 29%; */
+            margin: auto;
+            transform: translateY(75%);
+        }
+        .mb-day{
+            display: none;
+        }
+
         @media (min-width: 780px) {
 
 
@@ -97,77 +178,31 @@
             .regbtn {
                 margin-top: -5px;
             }
-            .vl,.circle{
+
+            .vl,
+            .circle {
                 display: none;
             }
-        }
-        .navbar {
-            padding: 0 1rem;
-        }
 
-        ul {
-            text-align: center
-        }
+            .timeline>p {
+                display: none;
+            }
 
-        .sec-one {
-            background: url("../assets/images/eventsback.png") center center no-repeat;
-            background-size: cover;
-        }
+            .mb-day {
+                text-align: center;
+                margin-top: 20%;
+                margin-left: 10%;
+                font-size: 25px;
+                display: block;
+                font-weight: 500;
+            }
 
-        .sec-one-cont {
-            height: auto;
-            color: white;
-        }
-
-        p {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-
-        .navbar-expand-lg {
-            background-color: #121212
-        }
-
-
-        .proshowDetails {
-            background-color: #121212
-        }
-        .card-body{
-            background-color: #282828;
-        }
-        .card-title{
-            color: #FFFFFF;
-        }
-        .card-text{
-            color: #FFFFFF;
-        }
-        .timeline{
-            margin-top: 25px;
-        }
-        .card{
-            margin-right: 50px;
-        }
-        .row{
-            width: 130%;
-        }
-        .vl {
-            border-left: 6px solid #FF6639;
-            height: 300px;
-            position: absolute;
-            left: 50%;
-            margin-left: -3px;
-            top: 35%;
-        }
-        .circle{
-            border-radius: 100%;
-            border: 6px solid #FF6639;
-            width: 50px;
-            height: 50px;
-            /* position: absolute;
-            left: 38%;
-            top: 29%; */
-            margin: auto;
-            transform: translateY(75%);
+            .row {
+                width: 100%;
+            }
+            .card{
+                margin: auto;
+            }
         }
     </style>
 </head>
@@ -248,7 +283,8 @@
             </div>
 
             <div style="float: right;">
-                <button style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
+                <button
+                    style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 1px;"
                     type="button" class="btn regbtn btn-primary-outline">Register</button>
             </div>
         </div>
@@ -267,60 +303,66 @@
     <div class="proshowDetails" class="container-fluid">
         <div class="sec-one-cont">
             <!-- <div class="col-sm-12 " style="height: 650px;"> -->
-                <main>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-10 col-lg-5 timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Sonu Nigam</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-10 col-lg-5 timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ayushmann Khurrana</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-2 col-lg-2 timeline">
-                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
-                                <div class="vl"></div>
-                                <div class="circle"></div>
+            <main>
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="mb-day">DAY 1 </p>
+                        <div class="col-sm-10 col-lg-5 timeline">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sonu Nigam</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-10 col-lg-5  timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Sonu Nigam</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
+                        <div class="col-sm-10 col-lg-5 timeline">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ayushmann Khurrana</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
                             </div>
-                            <div class="col-sm-10 col-lg-5  timeline">
-                                    <div class="card" style="width: 20rem;">
-                                        <img src="../assets/images/proshow2.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ayushmann Khurrana</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-sm-2 timeline">
-                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
-                                <div class="vl"></div>
-                                <div class="circle"></div>
-                            </div>
+                        </div>
+                        <div class="col-sm-2 col-lg-2 timeline">
+                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
+                            <div class="vl"></div>
+                            <div class="circle"></div>
                         </div>
                     </div>
-                </main>
+                    <div class="row">
+                        <p class="mb-day">DAY 2</p>
+                        <div class="col-sm-10 col-lg-5  timeline">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sonu Nigam</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-10 col-lg-5  timeline">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ayushmann Khurrana</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 timeline">
+                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
+                            <div class="vl"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
             <!-- </div> -->
         </div>
     </div>
