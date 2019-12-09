@@ -59,9 +59,18 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" href="./assets/images/logo.png" type="image/x-icon">
 
-    <!-- Cache  -->
-    <meta http-equiv="Cache-control" content="no-cache">
+    <!-- PWA and Cache  -->
+    <!-- <meta http-equiv="Cache-control" content="no-cache"> -->
+    <link rel="manifest" href="manifest.json">
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/swr.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                });
+        }
+    </script>
     <style>
         @media (min-width: 780px) {
             .nav-desk {
