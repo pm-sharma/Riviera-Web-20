@@ -4,7 +4,7 @@ var filesToCache = [
     './css/index.css',
     './css/event.css',
     './css/proshows.css',
-    './script/indexjs',
+    './script/index.js',
     './assets/images/mainbg.png'
   ];
   
