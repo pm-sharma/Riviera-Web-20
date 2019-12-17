@@ -1,11 +1,25 @@
 var filesToCache = [
     '/',
-    '/index.html',
+    './index.html',
     './css/index.css',
     './css/event.css',
     './css/proshows.css',
     './script/index.js',
-    './assets/images/mainbg.png'
+    './view/ambassador.html',
+    './view/events.html',
+    './view/infusion.html',
+    './view/proshow.html',
+    './view/sponsors.html',
+    './view/teamriviera.html',
+    './assets/images/mainbg.png',
+    './assets/icons/facebook.svg',
+    './assets/icons/magnifier.svg',
+    './assets/icons/pepsi.png',
+    './assets/icons/proshows.svg',
+    './assets/icons/sports.svg',
+    './assets/icons/twitter.svg',
+    './assets/icons/vit-white.png',
+    './assets/icons/youtube.svg'
   ];
   
   self.addEventListener('install', function(e) {
