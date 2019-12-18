@@ -91,8 +91,15 @@
             li {
                 padding-left: 42px;
             }
-            .mainInfo{
-            margin : 0 5vw;
+
+            .mainInfo {
+                margin: 0 5vw;
+            }
+            .moreInfoBtn{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%)
         }
         }
 
@@ -165,15 +172,25 @@
             color: white;
             font-size: 16px
         }
-        .card-title{
+
+        .card-title {
             text-align: center;
             color: white
         }
-        .card-body{
+
+        .card-body {
             background-color: #282828
         }
-        h5{
-            color:white
+
+        h5 {
+            color: white
+        }
+
+        .cardsTop {
+            margin-bottom: 20px
+        }
+        .card{
+            background-color: #282828;
         }
         
     </style>
@@ -313,24 +330,24 @@
         </div>
 
         <div class="row mainInfo" style="padding: 15px">
-            <div class="col-lg-4 col-10">
-                <div class="card" style="width: 20rem;">
+            <div class="col-lg-4 col-12 cardsTop">
+                <div class="card">
                     <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
                     <div class="card-body">
                         <h5 class="card-title">Events</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-10">
-                <div class="card" style="width: 20rem;">
+            <div class="col-lg-4 col-12 cardsTop">
+                <div class="card">
                     <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
                     <div class="card-body">
                         <h5 class="card-title">Sports</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-10">
-                <div class="card" style="width: 20rem;">
+            <div class="col-lg-4 col-12 cardsTop">
+                <div class="card">
                     <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
                     <div class="card-body">
                         <h5 class="card-title">Proshows</h5>
@@ -338,7 +355,46 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    SPONSERS</p><br>
+            </div>
+        </div>
+
+        <div class="row mainInfo" style="padding: 15px">
+                <div class="col-lg-4 col-12 cardsTop">
+                    <div class="card">
+                        <img src="../assets/images/pepsi.png" class="card-img-top" alt="Pepsi">
+                        <div class="card-body">
+                            <h5 class="card-title">Title Sponser</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 cardsTop">
+                    <div class="card">
+                        <img src="../assets/images/pepsi.png" class="card-img-top" alt="Paytm">
+                        <div class="card-body">
+                            <h5 class="card-title">Co-Sponser</h5>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center" class="col-lg-4 col-12">
+                    <div class="moreInfoBtn">
+                        <a href="./view/sponsors.html">
+                        <button style="color: white;border-radius: 6px;background-color: #0090C5" type="button"
+                        class="btn">More Info</button></a>
+                    </div>
+                </div>
+            </div>
+
+
     </div>
+
+
+
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
