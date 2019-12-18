@@ -3,9 +3,9 @@
     "short_name": "VIT Event",
     "description": "Riviera 2k20",
     "start_url": "/",
-    "background_color": "#F83B03",
+    "background_color": "#0090C5",
     "display": "standalone",
-    "theme_color": "#F83B03"
+    "theme_color": "#0090C5"
   }
 
 
