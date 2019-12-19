@@ -112,6 +112,12 @@
             }
         }
 
+        @media(max-width: 921px){
+            .button1{
+                width: 921px;
+            }
+        }
+
         .navbar {
             padding: 0 1rem;
         }
@@ -137,29 +143,80 @@
         }
 
         .navbar-expand-lg {
-            background-color: #121212
+            background-color: #121212;
         }
 
 
         .eventsDetails {
-            background-color: #121212
+            background-color: #121212;
         }
 
         body {
-            overflow-x: hidden
+            overflow-x: hidden;
         }
 
         .col-9 {
-            padding-right: 0
+            padding-right: 0;
         }
 
         .btn-secondary.dropdown-toggle {
             background-color: #0090C5!important;
         }
+        .infusionContent li{
+            color: white;
+            font-size: 16px;
+            text-align: left;
+            padding-bottom: 5px;
+        }   
         .infusionContent p{
             color: white;
-            font-size: 16px
-        }   
+        }
+        /*Infusion table css*/
+        .infusionMid{
+            background-color: #000;
+            color: white;
+            text-align: center;
+            overflow: scroll;   
+        }
+        .infusionMid >div{
+            display: inline-block;
+            text-align: center;
+        }
+        .infusionMid >div button{
+            color: white;
+            border: 4px solid #0090C5;
+            border-radius: 10px;
+            background-color: #000;
+            margin: 0px;
+            display: inline-block;
+            height: 6rem;
+            width: 75%;
+        }
+        .button1{
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .col-4{
+            float: left;
+        }
+        .btn:focus{
+            background-color: #0090C5;
+        }
+        table, td{
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+        th, td{
+            text-align: center;
+            padding: 18px;
+            padding-right: 70px; 
+            padding-left: 70px;
+        }
+        #yesBorder{
+            border: 1px solid grey;
+        }
+        .noBorder{
+        }
     </style>
 </head>
 
@@ -252,6 +309,151 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid infusionMid">
+            <div class="button1">
+                <div class="col-4"><button  type="button" class="btn" id="cng1">Colleges in Tamil Nadu (Zone 1)</button></div>
+                <div class="col-4"><button  type="button" class="btn" id="cng2">Colleges from Andhra, Telangana, Kerala and Karnataka (Zone 2)</button></div>
+                <div class="col-4"><button  type="button" class="btn" id="cng3">Colleges from other parts of North India (Zone 3)</button></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th class="noBorder">
+                            
+                        </th>
+                        <th class="noBorder">
+                            GOLD
+                        </th>
+                        <th class="noBorder">
+                            DIAMOND
+                        </th>
+                        <th class="noBorder">
+                            PLATINUM
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th id="yesBorder">
+                            Registration Requirements
+                        </th>
+                        <td id="change1">
+                            ~Choose an option~  
+                        </td>
+                        <td id="change2">
+                            ~Choose an option~
+                        </td>
+                        <td id="change3">
+                            ~Choose an option~
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            One way fare
+                        </td>
+                        <td>
+                            One way fare
+                        </td>
+                        <td>
+                            Two way fare
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            Certificate and tag
+                        </td>
+                        <td>
+                            Certificate and tag
+                        </td>
+                        <td>
+                            Certificate and tag
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            Post on Riviera page
+                        </td>
+                        <td>
+                            Post on Riviera page
+                        </td>
+                        <td>
+                            Post on Riviera page
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Incentives
+                        </th>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            4 days accomodation
+                        </td>
+                        <td>
+                            4 days accomodation
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            Food coupons
+                        </td>
+                        <td>
+                            Food coupons
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            Goodies
+                        </td>
+                        <td>
+                            Goodies
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            ProShow passes for 4 days
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+ <!-- <tr>
+    <th>Company</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+  </tr> -->
 
         <div class="container-fluid infusionContent" style="background: black;padding-top:20px">
 
@@ -261,25 +463,42 @@
                 </div>
             </div>
             <div class="row infusionContent" style="margin : 0 5vw;padding: 15px">
-                <p>• Campus ambassadors are to act as the link between the Riviera Team and the concerned college administration and facilitate student communication </p><br>
-                <p>• Be updated with Riviera’19 happenings</p><br>
-                <p>• To publicize and promote Riviera’19 by all possible means.</p><br> 
-                <p>• They are required to share posters and other happenings of Riviera’19 through social media networks.</p>
+               <ul> <li> Campus ambassadors are to act as the link between the Riviera Team and the concerned college administration and facilitate student communication </li>
+                <li> Be updated with Riviera’19 happenings</li>
+                <li> To publicize and promote Riviera’19 by all possible means.</li>
+                <li> They are required to share posters and other happenings of Riviera’19 through social media networks.</li> </ul>
             </div>
             <div class="container-fluid">
                 <div class="row" style="text-align: center">
                 <p style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;font-size: 40px">TERMS AND CONDITIONS</p><br>
                 </div>
             </div>
-            <div class="row infusionContent" style="margin : 0 5vw;padding: 15px">
-                <p>• Only 1 campus ambassador per college is permitted.</p><br> 
-                <p>• The final decision of allotting the zone and category rests with the Riviera’19 team.</p><br> 
-                <p>• Any kind of indiscipline caused by the ambassador during or before the fest will lead to severe disciplinary actions.</p><br> 
-                <p>• The travel ticket should be booked in the name of the ambassador to claim the refund. The travel fares, as mentioned, entail train tickets of the 2nd class compartments to all respective destinations from Vellore. (Maximum amount is INR 500 one way for Zone 1, INR 750 one way for Zone 2 and INR 1000 one way for Zone 3 and twice the amount for two way fares.)</p><br> 
-                <p>• The travel expenses will be redeemed on the fourth day of the fest on submission of the ticket. </p><br>
-                <p>• As a proof of registrations, the student ambassador needs to maintain a record of the details of registered students, in a format described by the Riviera’19 team.</p>
+            <div class="row infusionContent" style="margin : 0 5vw;padding: 15px;">
+               <ul> <li> Only 1 campus ambassador per college is permitted.</li>
+                <li> The final decision of allotting the zone and category rests with the Riviera’19 team.</li> 
+                <li> Any kind of indiscipline caused by the ambassador during or before the fest will lead to severe disciplinary actions.</li>
+                <li> The travel ticket should be booked in the name of the ambassador to claim the refund. The travel fares, as mentioned, entail train tickets of the 2nd class compartments to all respective destinations from Vellore. (Maximum amount is INR 500 one way for Zone 1, INR 750 one way for Zone 2 and INR 1000 one way for Zone 3 and twice the amount for two way fares.)</li>
+                <li> The travel expenses will be redeemed on the fourth day of the fest on submission of the ticket. </li>
+                <li> As a proof of registrations, the student ambassador needs to maintain a record of the details of registered students, in a format described by the Riviera’19 team.</li> </ul>
             </div>
         </div>
 
+<script type="text/javascript">
+    $("#cng1").click(function(){
+        $("#change1").html("35-50 registrations");
+        $("#change2").html("51-75 registrations");
+        $("#change3").html("Above 75 registrations");
+    }); 
+    $("#cng2").click(function(){
+        $("#change1").html("20-30 registrations");
+        $("#change2").html("31-50 registrations");
+        $("#change3").html("Above 50 registrations");
+    }); 
+    $("#cng3").click(function(){
+        $("#change1").html("10-15 registrations");
+        $("#change2").html("16-25 registrations");
+        $("#change3").html("Above 25 registrations");
+    });
+</script>
 </body>
 </html>
