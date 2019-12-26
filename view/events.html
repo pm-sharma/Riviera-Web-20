@@ -406,9 +406,9 @@
                         All
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#" id="selectAll">All</a>
+                        <a class="dropdown-item" href="#" id="selectCultural">Cultural Events</a>
+                        <a class="dropdown-item" href="#" id="selectSport">Sport Events</a>
                     </div>
                 </div>
             </div>
@@ -424,19 +424,16 @@
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
-        <div class="sec-one-cont" style="padding-top:20px">
-            <div class="row eventinfo">
+        <div class="sec-one-cont" style="padding-top:20px" id="output">
+            <!-- <div class="row eventinfo">
 
-                <div class="col-lg-3 sportsImg" style="height: auto;">
-
-                </div>
+                <div class="col-lg-3 sportsImg" style="height: auto;"></div>
                 <div class="col-lg-9" style="padding-top:10px">
                     <h2 style="text-align: left">Cricket</h2>
                     <div class="row">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>  12pm-5pm</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
                             <div class="details" style="display: inline-block">&#8377; 1000</div>
                         </div>
                         <div class="col-sm-4">
@@ -444,67 +441,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row eventinfo">
-
-                <div class="col-3 sportsImg" style="height: auto;">
-
-                </div>
-                <div class="col-9" style="padding-top:10px">
-                    <h2 style="text-align: left">Cricket</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row eventinfo">
-
-                <div class="col-3 sportsImg" style="height: auto;">
-
-                </div>
-                <div class="col-9" style="padding-top:10px">
-                    <h2 style="text-align: left">Cricket</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row eventinfo">
-
-                <div class="col-3  sportsImg" style="height: auto;">
-
-                </div>
-                <div class="col-9" style="padding-top:10px">
-                    <h2 style="text-align: left">Cricket</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>  12pm-5pm</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
     </div>
@@ -514,6 +451,40 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+    document.getElementById('selectAll').addEventListener('click', selectAll);
+    function selectAll(){
+      fetch('allEvents.json')
+      .then((res) => res.json())
+      .then((data) => {
+        let output = '';
+        data.forEach(function(user){
+          output += `
+            
+            <div class="row eventinfo">
+
+                <div class="col-lg-3 sportsImg" style="height: auto;"></div>
+                <div class="col-lg-9" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.Event}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>  12pm-5pm</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
+                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        });
+        document.getElementById('output').innerHTML = output;
+      })
+    }
+
     </script>
 </body>
 
