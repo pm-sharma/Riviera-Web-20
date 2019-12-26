@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js">
     </script>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ICO" href="../assets/icons/R.ICO"/>
+    <link rel="shortcut icon" type="image/ICO" href="../assets/icons/R.ICO" />
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
@@ -70,6 +70,7 @@
             float: right;
             margin-right: 15vh;
             margin-bottom: 2vh;
+            min-width: 145px;
         }
 
         /* .navbar-nav>.active>a {
@@ -167,13 +168,15 @@
             color: #FFFFFF;
             margin-top: 20px;
         }
-        .search:focus{
+
+        .search:focus {
             outline: none;
             box-shadow: none;
             border-color: #FFFFFF;
             color: #FFFFFF;
         }
-        .search::placeholder{
+
+        .search::placeholder {
             color: #FFFFFF;
             text-align: center;
         }
@@ -187,7 +190,7 @@
         .btn-secondary.dropdown-toggle:hover,
         .btn-secondary.dropdown-toggle:focus,
         .btn-secondary.dropdown-toggle:active,
-        .btn-secondary.dropdown-toggle:focus-within{
+        .btn-secondary.dropdown-toggle:focus-within {
             background-color: #121212 !important;
         }
 
@@ -195,10 +198,12 @@
         .btn-secondary:not([disabled]):not(.disabled):active {
             background-color: #121212 !important;
         }
-        .eventsDetails{
+
+        .eventsDetails {
             padding-bottom: 60px;
         }
-        .details{
+
+        .details {
             margin-right: 60px;
         }
 
@@ -233,8 +238,9 @@
             }
 
         }
-        @media(max-width: 991px) and (min-width: 780px){
-            .redbg{
+
+        @media(max-width: 991px) and (min-width: 780px) {
+            .redbg {
                 /*margin-right: 10vh;*/
                 float: left;
             }
@@ -264,26 +270,31 @@
             }
 
             .redbg {
-                min-width: 16vh;
+                /* min-width: 16vh; */
                 float: none;
                 margin: 1vh 0 1vh 0;
             }
-            .eventinfo{
+
+            .eventinfo {
                 margin-right: 20px;
                 margin-left: 20px;
             }
-            .filter{
+
+            .filter {
                 min-width: 250px;
             }
-            .search{
+
+            .search {
                 min-height: 50px;
                 /* min-width: 25vh; */
-            } 
-            .funbtn{
-                padding-top:40px;
+            }
+
+            .funbtn {
+                padding-top: 40px;
             }
         }
-        .dropdown-menu.show{
+
+        .dropdown-menu.show {
             width: 16vw !important;
             min-width: 250px;
         }
@@ -380,7 +391,8 @@
             </div>
 
             <div style="float: right;">
-                <button style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
+                <button
+                    style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline">Register</button>
             </div>
         </div>
@@ -425,23 +437,7 @@
             </div>
         </div>
         <div class="sec-one-cont" style="padding-top:20px" id="output">
-            <!-- <div class="row eventinfo">
-
-                <div class="col-lg-3 sportsImg" style="height: auto;"></div>
-                <div class="col-lg-9" style="padding-top:10px">
-                    <h2 style="text-align: left">Cricket</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>  12pm-5pm</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            
         </div>
     </div>
     </div>
@@ -453,6 +449,7 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
+    selectAll();
     document.getElementById('selectAll').addEventListener('click', selectAll);
     function selectAll(){
       fetch('allEvents.json')
@@ -461,16 +458,18 @@
         let output = '';
         data.forEach(function(user){
           output += `
-            
-            <div class="row eventinfo">
-
-                <div class="col-lg-3 sportsImg" style="height: auto;"></div>
-                <div class="col-lg-9" style="padding-top:10px">
+          <div class="row eventinfo">
+                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
+                </div>
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.Event}</h2>
                     <div class="row">
                         <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>  12pm-5pm</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th February</div>
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
+                            </div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th
+                                February</div>
+                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
                             <div class="details" style="display: inline-block">&#8377; 1000</div>
                         </div>
                         <div class="col-sm-4">
