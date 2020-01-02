@@ -451,12 +451,11 @@
     selectAll();
     $("#clubval").keyup(function(){
         var query = $(this).val();
-        // query = JSON.stringify(query)
         // $("#eventval").attr("disabled");
         fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit=10&offset=0", {
             method: "get", 
             headers: {
-
+                'Content-Type': 'application/json'
             },
         })
         .then((response) => {
