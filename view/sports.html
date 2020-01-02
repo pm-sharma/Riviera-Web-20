@@ -399,7 +399,7 @@
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
-                    <h1><span>Events</span></h1>
+                    <h1><span>Sports</span></h1>
                 </div>
 
             </div>
@@ -430,8 +430,7 @@
                         <span class="input-group-text" id="basic-addon1" style="background-color: #121212;">@</span>
                     </div>
                 </div> -->
-                <input class="form-control search" type="text" placeholder="Search by club" name="club" id="clubval">
-                <input class="form-control search" type="text" placeholder="Search by event" name="event" id="eventval">
+                <input class="form-control search" type="text" placeholder="Search">
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
@@ -449,54 +448,9 @@
     </script>
     <script type="text/javascript">
     selectAll();
-    $("#clubval").keyup(function(){
-        var query = $(this).val();
-        // query = JSON.stringify(query)
-        // $("#eventval").attr("disabled");
-        fetch("http://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit=10&offset=0", {
-            method: "get", 
-            headers: {
-
-            },
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => { 
-            console.log(data)
-        let output1 = '';
-        data.forEach(function(user){
-          output1 += `
-          <div class="row eventinfo">
-                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
-                </div>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
-                            </div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th
-                                February</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          `;
-        });
-        document.getElementById('output').innerHTML = output1;
-    });
-    });
-    
-
-    // ====================================
+    document.getElementById('selectAll').addEventListener('click', selectAll);
     function selectAll(){
-      fetch('allEvents.json')
+      fetch('allSports.json')
       .then((res) => res.json())
       .then((data) => {
         let output = '';
@@ -525,7 +479,7 @@
           `;
         });
         document.getElementById('output').innerHTML = output;
-      });
+      })
     }
 
     </script>
