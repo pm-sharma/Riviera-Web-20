@@ -463,18 +463,73 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    
+    // PAGINATION========================
     var limitnum = 10;
+    var clubFlag=0, eventFlag=0;
     $("#showMore").click(function(){
         limitnum = limitnum+10;
+        if(clubFlag==0 && eventFlag==0){
+            selectAll();
+        }
+        if(clubFlag==1 && eventFlag==0){
+            listbyClub();
+        }
+        if(clubFlag==0 && eventFlag==1){
+            listbyEvent();
+        }
     });
-    selectAll();
-    $("#clubval").keyup(function(){
+
+    // DISPLAY ALL EVENTS================
+    function selectAll(){
+        limit = limitnum.toString();
+        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            // console.log(data)
+        let output = '';
+        data.forEach(function(user){
+          output += `
+          <div class="row eventinfo">
+                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
+                </div>
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
+                            </div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>${user.club}</div>
+                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
+                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        });
+        document.getElementById('output').innerHTML = output;
+      });
+    }
+
+    // DISPLAY EVENTS BY CLUB SEARCH=====
+    $("#clubval").keyup(function listbyClub(){
+        clubFlag=1;
         var query = $(this).val();
         limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query==""){
             selectAll();
+            clubFlag=0;
         }
         else{
         fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit="+limit+"&offset=0", {
@@ -517,12 +572,16 @@
     }
     });
 
-    $("#eventval").keyup(function(){
+
+    // DISPLAY EVENT BY EVENT SEARCH=====
+    $("#eventval").keyup(function listbyEvent(){
+        eventFlag = 1;
         var query1 = $(this).val();
         limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query1==""){
             selectAll();
+            eventFlag = 0;
         }
         else{
         fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query="+query1+"&limit="+limit+"&offset=0", {
@@ -565,50 +624,8 @@
         }
     });
     
-    // var val1 = $("#clubval").val();
-    // var val2 = $("#eventval").val();
-    // console.log(val1 + ", " + val2);
-    // ====================================
-    function selectAll(){
-        limit = limitnum.toString();
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit="+limit+"&offset=0", {
-            method: "get", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => { 
-            // console.log(data)
-        let output = '';
-        data.forEach(function(user){
-          output += `
-          <div class="row eventinfo">
-                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
-                </div>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
-                            </div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>${user.club}</div>
-                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          `;
-        });
-        document.getElementById('output').innerHTML = output;
-      });
-    }
+
+   
 
     </script>
 </body>
