@@ -464,17 +464,16 @@
     </script>
     <script type="text/javascript">
     // PAGINATION========================
-    var limitnum = 10;
-    var clubFlag=0, eventFlag=0;
+    var limitnum  = 10;
+    var clubFlag  = 0; 
+    var eventFlag = 0;
     $("#showMore").click(function(){
         limitnum = limitnum+10;
         if(clubFlag==0 && eventFlag==0){
             selectAll();
-        }
-        if(clubFlag==1 && eventFlag==0){
+        }else if(clubFlag==1 && eventFlag==0){
             listbyClub();
-        }
-        if(clubFlag==0 && eventFlag==1){
+        }else if(clubFlag==0 && eventFlag==1){
             listbyEvent();
         }
     });
