@@ -298,6 +298,18 @@
             width: 16vw !important;
             min-width: 250px;
         }
+        #pagination{
+            width: 100%;
+            text-align: center;
+            background-color: #121212;
+        }
+        #showMore{
+            display: inline-block;
+            background-color: #121212;
+            border: #FFFFFF solid;
+            color: #FFFFFF;
+            border-radius: 6px;
+        }
     </style>
 </head>
 
@@ -440,6 +452,9 @@
         </div>
     </div>
     </div>
+    <div id="pagination">
+        <button class="btn" id="showMore">Show More</button>
+    </div>
 
 
 
@@ -448,17 +463,21 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    // while($("#clubval").val()=="" && $("#eventval").val()==""){
+    
+    var limitnum = 10;
+    $("#showMore").click(function(){
+        limitnum = limitnum+10;
+    });
     selectAll();
-    // }
     $("#clubval").keyup(function(){
         var query = $(this).val();
+        limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query==""){
             selectAll();
         }
         else{
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit=10&offset=0", {
+        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit="+limit+"&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -500,12 +519,13 @@
 
     $("#eventval").keyup(function(){
         var query1 = $(this).val();
+        limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query1==""){
             selectAll();
         }
         else{
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query="+query1+"&limit=10&offset=0", {
+        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query="+query1+"&limit="+limit+"&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -550,7 +570,8 @@
     // console.log(val1 + ", " + val2);
     // ====================================
     function selectAll(){
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=10&offset=0", {
+        limit = limitnum.toString();
+        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit="+limit+"&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
