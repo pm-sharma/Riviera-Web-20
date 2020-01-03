@@ -448,7 +448,9 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    selectAll();
+    if($("#clubval").val()=="" && $("#eventval").val()==""){
+        selectAll();
+    }else{
     $("#clubval").keyup(function(){
         var query = $(this).val();
         // $("#eventval").attr("disabled");
@@ -491,6 +493,50 @@
         document.getElementById('output').innerHTML = output1;
     });
     });
+
+    $("#eventval").keyup(function(){
+        var query1 = $(this).val();
+        // $("#eventval").attr("disabled");
+        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query="+query1+"&limit=10&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            console.log(data)
+        let output1 = '';
+        data.forEach(function(user){
+          output1 += `
+          <div class="row eventinfo">
+                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
+                </div>
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
+                            </div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th
+                                February</div>
+                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
+                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        });
+        document.getElementById('output').innerHTML = output1;
+    });
+    });
+    }
     
 
     // ====================================
