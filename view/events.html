@@ -522,9 +522,12 @@
     selectAll();
 
     // DISPLAY EVENTS BY CLUB SEARCH=====
-    $("#clubval").keyup(function listbyClub(){
+    $("#clubval").keyup(function(){
+        listbyCLub();
+    });
+    function listbyClub(){
         clubFlag=1;
-        var query = $(this).val();
+        var query = $("#clubval").val();
         limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query==""){
@@ -570,13 +573,16 @@
         document.getElementById('output').innerHTML = output1;
     });
     }
-    });
+    }
 
 
     // DISPLAY EVENT BY EVENT SEARCH=====
-    $("#eventval").keyup(function listbyEvent(){
+    $("#eventval").keyup(function(){
+        listbyEvent();
+    }); 
+    function listbyEvent(){
         eventFlag = 1;
-        var query1 = $(this).val();
+        var query1 = $("#eventval").val();
         limit = limitnum.toString();
         // $("#eventval").attr("disabled");
         if(query1==""){
@@ -622,7 +628,7 @@
         document.getElementById('output').innerHTML = output1;
     });
         }
-    });
+    }
     
 
    
