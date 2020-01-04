@@ -463,22 +463,11 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    // PAGINATION========================
     var limitnum  = 10;
     var clubFlag  = 0; 
     var eventFlag = 0;
-    $("#showMore").click(function(){
-        limitnum = limitnum+10;
-        if(clubFlag==0 && eventFlag==0){
-            selectAll();
-        }else if(clubFlag==1 && eventFlag==0){
-            listbyClub();
-        }else if(clubFlag==0 && eventFlag==1){
-            listbyEvent();
-        }
-    });
 
-    // DISPLAY ALL EVENTS================
+    //============================================DISPLAY ALL EVENTS==================================================
     function selectAll(){
         limit = limitnum.toString();
         fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit="+limit+"&offset=0", {
@@ -521,10 +510,7 @@
     }
     selectAll();
 
-    // DISPLAY EVENTS BY CLUB SEARCH=====
-    $("#clubval").keyup(function(){
-        listbyCLub();
-    });
+//=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
     function listbyClub(){
         clubFlag = 1;
         var query = $("#clubval").val();
@@ -574,12 +560,11 @@
     });
     }
     }
+    $("#clubval").keyup(function(){
+        listbyCLub();
+    });
 
-
-    // DISPLAY EVENT BY EVENT SEARCH=====
-    $("#eventval").keyup(function(){
-        listbyEvent();
-    }); 
+//========================================DISPLAY EVENT BY EVENT SEARCH===================================
     function listbyEvent(){
         eventFlag = 1;
         var query1 = $("#eventval").val();
@@ -627,10 +612,22 @@
         });
         document.getElementById('output').innerHTML = output1;
     });
-        }
     }
-    
-
+    }
+    $("#eventval").keyup(function(){
+        listbyEvent();
+    }); 
+//===========================================PAGINATION=====================================================
+    $("#showMore").click(function(){
+        limitnum = limitnum+10;
+        if(clubFlag==0 && eventFlag==0){
+            selectAll();
+        }else if(clubFlag==1 && eventFlag==0){
+            listbyClub();
+        }else if(clubFlag==0 && eventFlag==1){
+            listbyEvent();
+        }
+    });
    
 
     </script>
