@@ -466,6 +466,7 @@
     var limitnum  = 10;
     var clubFlag  = 0; 
     var eventFlag = 0;
+    var showCheck = 0;
 
     //============================================DISPLAY ALL EVENTS==================================================
     function selectAll(){
@@ -506,6 +507,11 @@
           `;
         });
         document.getElementById('output').innerHTML = output;
+    // function to display show more button only after fetch has loaded        
+        if(showCheck==0){
+                showCheck = 1;
+                $("#showMore").css("display", "inline-block");
+        }
       });
     }
     selectAll();
