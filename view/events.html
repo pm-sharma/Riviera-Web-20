@@ -480,8 +480,7 @@
         .then((response) => {
           return response.json()
         })
-        .then(data => { 
-            console.log(data.length)
+        .then(data => {
         let output = '';
         data.forEach(function(user){
           output += `
@@ -508,10 +507,8 @@
         });
         document.getElementById('output').innerHTML = output;
     // function to display show more button only after fetch has loaded        
-        if(showCheck==0){
-                showCheck = 1;
-                $("#showMore").css("display", "inline-block");
-        }
+        $("#showMore").css("display", "inline-block");
+        
       });
     }
     selectAll();
@@ -537,7 +534,11 @@
           return response.json()
         })
         .then(data => { 
-            console.log(data)
+            if(data.length < 10){
+                $("#showMore").css("display", "none"); 
+            }else{
+                $("#showMore").css("display", "inline-block");
+            }
         let output1 = '';
         data.forEach(function(user){
           output1 += `
@@ -591,7 +592,11 @@
           return response.json()
         })
         .then(data => { 
-            console.log(data)
+            if(data.length < 10){
+                $("#showMore").css("display", "none"); 
+            }else{
+                $("#showMore").css("display", "inline-block");
+            }
         let output1 = '';
         data.forEach(function(user){
           output1 += `
