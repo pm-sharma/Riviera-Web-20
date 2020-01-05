@@ -454,7 +454,7 @@
     // ========================function to display all sports=================================
     function selectAll(){
         limit = limitnum.toString();
-        fetch("http://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -508,7 +508,7 @@
             clubFlag=0;
         }
         else{
-        fetch("http://rivera-backend.herokuapp.com/login/sportDisplay/?type=name&query="+query+"&limit="+limit+"&offset=0", {
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=name&query="+query+"&limit="+limit+"&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
