@@ -203,9 +203,9 @@
             padding-bottom: 60px;
         }
 
-        .details {
+        /* .details {
             margin-right: 60px;
-        }
+        } */
 
         @media (min-width: 780px) {
 
@@ -229,7 +229,7 @@
 
             .details {
                 margin: 0 15px;
-                margin-right: 60px;
+                /* margin-right: 60px; */
             }
 
             .sportsImg {
@@ -298,12 +298,14 @@
             width: 16vw !important;
             min-width: 250px;
         }
-        #pagination{
+
+        #pagination {
             width: 100%;
             text-align: center;
             background-color: #121212;
         }
-        #showMore{
+
+        #showMore {
             display: none;
             background-color: #121212;
             border: #FFFFFF solid;
@@ -410,7 +412,8 @@
             <div style="float: right;">
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
-                    type="button" class="btn regbtn btn-primary-outline" data-toggle="modal" data-target="#reg">Register</button>
+                    type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
+                    data-target="#reg">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
@@ -423,17 +426,31 @@
         </div>
     </div>
 
-        <!-- Reg Modal -->
-        <div class="modal fade" id="reg" role="dialog">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
+    <!-- Reg Modal -->
+    <div class="modal fade" id="reg" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
                 <!-- <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div> -->
                 <div class="modal-body">
-                  <p>Registrations will open soon! </p>
+                    <p>Registrations will open soon! </p>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Reg Event Modal -->
+        <div class="modal fade" class="reg0" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p>Registrations will open soon! </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -488,180 +505,186 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    var limitnum  = 10;
-    var clubFlag  = 0; 
-    var eventFlag = 0;
-    var showCheck = 0;
+        var limitnum = 10;
+        var clubFlag = 0;
+        var eventFlag = 0;
+        var showCheck = 0;
 
-    //============================================DISPLAY ALL EVENTS==================================================
-    function selectAll(){
-        limit = limitnum.toString();
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit="+limit+"&offset=0", {
-            method: "get", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => {
-        let output = '';
-        // console.log(data)
-        data.forEach(function(user){    
-          output += `
+        //============================================DISPLAY ALL EVENTS==================================================
+        function selectAll() {
+            limit = limitnum.toString();
+            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
+                    method: "get",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then((response) => {
+                    return response.json()
+                })
+                .then(data => {
+                    let output = '';
+                    // console.log(data)
+                    data.forEach(function (user) {
+                        output += `
           <div class="row eventinfo">
-                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <!--<div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.name}</h2>
                     <div class="row">
                         <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                            <div class="row">
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block">&#8377; 1000</div>
+                            </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
+                            <div class="redbg" data-toggle="modal" data-target=".reg0"> Register </div>
                         </div>
                     </div>
                 </div>
             </div>
           `;
-        });
-        document.getElementById('output').innerHTML = output;
-    // function to display show more button only after fetch has loaded        
-        $("#showMore").css("display", "inline-block");
-        
-      });
-    }
-    selectAll();
+                    });
+                    document.getElementById('output').innerHTML = output;
+                    // function to display show more button only after fetch has loaded        
+                    $("#showMore").css("display", "inline-block");
 
-//=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
-    function listbyClub(){
-        clubFlag = 1;
-        var query = $("#clubval").val();
-        limit = limitnum.toString();
-        // $("#eventval").attr("disabled");
-        if(query==""){
-            selectAll();
-            clubFlag=0;
+                });
         }
-        else{
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query="+query+"&limit="+limit+"&offset=0", {
-            method: "get", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => { 
-            if(data.length < 10){
-                $("#showMore").css("display", "none"); 
-            }else{
-                $("#showMore").css("display", "inline-block");
-            }
-        let output1 = '';
-        data.forEach(function(user){
-          output1 += `
+        selectAll();
+
+        //=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
+        function listbyClub() {
+            clubFlag = 1;
+            var query = $("#clubval").val();
+            limit = limitnum.toString();
+            // $("#eventval").attr("disabled");
+            if (query == "") {
+                selectAll();
+                clubFlag = 0;
+            } else {
+                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query=" + query + "&limit=" +
+                        limit + "&offset=0", {
+                            method: "get",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        if (data.length < 10) {
+                            $("#showMore").css("display", "none");
+                        } else {
+                            $("#showMore").css("display", "inline-block");
+                        }
+                        let output1 = '';
+                        data.forEach(function (user) {
+                            output1 += `
           <div class="row eventinfo">
             <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.name}</h2>
                     <div class="row">
                         <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                            <div class="row">
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block">&#8377; 1000</div>
+                            </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
+                            <div class="redbg" data-toggle="modal" data-target=".reg0"> Register </div>
                         </div>
                     </div>
                 </div>
             </div>
           `;
-        });
-        document.getElementById('output').innerHTML = output1;
-    });
-    }
-    }
-    $("#clubval").keyup(function(){
-        listbyClub();
-    });
-
-//========================================DISPLAY EVENT BY EVENT SEARCH===================================
-    function listbyEvent(){
-        eventFlag = 1;
-        var query1 = $("#eventval").val();
-        limit = limitnum.toString();
-        // $("#eventval").attr("disabled");
-        if(query1==""){
-            selectAll();
-            eventFlag = 0;
-        }
-        else{
-        fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query="+query1+"&limit="+limit+"&offset=0", {
-            method: "get", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => { 
-            if(data.length < 10){
-                $("#showMore").css("display", "none"); 
-            }else{
-                $("#showMore").css("display", "inline-block");
+                        });
+                        document.getElementById('output').innerHTML = output1;
+                    });
             }
-        let output1 = '';
-        data.forEach(function(user){
-          output1 += `
-          <div class="row eventinfo">
-            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
-                </div>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          `;
-        });
-        document.getElementById('output').innerHTML = output1;
-    });
-    }
-    }
-    $("#eventval").keyup(function(){
-        listbyEvent();
-    }); 
-//===========================================PAGINATION=====================================================
-    $("#showMore").click(function(){
-        limitnum = limitnum+10;
-        if(clubFlag==0 && eventFlag==0){
-            selectAll();
-        }else if(clubFlag==1 && eventFlag==0){
+        }
+        $("#clubval").keyup(function () {
             listbyClub();
-        }else if(clubFlag==0 && eventFlag==1){
-            listbyEvent();
+        });
+
+        //========================================DISPLAY EVENT BY EVENT SEARCH===================================
+        function listbyEvent() {
+            eventFlag = 1;
+            var query1 = $("#eventval").val();
+            limit = limitnum.toString();
+            // $("#eventval").attr("disabled");
+            if (query1 == "") {
+                selectAll();
+                eventFlag = 0;
+            } else {
+                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +
+                        "&limit=" + limit + "&offset=0", {
+                            method: "get",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        if (data.length < 10) {
+                            $("#showMore").css("display", "none");
+                        } else {
+                            $("#showMore").css("display", "inline-block");
+                        }
+                        let output1 = '';
+                        data.forEach(function (user) {
+                            output1 += `
+          <div class="row eventinfo">
+            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="row">
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block">&#8377; 1000</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg" data-toggle="modal" data-target=".reg0"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          `;
+                        });
+                        document.getElementById('output').innerHTML = output1;
+                    });
+            }
         }
-    });
-   
-//=================================Button display onload====================================================
+        $("#eventval").keyup(function () {
+            listbyEvent();
+        });
+        //===========================================PAGINATION=====================================================
+        $("#showMore").click(function () {
+            limitnum = limitnum + 10;
+            if (clubFlag == 0 && eventFlag == 0) {
+                selectAll();
+            } else if (clubFlag == 1 && eventFlag == 0) {
+                listbyClub();
+            } else if (clubFlag == 0 && eventFlag == 1) {
+                listbyEvent();
+            }
+        });
+
+        //=================================Button display onload====================================================
     </script>
 </body>
 
