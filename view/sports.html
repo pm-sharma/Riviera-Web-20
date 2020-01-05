@@ -331,7 +331,7 @@
                                     </a>
                                 </li>
                                 <li style="background-color: #0090C5;color: white" class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./events.html">
                                         <p style=" color: white" class="headings">Events</p>
                                     </a>
                                 </li>
@@ -418,7 +418,9 @@
                         All
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" id="selectAll">All</a>
+                        <a class="dropdown-item" href="#" id="selectAll">All Sports</a>
+                        <a class="dropdown-item" href="#" id="selectPre">Pre-Riviera</a>
+                        <a class="dropdown-item" href="#" id="selectRiv">Riviera</a>
                     </div>
                 </div>
             </div>
@@ -447,12 +449,19 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    selectAll();
-    document.getElementById('selectAll').addEventListener('click', selectAll);
     function selectAll(){
-      fetch('allSports.json')
-      .then((res) => res.json())
-      .then((data) => {
+        limit = limitnum.toString();
+        fetch("http://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            // console.log(data)
         let output = '';
         data.forEach(function(user){
           output += `
@@ -460,13 +469,12 @@
                 <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
                 </div>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.Event}</h2>
+                    <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
                             </div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th
-                                February</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>some date</div>
                             <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
                             <div class="details" style="display: inline-block">&#8377; 1000</div>
                         </div>
@@ -479,8 +487,78 @@
           `;
         });
         document.getElementById('output').innerHTML = output;
-      })
+    // function to display show more button only after fetch has loaded        
+        if(showCheck==0){
+                showCheck = 1;
+                $("#showMore").css("display", "inline-block");
+        }
+      });
     }
+    selectAll();
+
+//=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
+    function listbyClub(){
+        clubFlag = 1;
+        var query = $("#clubval").val();
+        limit = limitnum.toString();
+        // $("#eventval").attr("disabled");
+        if(query==""){
+            selectAll();
+            clubFlag=0;
+        }
+        else{
+        fetch("http://rivera-backend.herokuapp.com/login/sportDisplay/?type=name&query="+query+"&limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            console.log(data)
+        let output1 = '';
+        data.forEach(function(user){
+          output1 += `
+          <div class="row eventinfo">
+                <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;">
+                </div>
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.event_name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i> 12pm-5pm
+                            </div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i></div>
+                            <!-- <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i> 11th feb</div> -->
+                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        });
+        document.getElementById('output').innerHTML = output1;
+    });
+    }
+    }
+    $("#clubval").keyup(function(){
+        listbyClub();
+    });
+   
+//===========================================PAGINATION=====================================================
+    $("#showMore").click(function(){
+        limitnum = limitnum+10;
+        if(clubFlag==0){
+            selectAll();
+        }else{
+            listbyClub();
+        }
+    });
 
     </script>
 </body>
