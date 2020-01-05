@@ -69,9 +69,16 @@
             text-align: center
         }
 
-        .sec-one {
+        /* .sec-one {
             min-height: 50vh;
             background: url("../assets/images/eventsback.png") center center no-repeat;
+            background-size: cover;
+            height: 45vh;border-bottom: 4px solid #0090C5;
+        } */
+
+        .sec-one{
+            height: 100vh;
+            background: url("../assets/images/stage-min.jpg") center center no-repeat;
             background-size: cover;
         }
 
@@ -142,10 +149,16 @@
         .mb-day{
             display: none;
         }
+        .coming-soon{
+            font-weight: 500; 
+            margin-top: 10px; 
+            font-size: 60px;
+            cursor: default;
+            user-select: none;
+            color: #FFFFFF;
+        }
 
         @media (min-width: 780px) {
-
-
             .x {
                 margin-left: 0;
                 color: white;
@@ -210,12 +223,21 @@
                 cursor: default;
                 user-select: none;
             }
+            .coming-soon{
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div style="height: 45vh;border-bottom: 4px solid #0090C5;" class="sec-one">
+    <div class="sec-one">
+        <!-- Adding coming soon -->
+        <div style="text-align: center;width: 100vw;">
+            <div style="margin: auto auto;position: absolute;top: 45%;left:50%;transform: translate(-50%,-50%);">
+                <div class="coming-soon">Coming Soon!</div>
+            </div>
+        </div>
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -295,22 +317,22 @@
                     type="button" class="btn regbtn btn-primary-outline">Register</button>
             </div>
         </div>
-        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
+        <!-- <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
                     <h1 style="cursor: default; user-select: none;">ProShows</h1>
                 </div>
 
             </div>
-        </div>
+        </div> -->
     </div>
 
 
 
-    <div class="proshowDetails" class="container-fluid">
-        <div class="sec-one-cont">
+    <!-- <div class="proshowDetails" class="container-fluid"> -->
+        <!-- <div class="sec-one-cont"> -->
             <!-- <div class="col-sm-12 " style="height: 650px;"> -->
-            <main>
+            <!-- <main>
                 <div class="container-fluid">
                     <div class="row">
                         <p class="mb-day">DAY 1 </p>
@@ -373,10 +395,10 @@
                         </div>
                     </div>
                 </div>
-            </main>
+            </main> -->
             <!-- </div> -->
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
 
 
 
