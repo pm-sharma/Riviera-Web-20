@@ -432,7 +432,7 @@
                         <span class="input-group-text" id="basic-addon1" style="background-color: #121212;">@</span>
                     </div>
                 </div> -->
-                <input class="form-control search" type="text" placeholder="Search">
+                <input class="form-control search" type="text" placeholder="Search" id="clubval">
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
@@ -449,6 +449,7 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
+    // ========================function to display all sports=================================
     function selectAll(){
         limit = limitnum.toString();
         fetch("http://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
@@ -488,15 +489,13 @@
         });
         document.getElementById('output').innerHTML = output;
     // function to display show more button only after fetch has loaded        
-        if(showCheck==0){
-                showCheck = 1;
-                $("#showMore").css("display", "inline-block");
-        }
+        $("#showMore").css("display", "inline-block");
+        
       });
     }
     selectAll();
 
-//=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
+//=========================================DISPLAY sports by SEARCH===============================================
     function listbyClub(){
         clubFlag = 1;
         var query = $("#clubval").val();
@@ -517,7 +516,11 @@
           return response.json()
         })
         .then(data => { 
-            console.log(data)
+            if(data.length < 10){
+                $("#showMore").css("display", "none"); 
+            }else{
+                $("#showMore").css("display", "inline-block");
+            }
         let output1 = '';
         data.forEach(function(user){
           output1 += `
