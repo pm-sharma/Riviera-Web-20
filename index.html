@@ -142,7 +142,7 @@
         }
 
         .sec-one {
-            background: url("./assets/images/maincover.jpg") center center no-repeat;
+            background: url("./assets/images/finalback.jpg") center center no-repeat;
             background-size: cover;
         }
 
@@ -280,16 +280,30 @@
             </div>
         </div>
 
-        <div style="margin: auto auto;position:relative;color:white;text-align: center;width: 100vw;height: 100vh;">
+        <div style="margin: auto auto;position:relative;color:white;text-align: center;height: 100vh;">
             <div style="margin: auto auto;position: absolute;top: 45%;left:50%;transform: translate(-50%,-50%);">
                 <img height="150px" src="./assets/images/logo.png" class="riviera-logo" /><br><br>
                 <img height="30px" src="./assets/images/landingheading.svg" class="landing-heading" /><br>
                 <div style="font-weight: 800; margin-top: 10px; font-size: 20px;cursor: default; user-select: none;">12th - 15th February</div>
                 <button style="border: 2px solid #FFFFFF;color: white;border-radius: 6px" type="button"
-                    class="btn btn-primary-outline">Register</button>
+                    class="btn btn-primary-outline" data-toggle="modal" data-target="#reg">Register</button>
             </div>
         </div>
 
+    </div>
+
+    <!-- Reg Modal -->
+    <div class="modal fade" id="reg" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> -->
+            <div class="modal-body">
+              <p>Registrations will open soon! </p>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="container-fluid" style="background: black;padding-top:30px">
