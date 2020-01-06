@@ -94,7 +94,7 @@
 
         .sec-one {
             min-height: 50vh;
-            background: url("../assets/images/eventsback.png") center center no-repeat;
+            background: url("../assets/images/sportscover.jpg") center center no-repeat;
             background-size: cover;
         }
 
@@ -506,14 +506,27 @@
                             <div class="details" style="display: inline-block;">${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
+                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Reg Event Modal -->
+        <div class="modal fade show" id="${user.sports_id}" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p style="color:black">Registrations will open soon! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
           `;
         });
         document.getElementById('output').innerHTML = output;
@@ -555,7 +568,7 @@
         data.forEach(function(user){
           output1 += `
           <div class="row eventinfo">
-                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -563,14 +576,27 @@
                             <div class="details" style="display: inline-block;">${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; 1000</div>
+                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
+                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Reg Event Modal -->
+        <div class="modal fade show" id="${user.sports_id}" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p style="color:black">Registrations will open soon! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
           `;
         });
         document.getElementById('output').innerHTML = output1;
@@ -582,9 +608,11 @@
     });
 //=============================Select By Cat===========================================================
 function selectbyCat(i){
+    $("#showMore").css("display", "none");
     filterFlag = 1;
     limit = limitnum.toString();
-    fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=riv&limit="+limit+"&offset=0", {
+    if(i==0){
+    fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=pre&limit=16&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -594,20 +622,11 @@ function selectbyCat(i){
           return response.json()
         })
         .then(data => { 
-            if(data.length < 10){
-                $("#showMore").css("display", "none"); 
-            }else{
-                $("#showMore").css("display", "inline-block");
-            }
         let output1 = '';
-        var temp = 0;
-        if(i=0){
         data.forEach(function(user){
-          temp = temp+1;
-            if(temp>15){
           output1 += `
           <div class="row eventinfo">
-                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -615,56 +634,89 @@ function selectbyCat(i){
                             <div class="details" style="display: inline-block;">${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; TBA</div>
+                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
+                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
                         </div>
                     </div>
                 </div>
             </div>
-          `;
-        }
-        });
-        }else if(i=1){
-         data.forEach(function(user){
-          temp = temp+1;
-            if(temp<16){
-          output1 += `
-          <div class="row eventinfo">
-                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;">${user.category}</div>
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block">&#8377; TBA</div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="redbg"> Register </div>
-                        </div>
+            <!-- Reg Event Modal -->
+        <div class="modal fade show" id="${user.sports_id}" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p style="color:black">Registrations will open soon! </p>
                     </div>
                 </div>
             </div>
+        </div>
           `;
-        }
         });
-        }
         document.getElementById('output').innerHTML = output1;
     });
+    }else if(i==1){
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=Riviera&limit=16&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+        let output1 = '';
+        data.forEach(function(user){
+          output1 += `
+          <div class="row eventinfo">
+            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.event_name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;">${user.category}</div>
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reg Event Modal -->
+        <div class="modal fade show" id="${user.sports_id}" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p style="color:black">Registrations will open soon! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+          `;
+        });
+        document.getElementById('output').innerHTML = output1;
+    });
+    }
 }
 //=========================================SelectBy Catergory=================================================
-$("selectAll").click(function(){
+$("#selectAll").click(function(){
     selectAll();
 }); 
 $("#selectPre").click(function(){
-    tempi = 0;
     selectbyCat(0);
 });
-$("selectRiv").click(function(){
-    temip = 1;
+$("#selectRiv").click(function(){
     selectbyCat(1);
 });
 //===========================================PAGINATION=====================================================
@@ -674,8 +726,6 @@ $("selectRiv").click(function(){
             selectAll();
         }else if(clubFlag==1){
             listbyClub();
-        }else if(filterFlag==1){
-            selectbyCat(temip);
         }
     });
 
