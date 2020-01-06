@@ -493,9 +493,18 @@
             // console.log(data)
         let output = '';
         data.forEach(function(user){
+            let len=user.url.length;
+            console.log(len)
+            let url1 = '';
+            for(let p=0; p<=len; p++){
+                if(p!=0 || p!=1 || p!=len || p!=(len-1)){
+                    url1 += user.url[p];
+                }
+            }
+            console.log(url1)
           output += `
           <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${user.url}" alt="Event image" style="height: auto;">
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -565,7 +574,7 @@
         data.forEach(function(user){
           output1 += `
           <div class="row eventinfo">
-            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -623,7 +632,7 @@ function selectbyCat(i){
         data.forEach(function(user){
           output1 += `
           <div class="row eventinfo">
-            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -671,7 +680,7 @@ function selectbyCat(i){
         data.forEach(function(user){
           output1 += `
           <div class="row eventinfo">
-            <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
