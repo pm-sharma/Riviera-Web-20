@@ -41,9 +41,12 @@ var filesToCache = [
     './assets/sponsors/aviation-express-min.jpeg',
     './assets/sponsors/asian-paints-logo.png',
     './assets/vit-img/faculty/Monica subashini.JPG',
-    '/assets/vit-img/faculty/N Sharmila.JPG',
-    '/assets/vit-img/faculty/Ramesh.JPG',
-    '/assets/vit-img/faculty/Sasikumar.JPG'
+    './assets/vit-img/faculty/N Sharmila.JPG',
+    './assets/vit-img/faculty/Ramesh.JPG',
+    './assets/vit-img/faculty/Sasikumar.JPG',
+    './assets/images/back1.jpeg',
+    './assets/images/back2.jpeg',
+    './assets/images/back3.jpeg'
   ];
   
   self.addEventListener('install', function(e) {
