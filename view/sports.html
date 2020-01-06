@@ -582,10 +582,11 @@
     });
 //=============================Select By Cat===========================================================
 function selectbyCat(i){
+    $("#showMore").css("display", "none");
     filterFlag = 1;
     limit = limitnum.toString();
     if(i==0){
-    fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=pre&limit="+limit+"&offset=0", {
+    fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=pre&limit=16&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -620,7 +621,7 @@ function selectbyCat(i){
         document.getElementById('output').innerHTML = output1;
     });
     }else if(i==1){
-        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=Riviera&limit="+limit+"&offset=0", {
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=Riviera&limit=16&offset=0", {
             method: "get", 
             headers: {
                 'Content-Type': 'application/json'
@@ -662,11 +663,9 @@ $("#selectAll").click(function(){
 }); 
 $("#selectPre").click(function(){
     selectbyCat(0);
-    temip = 0;
 });
 $("#selectRiv").click(function(){
     selectbyCat(1);
-    temip = 1;
 });
 //===========================================PAGINATION=====================================================
     $("#showMore").click(function(){
@@ -675,8 +674,6 @@ $("#selectRiv").click(function(){
             selectAll();
         }else if(clubFlag==1){
             listbyClub();
-        }else if(filterFlag==1){
-            selectbyCat(temip);
         }
     });
 
