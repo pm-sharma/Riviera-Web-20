@@ -468,7 +468,8 @@
                         <a class="dropdown-item" href="#" id="quiz">Quiz</a>
                         <a class="dropdown-item" href="#" id="wwe">Words Worth English</a>
                         <a class="dropdown-item" href="#" id="wwh">Words Worth Hindi</a>
-                        <a class="dropdown-item" href="#" id="wwt">Words Worth Tamil</a>
+                        <a class="dropdown-item" href="#" id="wwt">Words Worth Telugu</a>
+                        <a class="dropdown-item" href="#" id="wwtm">Words With Tamil</a>
                         <a class="dropdown-item" href="#" id="adven">Adventure Sport</a>
                         <a class="dropdown-item" href="#" id="cyber">Cyber Engage</a>
                         <a class="dropdown-item" href="#" id="informal">Informals</a>
@@ -536,9 +537,10 @@
                                 <div class="details col-lg-3" style="display: inline-block;">${user.category}</div>
                                 <div class="details col-lg-3" style="display: inline-block;">${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -610,9 +612,10 @@
                                 <div class="details col-lg-3" style="display: inline-block;">${user.category}</div>
                                 <div class="details col-lg-3" style="display: inline-block;">${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -657,8 +660,7 @@
                 selectAll();
                 eventFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +
-                        "&limit=" + limit + "&offset=0", {
+                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +"&limit=" + limit + "&offset=0", {
                             method: "get",
                             headers: {
                                 'Content-Type': 'application/json'
@@ -686,9 +688,9 @@
                                 <div class="details col-lg-3" style="display: inline-block;">${user.category}</div>
                                 <div class="details col-lg-3" style="display: inline-block;">${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -721,9 +723,154 @@
             listbyEvent();
         });
         //============================================Filter========================================================
-        $("#selectAll").click(function(){
-            selectAll();
+        function filter(i){
+            $("#showMore").css("display", "inline-block");
+            var cat = "";
+            switch(i){
+                case 0: 
+                    cat="premium";
+                    break; 
+                case 1: 
+                    cat="pre riviera";
+                    break;
+                case 2: 
+                    cat="drama";
+                    break;
+                case 3:
+                    cat="music";
+                    break;
+                case 4: 
+                    cat="dance";
+                    break;
+                case 5: 
+                    cat="workshop";
+                    break;
+                case 6: 
+                    cat="quiz";
+                    break;
+                case 7: 
+                    cat="english";
+                    break;
+                case 8: 
+                    cat="hindi";
+                    break;
+                case 9: 
+                    cat="telugu";
+                    break;
+                case 10: 
+                    cat="tamil";
+                    break;
+                case 11: 
+                    cat="adventure";
+                    break;
+                case 12: 
+                    cat="cyber";
+                    break;
+                case 13: 
+                    cat="informal";
+                    break;
+            }
+            fetch("http://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query="+cat+"&limit=10&offset=0", {
+                            method: "get",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then(data => {
+                            $("#showMore").css("display", "inline-block");
+                        
+                        let output1 = '';
+                        data.forEach(function (user) {
+                            output1 += `
+                            <div class="row eventinfo">
+            <!--<div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="row">
+                                <div class="details col-lg-3" style="display: inline-block;">${user.category}</div>
+                                <div class="details col-lg-3" style="display: inline-block;">${user.club}</div>
+                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg" data-toggle="modal" data-target="#${user.event_id}"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reg Event Modal -->
+        <div class="modal fade show" id="${user.event_id}" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <div class="modal-body">
+                        <p style="color:black">Registrations will open soon! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+          `;
         });
+                        document.getElementById('output').innerHTML = output1;
+     });
+        }
+        //====================================Filter selector=====================================================
+        $("#selectALl").click(function(){
+            selectAll();
+        })
+        $("#premium").click(function(){
+            filter(0);
+        })
+        $("#preriv").click(function(){
+            filter(1);
+        })
+        $("#drama").click(function(){
+            filter(2);
+        })
+        $("#music").click(function(){
+            filter(3);
+        })
+        $("#dance").click(function(){
+            filter(4);
+        })
+        $("#wrkshp").click(function(){
+            filter(5);
+        })
+        $("#quiz").click(function(){
+            filter(6);
+        })
+        $("#wwe").click(function(){
+            filter(7);
+        })
+        $("#wwh").click(function(){
+            filter(8);
+        })
+        $("#wwt").click(function(){
+            filter(9);
+        })
+        $("#wwtm").click(function(){
+            filter(10);
+        })
+        $("#adven").click(function(){
+            filter(11);
+        })
+        $("#cyber").click(function(){
+            filter(12);
+        })
+        $("#informal").click(function(){
+            filter(13);
+        })
 
         //===========================================PAGINATION=====================================================
         $("#showMore").click(function () {
