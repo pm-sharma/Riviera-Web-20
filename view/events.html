@@ -613,19 +613,17 @@
                         let output1 = '';
                         data.forEach(function (user) {
                             let len=user.url.length;
-                         console.log(len)
-                         let x = 0;
-                        let url1 = '';
-                        for(let p=0; p<len; p++){
-                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
-                                x = 1;
-                             }
-                             else{
-                                url1 += user.url[p];
-                             }
+                            let x = 0;
+                            let url1 = '';
+                            for(let p=0; p<(len-2); p++){
+                                if(p==0 || p==1){
+                                    x = 1;
+                                }
+                                else{
+                                    url1 += user.url[p];
+                                }
                         }
-                        
-                        output += `
+                         output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
@@ -650,7 +648,6 @@
                 </div>
             </div>
 
-
             <!-- Reg Event Modal -->
         <div class="modal fade show" id="${user.event_id}" role="dialog">
             <div class="modal-dialog modal-sm">
@@ -664,7 +661,6 @@
                 </div>
             </div>
         </div>
-
           `;
                         });
                         document.getElementById('output').innerHTML = output1;
@@ -703,7 +699,6 @@
                         let output1 = '';
                         data.forEach(function (user) {
                             let len=user.url.length;
-                         console.log(len)
                          let x = 0;
                         let url1 = '';
                         for(let p=0; p<len; p++){
@@ -714,7 +709,7 @@
                                 url1 += user.url[p];
                              }
                         }
-                        output += `
+                        output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
@@ -833,7 +828,7 @@
                                 url1 += user.url[p];
                              }
                         }
-                        output += `
+                        output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
