@@ -523,9 +523,13 @@
                     data.forEach(function (user) {
                         let len=user.url.length;
                          console.log(len)
+                         let x = 0;
                         let url1 = '';
                         for(let p=0; p<=len; p++){
-                            if(p!=0 || p!=1 || p!=len || p!=(len-1)){
+                            if(p==0 || p==1 || p==len || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
                                 url1 += user.url[p];
                              }
                         }
