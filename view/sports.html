@@ -94,7 +94,7 @@
 
         .sec-one {
             min-height: 50vh;
-            background: url("../assets/images/eventsback.png") center center no-repeat;
+            background: url("../assets/images/sportscover.jpg") center center no-repeat;
             background-size: cover;
         }
 
@@ -436,7 +436,7 @@
         <div class="row funbtn">
             <div class="col l6 s12">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-secondary dropdown-toggle disabled filter" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         All
                     </button>
@@ -600,7 +600,7 @@ function selectbyCat(i){
                 $("#showMore").css("display", "inline-block");
             }
         let output1 = '';
-        var temp = 0;
+        let temp = 0;
         if(i=1){
             temp=0;
         data.forEach(function(user){
