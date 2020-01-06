@@ -240,11 +240,6 @@
                 /* margin-right: 60px; */
             }
 
-            .sportsImg {
-                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
-                background-image: url("../assets/images/sportscrop.png");
-            }
-
         }
 
         @media(max-width: 991px) and (min-width: 780px) {
@@ -271,10 +266,6 @@
 
             .regbtn {
                 margin-top: -5.5px;
-            }
-
-            .sportsImg {
-                background-image: url("../assets/images/sportsM.png");
             }
 
             .redbg {
@@ -528,7 +519,7 @@
                     data.forEach(function (user) {
                         output += `
           <div class="row eventinfo">
-            <!--<div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+            <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto; background-image: url("${user.url[0]}");"></div>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.name}</h2>
                     <div class="row">
