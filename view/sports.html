@@ -598,7 +598,8 @@ function selectbyCat(i){
             }
         let output1 = '';
         var temp = 0;
-        if(i=0){
+        if(i=1){
+            temp=0;
         data.forEach(function(user){
           temp = temp+1;
             if(temp>15){
@@ -623,7 +624,8 @@ function selectbyCat(i){
           `;
         }
         });
-        }else if(i=1){
+        }else if(i=0){
+            temp=0;
          data.forEach(function(user){
           temp = temp+1;
             if(temp<16){
@@ -657,7 +659,7 @@ $("selectAll").click(function(){
     selectAll();
 }); 
 $("#selectPre").click(function(){
-    tempi = 0;
+    temip = 0;
     selectbyCat(0);
 });
 $("selectRiv").click(function(){
