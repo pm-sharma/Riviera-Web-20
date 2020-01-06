@@ -27,9 +27,8 @@
     <link rel="shortcut icon" type="image/ICO" href="../assets/icons/R.ICO" />
 
     <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/event.css">
     <title>Riviera 2020</title>
     <!-- SEO -->
@@ -61,6 +60,7 @@
     <style>
         body{
             background-color: #121212;
+            font-family: montserrat;
         }
         .redbg {
             width: 15vh;
@@ -494,17 +494,20 @@
         let output = '';
         data.forEach(function(user){
             let len=user.url.length;
-            console.log(len)
-            let url1 = '';
-            for(let p=0; p<=len; p++){
-                if(p!=0 || p!=1 || p!=len || p!=(len-1)){
-                    url1 += user.url[p];
-                }
-            }
-            console.log(url1)
-          output += `
+                         console.log(len)
+                         let x = 0;
+                        let url1 = '';
+                        for(let p=0; p<len; p++){
+                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
+                                url1 += user.url[p];
+                             }
+                        }
+                        output += `
           <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -570,11 +573,24 @@
             }else{
                 $("#showMore").css("display", "inline-block");
             }
+            console.log(data)
         let output1 = '';
         data.forEach(function(user){
-          output1 += `
+            let len=user.url.length;
+                         console.log(len)
+                         let x = 0;
+                        let url1 = '';
+                        for(let p=0; p<len; p++){
+                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
+                                url1 += user.url[p];
+                             }
+                            }
+             output += `
           <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -630,9 +646,22 @@ function selectbyCat(i){
         .then(data => { 
         let output1 = '';
         data.forEach(function(user){
-          output1 += `
+            let len=user.url.length;
+                         console.log(len)
+                         let x = 0;
+                        let url1 = '';
+                        for(let p=0; p<len; p++){
+                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
+                                url1 += user.url[p];
+                             }
+                        }
+                        
+                        output += `
           <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
@@ -678,9 +707,22 @@ function selectbyCat(i){
         .then(data => { 
         let output1 = '';
         data.forEach(function(user){
-          output1 += `
+            let len=user.url.length;
+                         console.log(len)
+                         let x = 0;
+                        let url1 = '';
+                        for(let p=0; p<len; p++){
+                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
+                                url1 += user.url[p];
+                             }
+                        }
+                
+                        output += `
           <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
                     <div class="row">
