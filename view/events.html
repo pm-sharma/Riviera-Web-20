@@ -780,8 +780,6 @@
                         return response.json()
                     })
                     .then(data => {
-                            $("#showMore").css("display", "inline-block");
-                        
                         let output1 = '';
                         data.forEach(function (user) {
                             output1 += `
