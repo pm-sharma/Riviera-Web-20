@@ -12,6 +12,7 @@ var filesToCache = [
     './view/sponsors.html',
     './view/teamriviera.html',
     './assets/images/mainbg.png',
+    './assets/images/stage.jpg',
     './assets/icons/facebook.svg',
     './assets/icons/magnifier.svg',
     './assets/icons/pepsi.png',
