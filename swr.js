@@ -39,7 +39,11 @@ var filesToCache = [
     './assets/sponsors/Ferns_N_Petals_Logo-min.jpg',
     './assets/sponsors/cloud-clothing.png',
     './assets/sponsors/aviation-express-min.jpeg',
-    './assets/sponsors/asian-paints-logo.png'
+    './assets/sponsors/asian-paints-logo.png',
+    './assets/vit-img/faculty/Monica subashini.JPG',
+    '/assets/vit-img/faculty/N Sharmila.JPG',
+    '/assets/vit-img/faculty/Ramesh.JPG',
+    '/assets/vit-img/faculty/Sasikumar.JPG'
   ];
   
   self.addEventListener('install', function(e) {
