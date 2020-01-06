@@ -472,10 +472,13 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    var limitnum  = 10;
-    var clubFlag  = 0;
+    var limitnum   = 10;
+    var clubFlag   = 0;
+    var filterFlag = 0;
+    var temip      = 0;
     // ========================function to display all sports=================================
     function selectAll(){
+        filterFlag=0;
         limit = limitnum.toString();
         fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
             method: "get", 
@@ -520,6 +523,7 @@
 
 //=========================================DISPLAY sports by SEARCH===============================================
     function listbyClub(){
+        filterFlag=0;
         clubFlag = 1;
         var query = $("#clubval").val();
         limit = limitnum.toString();
@@ -575,22 +579,100 @@
     });
 //=============================Select By Cat===========================================================
 function selectbyCat(i){
-console.log(i)
+    filterFlag = 1;
+    limit = limitnum.toString();
+    fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=category&query=riv&limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            if(data.length < 10){
+                $("#showMore").css("display", "none"); 
+            }else{
+                $("#showMore").css("display", "inline-block");
+            }
+        let output1 = '';
+        var temp = 0;
+        if(i=0){
+        data.forEach(function(user){
+          temp = temp+1;
+            if(temp>15){
+          output1 += `
+          <div class="row eventinfo">
+                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.event_name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;">${user.category}</div>
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block">&#8377; TBA</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        }
+        });
+        }else if(i=1){
+         data.forEach(function(user){
+          temp = temp+1;
+            if(temp<16){
+          output1 += `
+          <div class="row eventinfo">
+                <!-- <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto;"></div> -->
+                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                    <h2 style="text-align: left">${user.event_name}</h2>
+                    <div class="row">
+                        <div class="sportsdetails col-sm-12 col-lg-7">
+                            <div class="details" style="display: inline-block;">${user.category}</div>
+                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block">&#8377; TBA</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="redbg"> Register </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+        }
+        });
+        }
+        document.getElementById('output').innerHTML = output1;
+    });
 }
 //=========================================SelectBy Catergory=================================================
 $("selectAll").click(function(){
     selectAll();
 }); 
 $("#selectPre").click(function(){
+    tempi = 0;
+    selectbyCat(0);
+});
+$("selectRiv").click(function(){
+    temip = 1;
     selectbyCat(1);
-})
+});
 //===========================================PAGINATION=====================================================
     $("#showMore").click(function(){
         limitnum = limitnum+10;
         if(clubFlag==0){
             selectAll();
-        }else{
+        }else if(clubFlag==1){
             listbyClub();
+        }else if(filterFlag==1){
+            selectbyCat(temip);
         }
     });
 
