@@ -433,7 +433,7 @@
         <div class="row funbtn">
             <div class="col l6 s12">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle disabled filter" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         All
                     </button>
@@ -573,7 +573,17 @@
     $("#clubval").keyup(function(){
         listbyClub();
     });
-   
+//=============================Select By Cat===========================================================
+function selectbyCat(i){
+console.log(i)
+}
+//=========================================SelectBy Catergory=================================================
+$("selectAll").click(function(){
+    selectAll();
+}); 
+$("#selectPre").click(function(){
+    selectbyCat(1);
+})
 //===========================================PAGINATION=====================================================
     $("#showMore").click(function(){
         limitnum = limitnum+10;
