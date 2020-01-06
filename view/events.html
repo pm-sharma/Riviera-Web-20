@@ -491,6 +491,7 @@
     <div id="pagination">
         <button class="btn" id="showMore">Show More</button>
     </div>
+    <img src="" alt="">
 
 
 
@@ -522,7 +523,7 @@
                     data.forEach(function (user) {
                         output += `
           <div class="row eventinfo">
-            <div class="col-lg-3 col-md-5 col-sm-5 sportsImg" style="height: auto; background: url("${user.url}");"></div>
+            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${user.url}" alt="Event image" style="height: auto;">
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.name}</h2>
                     <div class="row">
