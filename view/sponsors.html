@@ -60,60 +60,6 @@
 
 
     <style>
-        @media (min-width: 780px) {
-
-
-            .x {
-                margin-left: 0;
-                color: white;
-                transform: skewX(-15deg);
-                flex-wrap: wrap;
-            }
-
-            .headings {
-                transform: skewX(15deg);
-            }
-
-            li,
-            .sportsdetails {
-                margin-left: 22px;
-                margin-right: 22px;
-            }
-
-            .details {
-                margin: 0 15px;
-            }
-
-            .sportsImg {
-                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
-                background-image: url("../assets/images/sports1.png");
-            }
-
-        }
-
-        @media (max-width: 780px) {
-            .hellobro {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                min-height: 10vh;
-                z-index: 1030;
-            }
-
-            .topnavwidth {
-                width: 102%;
-            }
-
-            .regbtn {
-                margin-top: -5.5px;
-            }
-
-            .sportsImg {
-                background-image: url("../assets/images/sports1.png");
-            }
-        }
-
         .navbar {
             padding: 0 1rem;
         }
@@ -173,12 +119,86 @@
             color: white;
             text-align: center
         }
+
         /* .m10{
             margin-top: 10px;
         } */
 
-        .nav-link{
+        .nav-link {
             padding-right: 0 !important;
+        }
+
+        .hitimg {
+            width: auto;
+            height: 90px;
+        }
+
+        .silimg {
+            width: auto;
+            height: 70px;
+        }
+
+        @media (min-width: 780px) {
+
+
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+
+            .headings {
+                transform: skewX(15deg);
+            }
+
+            li,
+            .sportsdetails {
+                margin-left: 22px;
+                margin-right: 22px;
+            }
+
+            .details {
+                margin: 0 15px;
+            }
+
+            .sportsImg {
+                /* clip-path: polygon(0% 0%,100% 100%, 100% 100%, 0% 100%); */
+                background-image: url("../assets/images/sports1.png");
+            }
+        }
+
+        @media (max-width: 780px) {
+            .hellobro {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                min-height: 10vh;
+                z-index: 1030;
+            }
+
+            .topnavwidth {
+                width: 102%;
+            }
+
+            .regbtn {
+                margin-top: -5.5px;
+            }
+
+            .sportsImg {
+                background-image: url("../assets/images/sports1.png");
+            }
+
+            .hitimg {
+                width: auto;
+                height: 60px;
+            }
+
+            .silimg {
+                width: auto;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -239,7 +259,8 @@
                                 </li>
                                 <li style="background-color: #0090C5;color: white" class="nav-item">
                                     <a class="nav-link" href="./sponsors.html">
-                                        <p style=" color: white;padding-right: 10px;" class="headings">Sponsors & Partners</p>
+                                        <p style=" color: white;padding-right: 10px;" class="headings">Sponsors &
+                                            Partners</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -265,31 +286,32 @@
             <div style="float: right;">
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
-                    type="button" class="btn regbtn btn-primary-outline" data-toggle="modal" data-target="#reg">Register</button>
+                    type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
+                    data-target="#reg">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
-                    <h1 style="cursor: default; user-select: none;" ><span>Sponsors and Partners</span></h1>
+                    <h1 style="cursor: default; user-select: none;"><span>Past Sponsors</span></h1>
                 </div>
 
             </div>
         </div>
     </div>
-        <!-- Reg Modal -->
-        <div class="modal fade" id="reg" role="dialog">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
+    <!-- Reg Modal -->
+    <div class="modal fade" id="reg" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
                 <!-- <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div> -->
                 <div class="modal-body">
-                  <p>Registrations will open soon! </p>
+                    <p>Registrations will open soon! </p>
                 </div>
-              </div>
             </div>
         </div>
+    </div>
 
 
     <div class="container-fluid sponserDetails">
@@ -325,173 +347,173 @@
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/Maruti-Suzuki-Logo-2019.jpg" style=" height: 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Maruti Suzuki
+                </div> -->
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/Ferns_N_Petals_Logo-min.jpg" style=" width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
-
-            </div>
-            <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
-
-
-                <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
-                </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Ferns N` Petals
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/talent.jpg" style="height:150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Silly Monks
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/silly-monks.png" class="silimg">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Talent 2 Success
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/Hitachi.png" class="hitimg">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Hitachi
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/asian-paints-logo.png" style="height : 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Asian Paints
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/jet-airways-vector-logo.png" style="height : 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Jet Airways
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/cloud-clothing.png" style="height : 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Cloud Clothing
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/Internshala_company_logo.png" style="height : 100px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Internshala
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/viacom.png" style="height : 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Viacom 18
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/aviation-express-min.jpeg" style="height : 180px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Aviation Express
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/paytm.png" style="height : 180px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    PayTM
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/Nestle.svg" style="height : 60px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Nestle
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/tata-gluco.png" style="height : 150px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
-                </div>
+                <!-- <div class="cor-name">
+                    Tata Gluco
+                </div> -->
 
             </div>
             <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
 
 
                 <div class="cor-circle">
-                    <img src="../assets/images/pepsi.png" style="height : 180px; width : auto">
+                    <img src="../assets/sponsors/one-plus.png" style=" height: 80px; width : auto">
                 </div>
-                <div class="cor-name">
-                    Pepsi
+                <!-- <div class="cor-name">
+                    One-Plus
+                </div> -->
+
+            </div>
+            <div class="col-12 col-lg-3" style="margin-top : 20px; margin-bottom : 20px;">
+
+
+                <div class="cor-circle">
+                    <img src="../assets/sponsors/tvf-min.jpg" style="height: 150px; width : auto">
                 </div>
+                <!-- <div class="cor-name">
+                    TVF
+                </div> -->
 
             </div>
 
