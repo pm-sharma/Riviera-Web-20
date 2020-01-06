@@ -19,7 +19,23 @@ var filesToCache = [
     './assets/icons/sports.svg',
     './assets/icons/twitter.svg',
     './assets/icons/vit-white.png',
-    './assets/icons/youtube.svg'
+    './assets/icons/youtube.svg',
+    './assets/sponsors/viacom.png',
+    './assets/sponsors/tvf-min.png',
+    './assets/sponsors/tata-gluco.png',
+    './assets/sponsors/talent.jpg',
+    './assets/sponsors/silly-monks.png',
+    './assets/sponsors/paytm.png',
+    './assets/sponsors/one-plus.png',
+    './assets/sponsors/Nestle.svg',
+    './assets/sponsors/Maruti-Suzuki-Logo-2019.jpg',
+    './assets/sponsors/jet-airways-logo.png',
+    './assets/sponsors/Internshala_company_logo.png',
+    './assets/sponsors/Hitachi.png',
+    './assets/sponsors/Ferns_N_Petals_Logo-min.jpg',
+    './assets/sponsors/cloud-clothing.png',
+    './assets/sponsors/aviation-express-min.jpeg',
+    './assets/sponsors/asian-paints-logo.png'
   ];
   
   self.addEventListener('install', function(e) {
