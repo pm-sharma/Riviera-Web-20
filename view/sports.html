@@ -491,7 +491,7 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-    var limitnum   = 10;
+    var limitnum   = 5;
     var clubFlag   = 0;
     var filterFlag = 0;
     var temip      = 0;
@@ -788,7 +788,7 @@ $("#selectRiv").click(function(){
 });
 //===========================================PAGINATION=====================================================
     $("#showMore").click(function(){
-        limitnum = limitnum+10;
+        limitnum = limitnum+5;
         if(clubFlag==0){
             selectAll();
         }else if(clubFlag==1){
