@@ -29,7 +29,7 @@
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/event.css">
     <title>Riviera 2020</title>
@@ -210,9 +210,10 @@
             margin-right: 60px;
         } */
 
-        .nav-link{
+        .nav-link {
             padding-right: 0 !important;
         }
+
         /* .m10{
             margin-top: 10px;
         } */
@@ -247,19 +248,22 @@
         @media(max-width: 991px) and (min-width: 780px) {
             .redbg {
                 /*margin-right: 10vh;*/
-                float: left;    
+                float: left;
             }
         }
-        @media(min-width: 991px){
-            .detbelow{
+
+        @media(min-width: 991px) {
+            .detbelow {
                 margin-top: 30px;
             }
         }
-        @media(min-width: 1200px){
-            .detbelow{
+
+        @media(min-width: 1200px) {
+            .detbelow {
                 margin-top: 40px;
             }
-            .redbg{
+
+            .redbg {
                 margin-top: 28px;
             }
         }
@@ -325,17 +329,21 @@
             color: #FFFFFF;
             border-radius: 6px;
         }
-        @media(max-width: 575px){
-            .redbg{
+
+        @media(max-width: 575px) {
+            .redbg {
                 display: inline-block;
             }
-            .eventsDetails{
+
+            .eventsDetails {
                 text-align: center;
             }
-            .col-sm-4{
+
+            .col-sm-4 {
                 text-align: center;
             }
-            .sportsdetails{
+
+            .sportsdetails {
                 text-align: left;
             }
         }
@@ -533,6 +541,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
+    <script>
+        //Dropdown select value
+
+        $(".dropdown-menu>a").click(function () {
+            var selText = $(this).text();
+            console.log(selText)
+            $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
+                ' <span class="caret"></span>');
+        });
+    </script>
     <script type="text/javascript">
         var limitnum = 5;
         var clubFlag = 0;
@@ -556,17 +574,16 @@
                     let output = '';
                     // console.log(data)
                     data.forEach(function (user) {
-                        let len=user.url.length;
-                         console.log(len)
-                         let x = 0;
+                        let len = user.url.length;
+                        console.log(len)
+                        let x = 0;
                         let url1 = '';
-                        for(let p=0; p<(len-2); p++){
-                            if(p==0 || p==1){
+                        for (let p = 0; p < (len - 2); p++) {
+                            if (p == 0 || p == 1) {
                                 x = 1;
-                             }
-                             else{
+                            } else {
                                 url1 += user.url[p];
-                             }
+                            }
                         }
                         console.log(url1)
                         output += `
@@ -647,18 +664,17 @@
                         }
                         let output1 = '';
                         data.forEach(function (user) {
-                            let len=user.url.length;
+                            let len = user.url.length;
                             let x = 0;
                             let url1 = '';
-                            for(let p=0; p<(len-2); p++){
-                                if(p==0 || p==1){
+                            for (let p = 0; p < (len - 2); p++) {
+                                if (p == 0 || p == 1) {
                                     x = 1;
-                                }
-                                else{
+                                } else {
                                     url1 += user.url[p];
                                 }
-                        }
-                         output1 += `
+                            }
+                            output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
@@ -718,7 +734,8 @@
                 selectAll();
                 eventFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +"&limit=" + limit + "&offset=0", {
+                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +
+                        "&limit=" + limit + "&offset=0", {
                             method: "get",
                             headers: {
                                 'Content-Type': 'application/json'
@@ -735,19 +752,18 @@
                         }
                         let output1 = '';
                         data.forEach(function (user) {
-                            let len=user.url.length;
-                         let x = 0;
-                        let url1 = '';
-                        for(let p=0; p<len; p++){
-                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
-                                x = 1;
-                             }
-                             else{
-                                url1 += user.url[p];
-                             }
-                        }
+                            let len = user.url.length;
+                            let x = 0;
+                            let url1 = '';
+                            for (let p = 0; p < len; p++) {
+                                if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
+                                    x = 1;
+                                } else {
+                                    url1 += user.url[p];
+                                }
+                            }
 
-                        output1 += `
+                            output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
@@ -800,73 +816,73 @@
             $("#loader").css("display", "inline-block");
             $("#showMore").css("display", "none");
             var cat = "";
-            switch(i){
-                case 0: 
-                    cat="premium";
-                    break; 
-                case 1: 
-                    cat="pre riviera";
+            switch (i) {
+                case 0:
+                    cat = "premium";
                     break;
-                case 2: 
-                    cat="drama";
+                case 1:
+                    cat = "pre riviera";
+                    break;
+                case 2:
+                    cat = "drama";
                     break;
                 case 3:
-                    cat="music";
+                    cat = "music";
                     break;
-                case 4: 
-                    cat="dance";
+                case 4:
+                    cat = "dance";
                     break;
-                case 5: 
-                    cat="workshop";
+                case 5:
+                    cat = "workshop";
                     break;
-                case 6: 
-                    cat="quiz";
+                case 6:
+                    cat = "quiz";
                     break;
-                case 7: 
-                    cat="english";
+                case 7:
+                    cat = "english";
                     break;
-                case 8: 
-                    cat="hindi";
+                case 8:
+                    cat = "hindi";
                     break;
-                case 9: 
-                    cat="telugu";
+                case 9:
+                    cat = "telugu";
                     break;
-                case 10: 
-                    cat="tamil";
+                case 10:
+                    cat = "tamil";
                     break;
-                case 11: 
-                    cat="adventure";
+                case 11:
+                    cat = "adventure";
                     break;
-                case 12: 
-                    cat="cyber";
+                case 12:
+                    cat = "cyber";
                     break;
-                case 13: 
-                    cat="informal";
+                case 13:
+                    cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query="+cat+"&limit=10&offset=0", {
-                            method: "get",
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                        })
-                    .then((response) => {
-                        return response.json()
+            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +
+                    "&limit=10&offset=0", {
+                        method: "get",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
                     })
-                    .then(data => {
-                        let output1 = '';
-                        data.forEach(function (user) {
-                            let len=user.url.length;
-                         console.log(len)
-                         let x = 0;
+                .then((response) => {
+                    return response.json()
+                })
+                .then(data => {
+                    let output1 = '';
+                    data.forEach(function (user) {
+                        let len = user.url.length;
+                        console.log(len)
+                        let x = 0;
                         let url1 = '';
-                        for(let p=0; p<len; p++){
-                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                        for (let p = 0; p < len; p++) {
+                            if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
                                 x = 1;
-                             }
-                             else{
+                            } else {
                                 url1 += user.url[p];
-                             }
+                            }
                         }
                         output1 += `
           <div class="row eventinfo">
@@ -913,49 +929,49 @@
      });
         }
         //====================================Filter selector=====================================================
-        $("#selectAll").click(function(){
+        $("#selectAll").click(function () {
             selectAll();
         })
-        $("#premium").click(function(){
+        $("#premium").click(function () {
             filter(0);
         })
-        $("#preriv").click(function(){
+        $("#preriv").click(function () {
             filter(1);
         })
-        $("#drama").click(function(){
+        $("#drama").click(function () {
             filter(2);
         })
-        $("#music").click(function(){
+        $("#music").click(function () {
             filter(3);
         })
-        $("#dance").click(function(){
+        $("#dance").click(function () {
             filter(4);
         })
-        $("#wrkshp").click(function(){
+        $("#wrkshp").click(function () {
             filter(5);
         })
-        $("#quiz").click(function(){
+        $("#quiz").click(function () {
             filter(6);
         })
-        $("#wwe").click(function(){
+        $("#wwe").click(function () {
             filter(7);
         })
-        $("#wwh").click(function(){
+        $("#wwh").click(function () {
             filter(8);
         })
-        $("#wwt").click(function(){
+        $("#wwt").click(function () {
             filter(9);
         })
-        $("#wwtm").click(function(){
+        $("#wwtm").click(function () {
             filter(10);
         })
-        $("#adven").click(function(){
+        $("#adven").click(function () {
             filter(11);
         })
-        $("#cyber").click(function(){
+        $("#cyber").click(function () {
             filter(12);
         })
-        $("#informal").click(function(){
+        $("#informal").click(function () {
             filter(13);
         })
 
