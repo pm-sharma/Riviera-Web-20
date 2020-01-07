@@ -246,6 +246,11 @@
             }
         }
 
+        @media(min-width: 991px){
+            .detbelow{
+                margin-top: 40px;
+            }
+        }
 
         @media (max-width: 780px) {
             .hellobro {
@@ -314,6 +319,20 @@
         } */
         .nav-link {
             padding-right: 0 !important;
+        }
+        @media(max-width: 575px){
+            .sportsdetails{
+                text-align: center;
+            }
+            .details{
+                margin-right: 1.5rem;
+            }
+            .redbg{
+                display: inline-block;
+            }
+            .col-sm-4{
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -477,30 +496,30 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-        var limitnum = 10;
-        var clubFlag = 0;
-        var filterFlag = 0;
-        var temip = 0;
-        // ========================function to display all sports=================================
-        function selectAll() {
-            filterFlag = 0;
-            limit = limitnum.toString();
-            fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?limit=" + limit + "&offset=0", {
-                    method: "get",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                })
-                .then((response) => {
-                    return response.json()
-                })
-                .then(data => {
-                    // console.log(data)
-                    let output = '';
-                    data.forEach(function (user) {
-                        let len = user.url.length;
-                        console.log(len)
-                        let x = 0;
+    var limitnum   = 5;
+    var clubFlag   = 0;
+    var filterFlag = 0;
+    var temip      = 0;
+    // ========================function to display all sports=================================
+    function selectAll(){
+        filterFlag=0;
+        limit = limitnum.toString();
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            // console.log(data)
+        let output = '';
+        data.forEach(function(user){
+            let len=user.url.length;
+                         console.log(len)
+                         let x = 0;
                         let url1 = '';
                         for (let p = 0; p < len; p++) {
                             if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -514,12 +533,12 @@
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row">
+                    <div class="row detbelow">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
+                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
                             <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
@@ -541,67 +560,68 @@
             </div>
         </div>
           `;
-                    });
-                    document.getElementById('output').innerHTML = output;
-                    // function to display show more button only after fetch has loaded        
-                    $("#showMore").css("display", "inline-block");
+        });
+        document.getElementById('output').innerHTML = output;
+    // function to display show more button only after fetch has loaded        
+        $("#showMore").css("display", "inline-block");
+        
+      });
+    }
+    selectAll();
 
-                });
+//=========================================DISPLAY sports by SEARCH===============================================
+    function listbyClub(){
+        filterFlag=0;
+        clubFlag = 1;
+        var query = $("#clubval").val();
+        limit = limitnum.toString();
+        // $("#eventval").attr("disabled");
+        if(query==""){
+            selectAll();
+            clubFlag=0;
         }
-        selectAll();
-
-        //=========================================DISPLAY sports by SEARCH===============================================
-        function listbyClub() {
-            filterFlag = 0;
-            clubFlag = 1;
-            var query = $("#clubval").val();
-            limit = limitnum.toString();
-            // $("#eventval").attr("disabled");
-            if (query == "") {
-                selectAll();
-                clubFlag = 0;
-            } else {
-                fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=name&query=" + query + "&limit=" +
-                        limit + "&offset=0", {
-                            method: "get",
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                        })
-                    .then((response) => {
-                        return response.json()
-                    })
-                    .then(data => {
-                        if (data.length < 10) {
-                            $("#showMore").css("display", "none");
-                        } else {
-                            $("#showMore").css("display", "inline-block");
-                        }
-                        console.log(data)
-                        let output1 = '';
-                        data.forEach(function (user) {
-                            let len = user.url.length;
-                            console.log(len)
-                            let x = 0;
-                            let url1 = '';
-                            for (let p = 0; p < len; p++) {
-                                if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
-                                    x = 1;
-                                } else {
-                                    url1 += user.url[p];
-                                }
+        else{
+        fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?type=name&query="+query+"&limit="+limit+"&offset=0", {
+            method: "get", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => { 
+            if(data.length < 5){
+                $("#showMore").css("display", "none"); 
+            }else{
+                $("#showMore").css("display", "inline-block");
+            }
+            console.log(data)
+        let output1 = '';
+        data.forEach(function(user){
+            let len=user.url.length;
+                         console.log(len)
+                         let x = 0;
+                        let url1 = '';
+                        for(let p=0; p<len; p++){
+                            if(p==0 || p==1 || p==(len-2) || p==(len-1)){
+                                x = 1;
+                             }
+                             else{
+                                url1 += user.url[p];
+                             }
                             }
                             output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row">
+                    <div class="row detbelow">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
+                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
                             <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
@@ -666,12 +686,12 @@
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row">
+                    <div class="row detbelow">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
+                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
                             <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
@@ -726,12 +746,12 @@
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                 <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
                     <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row">
+                    <div class="row detbelow">
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
                             <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><!-- &#8377; --> TBA</div>
+                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
                             <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
@@ -753,10 +773,28 @@
             </div>
         </div>
           `;
-                        });
-                        document.getElementById('output').innerHTML = output1;
-                    });
-            }
+        });
+        document.getElementById('output').innerHTML = output1;
+    });
+    }
+}
+//=========================================SelectBy Catergory=================================================
+$("#selectAll").click(function(){
+    selectAll();
+}); 
+$("#selectPre").click(function(){
+    selectbyCat(0);
+});
+$("#selectRiv").click(function(){
+    selectbyCat(1);
+});
+//===========================================PAGINATION=====================================================
+    $("#showMore").click(function(){
+        limitnum = limitnum+5;
+        if(clubFlag==0){
+            selectAll();
+        }else if(clubFlag==1){
+            listbyClub();
         }
         //=========================================SelectBy Catergory=================================================
         $("#selectAll").click(function () {
