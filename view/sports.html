@@ -679,6 +679,7 @@
         });
         //=============================Select By Cat===========================================================
         function selectbyCat(i) {
+            $("#loader").css("display", "block");
             $("#showMore").css("display", "none");
             filterFlag = 1;
             limit = limitnum.toString();
