@@ -347,6 +347,10 @@
                 text-align: left;
             }
         }
+        #loader{
+            display: none;
+            color: #FFFFFF;
+        }
     </style>
 </head>
 
@@ -519,6 +523,9 @@
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
+        <div id="loader" style="text-align: center;">
+            <span id="pw" style="display: inline-block;">Loading Events</span>
+        </div>
         <div class="sec-one-cont" style="padding-top:20px" id="output">
             <!--output from fetch is inserted here-->
         </div>
@@ -546,13 +553,17 @@
         });
     </script>
     <script type="text/javascript">
-        var limitnum = 5;
-        var clubFlag = 0;
-        var eventFlag = 0;
-        var showCheck = 0;
+        var limitnum     = 3;
+        var clubFlag     = 0;
+        var eventFlag    = 0;
+        var showCheck    = 0;
+        var e            = 0;
+        var categoryFlag =0;
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
+            $("#loader").css("display", "block");
+            categoryFlag=0;
             limit = limitnum.toString();
             fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
@@ -619,6 +630,7 @@
         </div>
           `;
                     });
+                    $("#loader").css("display", "none");
                     document.getElementById('output').innerHTML = output;
                     // function to display show more button only after fetch has loaded        
                     $("#showMore").css("display", "inline-block");
@@ -629,7 +641,9 @@
 
         //=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
         function listbyClub() {
+            $("#loader").css("display", "block");
             clubFlag = 1;
+            categoryFlag=0;
             var query = $("#clubval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -648,7 +662,7 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 5) {
+                        if (data.length < 3) {
                             $("#showMore").css("display", "none");
                         } else {
                             $("#showMore").css("display", "inline-block");
@@ -705,6 +719,7 @@
         </div>
           `;
                         });
+                        $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
                     });
             }
@@ -715,7 +730,9 @@
 
         //========================================DISPLAY EVENT BY EVENT SEARCH===================================
         function listbyEvent() {
+            $("#loader").css("display", "block");
             eventFlag = 1;
+            categoryFlag=0;
             var query1 = $("#eventval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -734,7 +751,7 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 5) {
+                        if (data.length < 3) {
                             $("#showMore").css("display", "none");
                         } else {
                             $("#showMore").css("display", "inline-block");
@@ -792,6 +809,7 @@
         </div>
           `;
                         });
+                        $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
                     });
             }
@@ -800,7 +818,10 @@
             listbyEvent();
         });
         //============================================Filter========================================================
-        function filter(i) {
+        function filter(i){
+            categoryFlag=1;
+            limit=limitnum.toString();
+            $("#loader").css("display", "block");
             $("#showMore").css("display", "none");
             var cat = "";
             switch (i) {
@@ -847,8 +868,7 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +
-                    "&limit=10&offset=0", {
+            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +"&limit=" + limit + "&offset=0", {
                         method: "get",
                         headers: {
                             'Content-Type': 'application/json'
@@ -858,6 +878,11 @@
                     return response.json()
                 })
                 .then(data => {
+                    if (data.length < 3) {
+                            $("#showMore").css("display", "none");
+                        } else {
+                            $("#showMore").css("display", "inline-block");
+                        }
                     let output1 = '';
                     data.forEach(function (user) {
                         let len = user.url.length;
@@ -910,66 +935,83 @@
             </div>
         </div>
           `;
-                    });
-                    document.getElementById('output').innerHTML = output1;
-                });
+        });
+                        $("#loader").css("display", "none");
+                        document.getElementById('output').innerHTML = output1;
+     });
         }
         //====================================Filter selector=====================================================
         $("#selectAll").click(function () {
             selectAll();
         })
         $("#premium").click(function () {
+            e=0;
             filter(0);
         })
         $("#preriv").click(function () {
+            e=1;
             filter(1);
         })
         $("#drama").click(function () {
+            e=2;
             filter(2);
         })
         $("#music").click(function () {
+            e=3;
             filter(3);
         })
         $("#dance").click(function () {
+            e=4;
             filter(4);
         })
         $("#wrkshp").click(function () {
+            e=5;
             filter(5);
         })
         $("#quiz").click(function () {
+            e=6;
             filter(6);
         })
         $("#wwe").click(function () {
+            e=7;
             filter(7);
         })
         $("#wwh").click(function () {
+            e=8;
             filter(8);
         })
         $("#wwt").click(function () {
+            e=9;
             filter(9);
         })
         $("#wwtm").click(function () {
+            e=10;
             filter(10);
         })
         $("#adven").click(function () {
+            e=11;
             filter(11);
         })
         $("#cyber").click(function () {
+            e=12;
             filter(12);
         })
         $("#informal").click(function () {
+            e=13;
             filter(13);
         })
 
         //===========================================PAGINATION=====================================================
         $("#showMore").click(function () {
-            limitnum = limitnum + 5;
+            limitnum = limitnum + 3;
             if (clubFlag == 0 && eventFlag == 0) {
                 selectAll();
-            } else if (clubFlag == 1 && eventFlag == 0) {
+            } else if (clubFlag == 1) {
                 listbyClub();
-            } else if (clubFlag == 0 && eventFlag == 1) {
+            } else if (eventFlag == 1) {
                 listbyEvent();
+            } else if(categoryFlag == 1){
+                filter(e);
             }
         });
     </script>
