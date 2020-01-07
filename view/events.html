@@ -349,6 +349,7 @@
         }
         #loader{
             display: none;
+            color: #FFFFFF;
         }
     </style>
 </head>
@@ -559,7 +560,7 @@
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
-            $("#loader").css("display", "inline-block");
+            $("#loader").css("display", "block");
             limit = limitnum.toString();
             fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
@@ -637,7 +638,7 @@
 
         //=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
         function listbyClub() {
-            $("#loader").css("display", "inline-block");
+            $("#loader").css("display", "block");
             clubFlag = 1;
             var query = $("#clubval").val();
             limit = limitnum.toString();
@@ -725,7 +726,7 @@
 
         //========================================DISPLAY EVENT BY EVENT SEARCH===================================
         function listbyEvent() {
-            $("#loader").css("display", "inline-block");
+            $("#loader").css("display", "block");
             eventFlag = 1;
             var query1 = $("#eventval").val();
             limit = limitnum.toString();
@@ -813,7 +814,7 @@
         });
         //============================================Filter========================================================
         function filter(i){
-            $("#loader").css("display", "inline-block");
+            $("#loader").css("display", "block");
             $("#showMore").css("display", "none");
             var cat = "";
             switch (i) {
