@@ -553,7 +553,7 @@
         });
     </script>
     <script type="text/javascript">
-        var limitnum     = 5;
+        var limitnum     = 3;
         var clubFlag     = 0;
         var eventFlag    = 0;
         var showCheck    = 0;
@@ -662,7 +662,7 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 5) {
+                        if (data.length < 3) {
                             $("#showMore").css("display", "none");
                         } else {
                             $("#showMore").css("display", "inline-block");
@@ -751,7 +751,7 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 5) {
+                        if (data.length < 3) {
                             $("#showMore").css("display", "none");
                         } else {
                             $("#showMore").css("display", "inline-block");
@@ -878,7 +878,7 @@
                     return response.json()
                 })
                 .then(data => {
-                    if (data.length < 5) {
+                    if (data.length < 3) {
                             $("#showMore").css("display", "none");
                         } else {
                             $("#showMore").css("display", "inline-block");
@@ -1003,7 +1003,7 @@
 
         //===========================================PAGINATION=====================================================
         $("#showMore").click(function () {
-            limitnum = limitnum + 5;
+            limitnum = limitnum + 3;
             if (clubFlag == 0 && eventFlag == 0) {
                 selectAll();
             } else if (clubFlag == 1) {
