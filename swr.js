@@ -13,6 +13,8 @@ var filesToCache = [
     './view/teamriviera.html',
     './assets/images/mainbg.png',
     './assets/images/stage.jpg',
+    './assets/images/proshow2.jpg',
+    './assets/images/sports.jpg',
     './assets/images/sportscover.jpg',
     './assets/images/sportstile.jpg',
     './assets/images/stage-guy.jpg',
