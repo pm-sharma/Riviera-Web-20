@@ -329,6 +329,10 @@
                 text-align: center;
             }
         }
+        #loader{
+            display: none;
+            color: white;
+        }
     </style>
 </head>
 
@@ -475,6 +479,9 @@
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
+        <div id="loader" style="text-align: center;">
+            <span id="pw" style="display: inline-block;">Loading Events</span>
+        </div>
         <div class="sec-one-cont" style="padding-top:20px" id="output">
             
         </div>
@@ -497,6 +504,7 @@
     var temip      = 0;
     // ========================function to display all sports=================================
     function selectAll(){
+        $("#loader").css("display", "block");
         filterFlag=0;
         limit = limitnum.toString();
         fetch("https://rivera-backend.herokuapp.com/login/sportDisplay/?limit="+limit+"&offset=0", {
@@ -557,6 +565,7 @@
         </div>
           `;
         });
+        $("#loader").css("display", "none");
         document.getElementById('output').innerHTML = output;
     // function to display show more button only after fetch has loaded        
         $("#showMore").css("display", "inline-block");
@@ -566,7 +575,8 @@
     selectAll();
 
 //=========================================DISPLAY sports by SEARCH===============================================
-    function listbyClub(){
+    function listbyClub(){        
+        $("#loader").css("display", "block");
         filterFlag=0;
         clubFlag = 1;
         var query = $("#clubval").val();
@@ -640,6 +650,7 @@
         </div>
           `;
         });
+        $("#loader").css("display", "none");
         document.getElementById('output').innerHTML = output1;
     });
     }
@@ -649,6 +660,7 @@
     });
 //=============================Select By Cat===========================================================
 function selectbyCat(i){
+    $("#loader").css("display", "block");
     $("#showMore").css("display", "none");
     filterFlag = 1;
     limit = limitnum.toString();
@@ -711,6 +723,7 @@ function selectbyCat(i){
         </div>
           `;
         });
+        $("#loader").css("display", "none");
         document.getElementById('output').innerHTML = output1;
     });
     }else if(i==1){
@@ -772,6 +785,7 @@ function selectbyCat(i){
         </div>
           `;
         });
+        $("#loader").css("display", "none");
         document.getElementById('output').innerHTML = output1;
     });
     }

@@ -339,6 +339,9 @@
                 text-align: left;
             }
         }
+        #loader{
+            display: none;
+        }
     </style>
 </head>
 
@@ -511,6 +514,9 @@
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
+        <div id="loader" style="text-align: center;">
+            <span id="pw" style="display: inline-block;">Loading Events</span>
+        </div>
         <div class="sec-one-cont" style="padding-top:20px" id="output">
             <!--output from fetch is inserted here-->
         </div>
@@ -535,6 +541,7 @@
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
+            $("#loader").css("display", "inline-block");
             limit = limitnum.toString();
             fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
@@ -602,6 +609,7 @@
         </div>
           `;
                     });
+                    $("#loader").css("display", "none");
                     document.getElementById('output').innerHTML = output;
                     // function to display show more button only after fetch has loaded        
                     $("#showMore").css("display", "inline-block");
@@ -612,6 +620,7 @@
 
         //=========================================DISPLAY EVENTS BY CLUB SEARCH===============================================
         function listbyClub() {
+            $("#loader").css("display", "inline-block");
             clubFlag = 1;
             var query = $("#clubval").val();
             limit = limitnum.toString();
@@ -689,6 +698,7 @@
         </div>
           `;
                         });
+                        $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
                     });
             }
@@ -699,6 +709,7 @@
 
         //========================================DISPLAY EVENT BY EVENT SEARCH===================================
         function listbyEvent() {
+            $("#loader").css("display", "inline-block");
             eventFlag = 1;
             var query1 = $("#eventval").val();
             limit = limitnum.toString();
@@ -776,6 +787,7 @@
         </div>
           `;
                         });
+                        $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
                     });
             }
@@ -785,6 +797,7 @@
         });
         //============================================Filter========================================================
         function filter(i){
+            $("#loader").css("display", "inline-block");
             $("#showMore").css("display", "none");
             var cat = "";
             switch(i){
@@ -895,6 +908,7 @@
         </div>
           `;
         });
+                        $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
      });
         }
