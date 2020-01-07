@@ -72,6 +72,10 @@
             margin-right: 15vh;
             margin-bottom: 2vh;
             min-width: 145px;
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
         }
 
         /* .navbar-nav>.active>a {
@@ -264,7 +268,10 @@
             }
 
             .redbg {
-                margin-top: 28px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -347,7 +354,8 @@
                 text-align: left;
             }
         }
-        #loader{
+
+        #loader {
             display: none;
             color: #FFFFFF;
         }
@@ -523,7 +531,7 @@
                 <!-- <img src="../assets/icons/magnifier.svg" class="magnifier"> -->
             </div>
         </div>
-        <div id="loader" style="text-align: center;">
+        <div id="loader" style="text-align: center;margin-top:30px">
             <span id="pw" style="display: inline-block;">Loading Events</span>
         </div>
         <div class="sec-one-cont" style="padding-top:20px" id="output">
@@ -531,7 +539,7 @@
         </div>
     </div>
     </div>
-    <div id="pagination">
+    <div style="margin-top:20px" id="pagination">
         <button class="btn" id="showMore">Show More</button>
     </div>
     <img src="" alt="">
@@ -553,17 +561,17 @@
         });
     </script>
     <script type="text/javascript">
-        var limitnum     = 3;
-        var clubFlag     = 0;
-        var eventFlag    = 0;
-        var showCheck    = 0;
-        var e            = 0;
-        var categoryFlag =0;
+        var limitnum = 3;
+        var clubFlag = 0;
+        var eventFlag = 0;
+        var showCheck = 0;
+        var e = 0;
+        var categoryFlag = 0;
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
             $("#loader").css("display", "block");
-            categoryFlag=0;
+            categoryFlag = 0;
             limit = limitnum.toString();
             fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
@@ -604,7 +612,7 @@
                             </div>
                             <div class="row detbelow">
                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                             </div>
                         </div>
@@ -643,7 +651,7 @@
         function listbyClub() {
             $("#loader").css("display", "block");
             clubFlag = 1;
-            categoryFlag=0;
+            categoryFlag = 0;
             var query = $("#clubval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -688,12 +696,12 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="row detbelow">
                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
                             </div>
                             <div class="row detbelow">
                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                             </div>
                         </div>
@@ -732,7 +740,7 @@
         function listbyEvent() {
             $("#loader").css("display", "block");
             eventFlag = 1;
-            categoryFlag=0;
+            categoryFlag = 0;
             var query1 = $("#eventval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -778,12 +786,12 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="row">
                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
                             </div>
                             <div class="row detbelow">
                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
                             </div>
                         </div>
@@ -818,9 +826,9 @@
             listbyEvent();
         });
         //============================================Filter========================================================
-        function filter(i){
-            categoryFlag=1;
-            limit=limitnum.toString();
+        function filter(i) {
+            categoryFlag = 1;
+            limit = limitnum.toString();
             $("#loader").css("display", "block");
             $("#showMore").css("display", "none");
             var cat = "";
@@ -868,7 +876,8 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +"&limit=" + limit + "&offset=0", {
+            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat + "&limit=" +
+                    limit + "&offset=0", {
                         method: "get",
                         headers: {
                             'Content-Type': 'application/json'
@@ -879,10 +888,10 @@
                 })
                 .then(data => {
                     if (data.length < 3) {
-                            $("#showMore").css("display", "none");
-                        } else {
-                            $("#showMore").css("display", "inline-block");
-                        }
+                        $("#showMore").css("display", "none");
+                    } else {
+                        $("#showMore").css("display", "inline-block");
+                    }
                     let output1 = '';
                     data.forEach(function (user) {
                         let len = user.url.length;
@@ -905,12 +914,12 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="row">
                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
                                 <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
                             </div>
                             <div class="row detbelow">
                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
                             </div>
                         </div>
@@ -935,69 +944,69 @@
             </div>
         </div>
           `;
-        });
-                        $("#loader").css("display", "none");
-                        document.getElementById('output').innerHTML = output1;
-     });
+                    });
+                    $("#loader").css("display", "none");
+                    document.getElementById('output').innerHTML = output1;
+                });
         }
         //====================================Filter selector=====================================================
         $("#selectAll").click(function () {
             selectAll();
         })
         $("#premium").click(function () {
-            e=0;
+            e = 0;
             filter(0);
         })
         $("#preriv").click(function () {
-            e=1;
+            e = 1;
             filter(1);
         })
         $("#drama").click(function () {
-            e=2;
+            e = 2;
             filter(2);
         })
         $("#music").click(function () {
-            e=3;
+            e = 3;
             filter(3);
         })
         $("#dance").click(function () {
-            e=4;
+            e = 4;
             filter(4);
         })
         $("#wrkshp").click(function () {
-            e=5;
+            e = 5;
             filter(5);
         })
         $("#quiz").click(function () {
-            e=6;
+            e = 6;
             filter(6);
         })
         $("#wwe").click(function () {
-            e=7;
+            e = 7;
             filter(7);
         })
         $("#wwh").click(function () {
-            e=8;
+            e = 8;
             filter(8);
         })
         $("#wwt").click(function () {
-            e=9;
+            e = 9;
             filter(9);
         })
         $("#wwtm").click(function () {
-            e=10;
+            e = 10;
             filter(10);
         })
         $("#adven").click(function () {
-            e=11;
+            e = 11;
             filter(11);
         })
         $("#cyber").click(function () {
-            e=12;
+            e = 12;
             filter(12);
         })
         $("#informal").click(function () {
-            e=13;
+            e = 13;
             filter(13);
         })
 
@@ -1010,7 +1019,7 @@
                 listbyClub();
             } else if (eventFlag == 1) {
                 listbyEvent();
-            } else if(categoryFlag == 1){
+            } else if (categoryFlag == 1) {
                 filter(e);
             }
         });
