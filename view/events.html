@@ -538,7 +538,7 @@
     <script>
         //Dropdown select value
 
-        $(".dropdown-menu li a").click(function () {
+        $(".dropdown-menu>a").click(function () {
             var selText = $(this).text();
             console.log(selText)
             $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
