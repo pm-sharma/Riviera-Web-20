@@ -1004,7 +1004,7 @@
         //===========================================PAGINATION=====================================================
         $("#showMore").click(function () {
             limitnum = limitnum + 3;
-            if (clubFlag == 0 && eventFlag == 0) {
+            if (clubFlag == 0 && eventFlag == 0 && categoryFlag == 0) {
                 selectAll();
             } else if (clubFlag == 1) {
                 listbyClub();
