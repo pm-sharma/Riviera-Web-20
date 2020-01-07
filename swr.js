@@ -42,13 +42,19 @@ var filesToCache = [
     './assets/sponsors/cloud-clothing.png',
     './assets/sponsors/aviation-express-min.jpeg',
     './assets/sponsors/asian-paints-logo.png',
-    './assets/vit-img/faculty/Monica subashini.JPG',
-    './assets/vit-img/faculty/N Sharmila.JPG',
-    './assets/vit-img/faculty/Ramesh.JPG',
-    './assets/vit-img/faculty/Sasikumar.JPG',
     './assets/images/back1.jpeg',
     './assets/images/back2.jpeg',
-    './assets/images/back3.jpeg'
+    './assets/images/back3.jpeg',
+    './assets/vit-img/team/avp.jpg',
+    './assets/vit-img/team/vp.jpg',
+    './assets/vit-img/team/CV Sudheer.JPG',
+    './assets/vit-img/team/viswanathan.jpg',
+    './assets/vit-img/team/Sharmila.JPG',
+    './assets/vit-img/team/selvam.jpg',
+    './assets/vit-img/team/provc1-min.jpg',
+    './assets/vit-img/team/SAMUEL1-min.jpg',
+    './assets/vit-img/team/Raghuram-min.JPG',
+    './assets/vit-img/team/Ramesh(1)-min.JPG'
   ];
   
   self.addEventListener('install', function(e) {
