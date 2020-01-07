@@ -878,6 +878,11 @@
                     return response.json()
                 })
                 .then(data => {
+                    if (data.length < 5) {
+                            $("#showMore").css("display", "none");
+                        } else {
+                            $("#showMore").css("display", "inline-block");
+                        }
                     let output1 = '';
                     data.forEach(function (user) {
                         let len = user.url.length;
