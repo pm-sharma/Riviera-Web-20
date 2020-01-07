@@ -553,14 +553,17 @@
         });
     </script>
     <script type="text/javascript">
-        var limitnum = 5;
-        var clubFlag = 0;
-        var eventFlag = 0;
-        var showCheck = 0;
+        var limitnum     = 5;
+        var clubFlag     = 0;
+        var eventFlag    = 0;
+        var showCheck    = 0;
+        var e            = 0;
+        var categoryFlag =0;
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
             $("#loader").css("display", "block");
+            categoryFlag=0;
             limit = limitnum.toString();
             fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
@@ -640,6 +643,7 @@
         function listbyClub() {
             $("#loader").css("display", "block");
             clubFlag = 1;
+            categoryFlag=0;
             var query = $("#clubval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -728,6 +732,7 @@
         function listbyEvent() {
             $("#loader").css("display", "block");
             eventFlag = 1;
+            categoryFlag=0;
             var query1 = $("#eventval").val();
             limit = limitnum.toString();
             // $("#eventval").attr("disabled");
@@ -814,6 +819,8 @@
         });
         //============================================Filter========================================================
         function filter(i){
+            categoryFlag=1;
+            limit=limitnum.toString();
             $("#loader").css("display", "block");
             $("#showMore").css("display", "none");
             var cat = "";
@@ -861,8 +868,7 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +
-                    "&limit=10&offset=0", {
+            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat +"&limit=" + limit + "&offset=0", {
                         method: "get",
                         headers: {
                             'Content-Type': 'application/json'
@@ -934,45 +940,59 @@
             selectAll();
         })
         $("#premium").click(function () {
+            e=0;
             filter(0);
         })
         $("#preriv").click(function () {
+            e=1;
             filter(1);
         })
         $("#drama").click(function () {
+            e=2;
             filter(2);
         })
         $("#music").click(function () {
+            e=3;
             filter(3);
         })
         $("#dance").click(function () {
+            e=4;
             filter(4);
         })
         $("#wrkshp").click(function () {
+            e=5;
             filter(5);
         })
         $("#quiz").click(function () {
+            e=6;
             filter(6);
         })
         $("#wwe").click(function () {
+            e=7;
             filter(7);
         })
         $("#wwh").click(function () {
+            e=8;
             filter(8);
         })
         $("#wwt").click(function () {
+            e=9;
             filter(9);
         })
         $("#wwtm").click(function () {
+            e=10;
             filter(10);
         })
         $("#adven").click(function () {
+            e=11;
             filter(11);
         })
         $("#cyber").click(function () {
+            e=12;
             filter(12);
         })
         $("#informal").click(function () {
+            e=13;
             filter(13);
         })
 
@@ -981,10 +1001,12 @@
             limitnum = limitnum + 5;
             if (clubFlag == 0 && eventFlag == 0) {
                 selectAll();
-            } else if (clubFlag == 1 && eventFlag == 0) {
+            } else if (clubFlag == 1) {
                 listbyClub();
-            } else if (clubFlag == 0 && eventFlag == 1) {
+            } else if (eventFlag == 1) {
                 listbyEvent();
+            } else if(categoryFlag == 1){
+                filter(e);
             }
         });
     </script>
