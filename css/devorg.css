@@ -25,14 +25,20 @@
 }
 .cor-circle{
     float: left;
+    text-align: left;
+}
+.cor-circle img{
+    height: 150px !important;
+
 }
 .divider{
     float: left;
     display: inline-block;
-    padding-left: 100px;
+    padding-left: 110px;
 }
 .eachDeet{
     margin-bottom: 20px;
+    text-align: left;
 }
 
 @media (max-width: 768px){
