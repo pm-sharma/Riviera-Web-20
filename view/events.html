@@ -365,7 +365,7 @@
             .sportsdetails {
                 text-align: left;
             }
-            .button1 .btn{
+            .card-body .btn{
                 padding: 0.5rem 0.3rem;
                 font-size: 0.6rem;
             }
@@ -376,12 +376,12 @@
             display: none;
             color: #FFFFFF;
         }
-        .card .collapse{
+        .sec-one-cont .collapse{
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
         }
-        .card .collapsing{
+        .sec-one-cont .collapsing{
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
@@ -402,7 +402,7 @@
         .btn:focus {
             background-color: #0090C5;
         }
-        .button1 div button {
+        .card-body div button {
             columns: #0090c5;
             border: 2px solid #0090C5;
             border-radius: 5px;
@@ -416,10 +416,6 @@
             border: 2px solid #0090c5;
             border-radius: 100%;
         }
-        .button1{
-            width: 100%;
-
-        }
         .buttonholder{
             float: left;
             text-align: center;
@@ -430,6 +426,7 @@
         .buttonholder button{
             display: inline-block;
         }
+
     </style>
 </head>
 
@@ -610,7 +607,7 @@
         <div id="loader" style="text-align: center;margin-top:30px">
             <span id="pw" style="display: inline-block;">Loading Events</span>
         </div>
-        <div class="sec-one-cont accordion" id="output" style="padding-top:20px">
+        <div class="sec-one-cont" id="output" style="padding-top:20px" role="tablist" aria-multiselectable="true">
             <!--output from fetch is inserted here-->
         </div>
     </div>
@@ -646,7 +643,7 @@
             $("#loader").css("display", "block");
             categoryFlag = 0;
             limit = limitnum.toString();
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?limit=" + limit + "&offset=0", {
+            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
                     headers: {
                         'Content-Type': 'application/json'
@@ -670,15 +667,11 @@
                                 url1 += user.url[p];
                             }
                         }
-                        console.log(url1)
                         output += `
-            <div class="card">
-                <div class="card-header">
-                    <a data-toggle="collapse" data-target="#${user.event_id}" role="button" aria-expanded="false" aria-controls="${user.event_id}">
-                        <div class="row eventinfo">
+                        <div class="row eventinfo";>
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                             </img>
-                            <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
                                 <h2 style="text-align: left">${user.name}</h2>
                                 <div class="row detbelow">
                                         <div class="sportsdetails col-sm-12 col-lg-7">
@@ -694,26 +687,20 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
-                                            <div class="redbg"> Register </div>
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.event_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Register</a>
                                         </div>
                                 </div>
-                             </div>
+                            </div>
                         </div>
-                    </a>
-                </div>
             
-                <div id="${user.event_id}" class="collapse" data-parent="#output">
-                  <div class="card-body">
-                        <p>${user.description}</p>
-                        <div class="button1">
+                        <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
                             <div class="col-6 buttonholder"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
-                            </div>
-                            <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
-                            </div>
+                                    </div>
+                                    <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
+                                    </div>    
+                            <p id="desc_${user.event_id}">${user.description}</p>
+                                    
                         </div>
-                  </div>
-                </div>
-              </div>
           `;
                     });
                     $("#loader").css("display", "none");
@@ -737,7 +724,7 @@
                 selectAll();
                 clubFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=club&query=" + query + "&limit=" +
+                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=club&query=" + query + "&limit=" +
                         limit + "&offset=0", {
                             method: "get",
                             headers: {
@@ -766,43 +753,40 @@
                                 }
                             }
                             output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="row detbelow">
-                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            </div>
-                            <div class="row detbelow">
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                        <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+                            </img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                            <div class="row">
+                                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                            </div>
+                                            <div class="row detbelow">
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.event_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Register</a>
+                                        </div>
+                                        
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.event_id}"> Register </div>
+            
+                        <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
+                            <div class="col-6 buttonholder"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
+                                    </div>
+                                    <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
+                                    </div>    
+                            <p id="desc_${user.event_id}">${user.description}</p>
+                                    
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.event_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                         });
                         $("#loader").css("display", "none");
@@ -826,7 +810,7 @@
                 selectAll();
                 eventFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=event&query=" + query1 +
+                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=event&query=" + query1 +
                         "&limit=" + limit + "&offset=0", {
                             method: "get",
                             headers: {
@@ -856,43 +840,39 @@
                             }
 
                             output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="row">
-                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            </div>
-                            <div class="row detbelow">
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
+                            <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+                            </img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                            <div class="row">
+                                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                            </div>
+                                            <div class="row detbelow">
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.event_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Register</a>
+                                        </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.event_id}"> Register </div>
+            
+                        <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
+                            <div class="col-6 buttonholder"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
+                                    </div>
+                                    <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
+                                    </div>    
+                            <p id="desc_${user.event_id}">${user.description}</p>
+                                    
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.event_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                         });
                         $("#loader").css("display", "none");
@@ -954,7 +934,7 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/login/eventDisplay/?type=category&query=" + cat + "&limit=" +
+            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=category&query=" + cat + "&limit=" +
                     limit + "&offset=0", {
                         method: "get",
                         headers: {
@@ -984,43 +964,39 @@
                             }
                         }
                         output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="row">
-                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
-                            </div>
-                            <div class="row detbelow">
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>
+                        <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+                            </img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                            <div class="row">
+                                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                            </div>
+                                            <div class="row detbelow">
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.event_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Register</a>
+                                        </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.event_id}"> Register </div>
+            
+                        <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
+                            <div class="col-6 buttonholder"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
+                                    </div>
+                                    <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
+                                    </div>    
+                            <p id="desc_${user.event_id}">${user.description}</p>
+                                    
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.event_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                     });
                     $("#loader").css("display", "none");
