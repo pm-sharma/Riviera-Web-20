@@ -107,6 +107,12 @@
             height: auto;
             color: white;
         }
+        a{
+            color: white;
+        }
+        a:hover{
+            color: white;
+        }
 
         p {
             margin-top: auto;
@@ -303,6 +309,13 @@
                 margin-right: 20px;
                 margin-left: 20px;
             }
+            .collapse, .collapsing{
+                margin-right: 20px !important;
+                margin-left: 20px !important;
+            }
+            .fa-circle{
+                display: none;
+            }
 
             .filter {
                 min-width: 250px;
@@ -353,11 +366,65 @@
             .sportsdetails {
                 text-align: left;
             }
+            .btn{
+                padding: 0.5rem 0.3rem;
+                font-size: 0.6rem;
+            }
         }
+
 
         #loader {
             display: none;
             color: #FFFFFF;
+        }
+        .collapse, .collapsing{
+            margin-right: 50px;
+            margin-left: 50px;
+            background-color: #282828;
+        }
+        .card-body{
+            background-color: #282828;
+            box-shadow: none;
+            border-radius: 0; 
+        }
+        .card{
+            background-color: #121212;
+            box-shadow: none;
+            border-radius: 0; 
+        }
+        button:hover {
+            color: white !important;
+        }
+        .btn:focus {
+            background-color: #0090C5;
+        }
+        .button1 div button {
+            columns: #0090c5;
+            border: 2px solid #0090C5;
+            border-radius: 5px;
+            background-color: #282828;
+            margin: 0px;
+            display: inline-block;
+            height: 3.2rem;
+            width: 75%;
+        }
+        .fa-circle{
+            border: 2px solid #0090c5;
+            border-radius: 100%;
+        }
+        .button1{
+            width: 100%;
+
+        }
+        .buttonholder{
+            float: left;
+            text-align: center;
+            background-color: #282828;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .buttonholder button{
+            display: inline-block;
         }
     </style>
 </head>
@@ -534,7 +601,7 @@
         <div id="loader" style="text-align: center;margin-top:30px">
             <span id="pw" style="display: inline-block;">Loading Events</span>
         </div>
-        <div class="sec-one-cont" style="padding-top:20px" id="output">
+        <div class="sec-one-cont accordion" id="output" style="padding-top:20px">
             <!--output from fetch is inserted here-->
         </div>
     </div>
@@ -547,9 +614,7 @@
 
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
         //Dropdown select value
 
@@ -599,43 +664,47 @@
                         }
                         console.log(url1)
                         output += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="row">
-                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+            <div class="card">
+                <div class="card-header">
+                    <a data-toggle="collapse" href="#${user.event_id}" role="button" aria-expanded="false" aria-controls="${user.event_id}">
+                        <div class="row eventinfo">
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
+                            </img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                            <div class="row">
+                                                <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                            </div>
+                                            <div class="row detbelow">
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="redbg"> Register </div>
+                                        </div>
+                                </div>
+                             </div>
+                        </div>
+                </div>
+            
+                <div id="${user.event_id}" class="collapse" data-parent="#output">
+                  <div class="card-body">
+                        <p>${user.description}</p>
+                        <div class="button1">
+                            <div class="col-6 buttonholder"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
                             </div>
-                            <div class="row detbelow">
-                                <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
-                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                            <div class="col-6 buttonholder"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.event_id}"> Register </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
-
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.event_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+              </div>
           `;
                     });
                     $("#loader").css("display", "none");
