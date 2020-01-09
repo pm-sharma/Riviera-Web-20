@@ -236,7 +236,7 @@
 
             .details {
                 margin: 0 15px;
-                margin-right: 60px;
+                margin-right: 40px;
             }
 
         }
@@ -442,7 +442,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -627,12 +627,21 @@
                         console.log(len)
                         let x = 0;
                         let url1 = '';
+                        let date = '';
                         for (let p = 0; p < len; p++) {
                             if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
                                 x = 1;
                             } else {
                                 url1 += user.url[p];
                             }
+                        }
+
+                        if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
                         }
                         output += `
           <div class="row eventinfo">
@@ -643,7 +652,7 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;${date}</div>
                             <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
@@ -710,6 +719,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date = '';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -718,6 +728,13 @@
                                     url1 += user.url[p];
                                 }
                             }
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
@@ -727,7 +744,7 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>${date}</div>
                             <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
@@ -781,6 +798,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date = '';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -789,7 +807,13 @@
                                     url1 += user.url[p];
                                 }
                             }
-
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
@@ -799,7 +823,7 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>${date}</div>
                             <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
@@ -842,6 +866,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date ='';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -851,6 +876,13 @@
                                 }
                             }
 
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
           <div class="row eventinfo">
             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
@@ -860,7 +892,7 @@
                         <div class="sportsdetails col-sm-12 col-lg-7">
                             <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                             <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
+                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>${date}</div>
                             <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
                         </div>
                         <div class="col-sm-4">
