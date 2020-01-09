@@ -614,16 +614,15 @@
 
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
         //Dropdown select value
 
-        $(".dropdown-menu>a").click(function () {
-            var selText = $(this).text();
-            console.log(selText)
-            $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
-                ' <span class="caret"></span>');
-        });
+        // $(".dropdown-menu>a").click(function () {
+        //     var selText = $(this).text();
+        //     console.log(selText)
+        //     $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
+        //         ' <span class="caret"></span>');
+        // });
     </script>
     <script type="text/javascript">
         var limitnum = 3;
@@ -666,7 +665,7 @@
                         output += `
             <div class="card">
                 <div class="card-header">
-                    <a data-toggle="collapse" href="#${user.event_id}" role="button" aria-expanded="false" aria-controls="${user.event_id}">
+                    <a data-toggle="collapse" data-target="#${user.event_id}" role="button" aria-expanded="false" aria-controls="${user.event_id}">
                         <div class="row eventinfo">
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
                             </img>
@@ -691,6 +690,7 @@
                                 </div>
                              </div>
                         </div>
+                    </a>
                 </div>
             
                 <div id="${user.event_id}" class="collapse" data-parent="#output">
