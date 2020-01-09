@@ -18,7 +18,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
     </script>
     <!-- Bootstrap core JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js">
     </script>
@@ -106,10 +108,12 @@
             height: auto;
             color: white;
         }
-        a{
+
+        a {
             color: white;
         }
-        a:hover{
+
+        a:hover {
             color: white;
         }
 
@@ -242,9 +246,8 @@
 
             li,
             .sportsdetails {
-                margin-left: 22px;
+                margin-left: 0px;
                 margin-right: 12px;
-
             }
 
             .details {
@@ -308,11 +311,14 @@
                 margin-right: 20px;
                 margin-left: 20px;
             }
-            .collapse, .collapsing{
+
+            .collapse,
+            .collapsing {
                 margin-right: 20px !important;
                 margin-left: 20px !important;
             }
-            .fa-circle{
+
+            .fa-circle {
                 display: none;
             }
 
@@ -327,6 +333,17 @@
 
             .funbtn {
                 padding-top: 40px;
+            }
+
+            /* footer styles */
+            .footer-logo {
+                height: 8vh;
+                width: auto;
+                margin-left: 10px;
+            }
+
+            .rb {
+                border-right: 0 !important;
             }
         }
 
@@ -365,7 +382,8 @@
             .sportsdetails {
                 text-align: left;
             }
-            .button1 .btn{
+
+            .button1 .btn {
                 padding: 0.5rem 0.3rem;
                 font-size: 0.6rem;
             }
@@ -376,32 +394,39 @@
             display: none;
             color: #FFFFFF;
         }
-        .card .collapse{
+
+        .card .collapse {
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
         }
-        .card .collapsing{
+
+        .card .collapsing {
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
         }
-        .card-body{
+
+        .card-body {
             background-color: #282828;
             box-shadow: none;
-            border-radius: 0; 
+            border-radius: 0;
         }
-        .card{
+
+        .card {
             background-color: #121212;
             box-shadow: none;
-            border-radius: 0; 
+            border-radius: 0;
         }
+
         button:hover {
             color: white !important;
         }
+
         .btn:focus {
             background-color: #0090C5;
         }
+
         .button1 div button {
             columns: #0090c5;
             border: 2px solid #0090C5;
@@ -412,23 +437,48 @@
             height: 3.2rem;
             width: 75%;
         }
-        .fa-circle{
+
+        .fa-circle {
             border: 2px solid #0090c5;
             border-radius: 100%;
         }
-        .button1{
+
+        .button1 {
             width: 100%;
 
         }
-        .buttonholder{
+
+        .buttonholder {
             float: left;
             text-align: center;
             background-color: #282828;
             margin-bottom: 10px;
             margin-top: 10px;
         }
-        .buttonholder button{
+
+        .buttonholder button {
             display: inline-block;
+        }
+
+        /* Contact Us styles */
+        .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+        .content p {
+            color: white;
+            font-size: 16px
         }
     </style>
 </head>
@@ -621,6 +671,48 @@
     <img src="" alt="">
 
 
+
+    <!-- Footer -->
+
+    <div class="contact-us" style="padding-bottom: 80px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="../assets/images/logo.png" class="footer-logo">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <p>emailaddress@xyz.abc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Latest compiled and minified JavaScript -->
     <script>
