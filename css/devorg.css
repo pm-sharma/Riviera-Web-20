@@ -20,7 +20,7 @@
 .deets{
     float: left;
     color: white;
-    margin-top: 0px;
+    margin-top: 20px;
     padding-left: 15px;
 }
 .cor-circle{
@@ -53,6 +53,7 @@
     max-width: 180px;
     overflow: auto;
     -ms-overflow-style: none;
+    white-space: nowrap;
 }
 .eachDeet::-webkit-scrollbar {
     display: none;
