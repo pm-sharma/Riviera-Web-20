@@ -72,59 +72,10 @@
         }
     </script>
     <style>
-        body{
+        body {
             font-family: montserrat;
         }
-        @media (min-width: 780px) {
-            .nav-desk {
-                height: 50px;
-            }
 
-            .x {
-                margin-left: 0;
-                color: white;
-                transform: skewX(-15deg);
-                flex-wrap: wrap;
-            }
-
-            .headings {
-                transform: skewX(15deg);
-            }
-
-            li {
-                padding-left: 42px;
-            }
-
-            .mainInfo {
-                margin: 0 5vw;
-            }
-
-            .moreInfoBtn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%)
-            }
-        }
-
-        @media (max-width: 780px) {
-            .riviera-logo {
-                height: 100px;
-            }
-
-            .landing-heading {
-                height: 15px;
-            }
-
-            .hellobro {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                z-index: 1030;
-                min-height: 8vh;
-            }
-        }
 
         /* .navbar-nav>.active>a {
             color: aqua;
@@ -206,6 +157,84 @@
         /* .m10{
             margin-top: 10px;
         } */
+
+        /* Contact Us styles */
+        .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+
+        @media (min-width: 780px) {
+            .nav-desk {
+                height: 50px;
+            }
+
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+
+            .headings {
+                transform: skewX(15deg);
+            }
+
+            li {
+                padding-left: 42px;
+            }
+
+            .mainInfo {
+                margin: 0 5vw;
+            }
+
+            .moreInfoBtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%)
+            }
+
+        }
+
+        @media (max-width: 780px) {
+            .riviera-logo {
+                height: 100px;
+            }
+
+            .landing-heading {
+                height: 15px;
+            }
+
+            .hellobro {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1030;
+                min-height: 8vh;
+            }
+
+            .footer-logo {
+                height: 8vh;
+                width: auto;
+                margin-left: 10px;
+            }
+            .rb{
+                border-right: 0 !important;
+            }
+        }
     </style>
 </head>
 
@@ -254,7 +283,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./view/teamriviera.html">
-                                    <p class="headings m10">TeamRiviera</p>
+                                    <p class="headings m10">Team Riviera</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -263,8 +292,10 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./view/sponsors.html">
-                                    <p class="headings">Sponsers & Partners</p>
+                                <a class="nav-link"
+                                    href="http://info.vit.ac.in/map/source/vit-university-map-no-numbers.jpg"
+                                    download="campus_map" title="campus_map">
+                                    <p class="headings">Campus Map</p>
                                 </a>
                             </li>
                             <!-- <li class="nav-item">
@@ -338,7 +369,17 @@
             </div>
         </div>
         <div class="row content" style="margin : 0 5vw;padding: 15px">
-Vellore Institute of Technology (VIT) is a private deemed university and an Institute of Eminence located in the city of Vellore, Tamil Nadu, India. Founded in 1984, as Vellore Engineering College, by G. Viswanathan, the institution offers 20 undergraduate, 34 postgraduate, four integrated and four research programs. It has campuses in Vellore, Chennai, Bhopal and Amaravati.VIT was established with the aim of providing quality higher education on par with international standards. The campuses have a cosmopolitan culture and house over 80k students across the 4 campuses, out of which the Vellore campus is home to about 40k students.</div>
+            <p style="text-align: justify;">
+                Vellore Institute of Technology (VIT) is a private deemed university and an Institute of Eminence
+                located in the city of Vellore, Tamil Nadu, India. Founded in 1984, as Vellore Engineering College, by
+                G. Viswanathan, the institution offers 20 undergraduate, 34 postgraduate, four integrated and four
+                research programs. It has campuses in Vellore, Chennai, Bhopal and Amaravati.VIT was established with
+                the aim of providing quality higher education on par with international standards. The campuses have a
+                cosmopolitan culture and house over 80k students across the 4 campuses, out of which the Vellore campus
+                is home to about 40k students.
+        </div>
+        </p><br>
+        <br>
 
         <div class="container-fluid">
             <div class="row" style="text-align: center">
@@ -348,41 +389,49 @@ Vellore Institute of Technology (VIT) is a private deemed university and an Inst
             </div>
         </div>
         <div class="row content" style="margin : 0 5vw;padding: 15px">
-            <p style="text-align: justify;">Riviera - the annual ISO certified sports, and cultural fest of VIT University, with all its splendor and eminence - is the biggest in South India one that boasts of the most prominent entertainers in the Indian entertainment scenario. Since its inception in 2000, Riviera has grown not only in terms of student participation but also the quality and the quantity of events, media coverage and international recognition has reached insurmountable heights. The aim is not only to nurture
-leadership qualities among students, but also to bring oneness among the student communities. This 4-day saga witnesses over 38,000 students from 700 universities and colleges from 30 countries in Asia, Europe and Africa. From swimming to cricket, from comedy shows to music concerts, from literary events to gaming competitions, from marathon to cultural parade, Riviera has it all!</p><br>
+            <p style="text-align: justify;">Riviera - the annual ISO certified sports, and cultural fest of VIT
+                University, with all its splendor and eminence - is the biggest in South India one that boasts of the
+                most prominent entertainers in the Indian entertainment scenario. Since its inception in 2000, Riviera
+                has grown not only in terms of student participation but also the quality and the quantity of events,
+                media coverage and international recognition has reached insurmountable heights. The aim is not only to
+                nurture
+                leadership qualities among students, but also to bring oneness among the student communities. This 4-day
+                saga witnesses over 38,000 students from 700 universities and colleges from 30 countries in Asia, Europe
+                and Africa. From swimming to cricket, from comedy shows to music concerts, from literary events to
+                gaming competitions, from marathon to cultural parade, Riviera has it all!</p><br>
             <br>
         </div>
 
         <div class="row mainInfo" style="padding: 15px">
             <div class="col-lg-4 col-12 cardsTop">
                 <a href="./view/events.html">
-                <div class="card">
-                    <img src="assets/images/stage-guy.jpg" class="card-img-top" alt="Event">
-                    <div class="card-body">
-                        <h5 class="card-title">Events</h5>
+                    <div class="card">
+                        <img src="assets/images/stage-guy.jpg" class="card-img-top" alt="Event">
+                        <div class="card-body">
+                            <h5 class="card-title">Events</h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-4 col-12 cardsTop">
                 <a href="./view/sports.html">
-                <div class="card">
-                    <img src="assets/images/sports.jpg" class="card-img-top" alt="Sports">
-                    <div class="card-body">
-                        <h5 class="card-title">Sports</h5>
+                    <div class="card">
+                        <img src="assets/images/sports.jpg" class="card-img-top" alt="Sports">
+                        <div class="card-body">
+                            <h5 class="card-title">Sports</h5>
+                        </div>
                     </div>
-                </div>
                 </a>
 
             </div>
             <div class="col-lg-4 col-12 cardsTop">
                 <a href="./view/proshow.html">
-                <div class="card">
-                    <img src="assets/images/proshow2.jpg" class="card-img-top" alt="Sonu Nigam">
-                    <div class="card-body">
-                        <h5 class="card-title">Proshows</h5>
+                    <div class="card">
+                        <img src="assets/images/proshow2.jpg" class="card-img-top" alt="Sonu Nigam">
+                        <div class="card-body">
+                            <h5 class="card-title">Proshows</h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
         </div>
@@ -398,7 +447,7 @@ leadership qualities among students, but also to bring oneness among the student
             <div class="col-lg-4 col-12 cardsTop" style="text-align: center;margin:auto">
 
                 <div class="card">
-                    <img src="assets/images/pepsi.png" class="card-img-top" alt="Pepsi" >
+                    <img src="assets/images/pepsi.png" class="card-img-top" alt="Pepsi">
                     <div class="card-body">
                         <h5 class="card-title">Title Sponsor</h5>
                     </div>
@@ -409,13 +458,50 @@ leadership qualities among students, but also to bring oneness among the student
             <div style="text-align: center;margin:auto" class="col-lg-4 col-12">
                 <div class="moreInfoBtn">
                     <a href="./view/sponsors.html">
-                        <button style="color: white;border-radius: 6px;background-color: #0090C5;margin-top: 30px;" type="button"
-                            class="btn">More Info</button></a>
+                        <button style="color: white;border-radius: 6px;background-color: #0090C5;margin-top: 30px;"
+                            type="button" class="btn">More Info</button></a>
                 </div>
             </div>
         </div>
-
-
+    </div>
+    <div class="contact-us" style="padding-bottom: 80px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="./assets/images/logo.png" class="footer-logo">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <p>emailaddress@xyz.abc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
