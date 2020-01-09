@@ -116,6 +116,16 @@
             .sportsImg {
                 background-image: url("../assets/images/sports1.png");
             }
+                        /* footer styles */
+                        .footer-logo {
+                height: 8vh;
+                width: auto;
+                margin-left: 10px;
+            }
+
+            .rb {
+                border-right: 0 !important;
+            }
         }
 
         @media(max-width: 921px) {
@@ -249,6 +259,27 @@
         } */
         .nav-link{
             padding-right: 0 !important;
+        }
+                /* Contact Us styles */
+                .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+
+        .content p {
+            color: white;
+            font-size: 16px
         }
     </style>
 </head>
@@ -558,6 +589,48 @@
             </ul>
         </div>
     </div>
+        <!-- Footer -->
+
+        <div class="contact-us" style="padding-bottom: 80px;">
+            <div class="container-fluid">
+                <div class="row" style="text-align: center">
+                    <p
+                        style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                        Contact Us</p><br>
+                </div>
+            </div>
+            <div class="container-fluid" style="padding-top: 70px;">
+                <div class="row">
+                    <div class="col-12 col-lg-6 rb"
+                        style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                        <img src="../assets/images/logo.png" class="footer-logo">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-2">
+                                <i class="fas fa-map-marker-alt footer-icons"></i>
+                            </div>
+                            <div class="col-9 col-lg-8">
+                                <div class="content">
+                                    <p>Vellore Institute of Technology</p>
+                                    <p>Vellore Campus</p>
+                                    <p>Vellore - 632014</p>
+                                    <p>TamilNadu, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 30px;">
+                            <div class="col-3 col-lg-2">
+                                <i class="far fa-envelope footer-icons"></i>
+                            </div>
+                            <div class="col-9 col-lg-8 content">
+                                <p>emailaddress@xyz.abc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script type="text/javascript">
         $("#cng1").click(function () {

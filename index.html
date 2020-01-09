@@ -76,56 +76,6 @@
             font-family: montserrat;
         }
 
-        @media (min-width: 780px) {
-            .nav-desk {
-                height: 50px;
-            }
-
-            .x {
-                margin-left: 0;
-                color: white;
-                transform: skewX(-15deg);
-                flex-wrap: wrap;
-            }
-
-            .headings {
-                transform: skewX(15deg);
-            }
-
-            li {
-                padding-left: 42px;
-            }
-
-            .mainInfo {
-                margin: 0 5vw;
-            }
-
-            .moreInfoBtn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%)
-            }
-        }
-
-        @media (max-width: 780px) {
-            .riviera-logo {
-                height: 100px;
-            }
-
-            .landing-heading {
-                height: 15px;
-            }
-
-            .hellobro {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                z-index: 1030;
-                min-height: 8vh;
-            }
-        }
 
         /* .navbar-nav>.active>a {
             color: aqua;
@@ -207,6 +157,84 @@
         /* .m10{
             margin-top: 10px;
         } */
+
+        /* Contact Us styles */
+        .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+
+        @media (min-width: 780px) {
+            .nav-desk {
+                height: 50px;
+            }
+
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+
+            .headings {
+                transform: skewX(15deg);
+            }
+
+            li {
+                padding-left: 42px;
+            }
+
+            .mainInfo {
+                margin: 0 5vw;
+            }
+
+            .moreInfoBtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%)
+            }
+
+        }
+
+        @media (max-width: 780px) {
+            .riviera-logo {
+                height: 100px;
+            }
+
+            .landing-heading {
+                height: 15px;
+            }
+
+            .hellobro {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1030;
+                min-height: 8vh;
+            }
+
+            .footer-logo {
+                height: 8vh;
+                width: auto;
+                margin-left: 10px;
+            }
+            .rb{
+                border-right: 0 !important;
+            }
+        }
     </style>
 </head>
 
@@ -264,7 +292,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://info.vit.ac.in/map/source/vit-university-map-no-numbers.jpg" download="campus_map" title="campus_map">
+                                <a class="nav-link"
+                                    href="http://info.vit.ac.in/map/source/vit-university-map-no-numbers.jpg"
+                                    download="campus_map" title="campus_map">
                                     <p class="headings">Campus Map</p>
                                 </a>
                             </li>
@@ -433,8 +463,45 @@
                 </div>
             </div>
         </div>
-
-
+    </div>
+    <div class="contact-us" style="padding-bottom: 80px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="./assets/images/logo.png" class="footer-logo">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <p>emailaddress@xyz.abc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
