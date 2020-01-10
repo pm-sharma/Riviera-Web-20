@@ -126,17 +126,13 @@
             margin-right: 50px;
         }
 
-        .row {
-            width: 130%;
-        }
-
         .vl {
             border-left: 6px solid #0090C5;
             height: 280px;
             position: absolute;
             left: 50%;
             margin-left: -3px;
-            top: 35%;
+            top: 30%;
         }
 
         .circle {
@@ -170,93 +166,8 @@
         .nav-link {
             padding-right: 0 !important;
         }
-
-        @media (min-width: 780px) {
-            .x {
-                margin-left: 0;
-                color: white;
-                transform: skewX(-15deg);
-                flex-wrap: wrap;
-            }
-
-            .headings {
-                transform: skewX(15deg);
-            }
-
-            li {
-                margin-left: 22px;
-                margin-right: 22px;
-            }
-
-        }
-
-        @media (max-width: 780px) {
-            .hellobro {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                z-index: 1030;
-                min-height: 10vh;
-            }
-
-            .topnavwidth {
-                width: 102%;
-            }
-
-            .regbtn {
-                margin-top: -5px;
-            }
-
-            .vl,
-            .circle {
-                display: none;
-            }
-
-            .timeline>p {
-                display: none;
-            }
-
-            .mb-day {
-                text-align: center;
-                margin-top: 20%;
-                margin-left: 10%;
-                font-size: 25px;
-                display: block;
-                font-weight: 500;
-            }
-
-            .row {
-                width: 100%;
-            }
-
-            .card {
-                margin: auto;
-            }
-
-            .headingname {
-                cursor: default;
-                user-select: none;
-            }
-
-            .coming-soon {
-                font-size: 30px;
-            }
-
-            /* footer styles */
-            .footer-logo {
-                height: 8vh;
-                width: auto;
-                margin-left: 10px;
-            }
-
-            .rb {
-                border-right: 0 !important;
-            }
-        }
-
-        /* Contact Us styles */
-        .contact-us {
+               /* Contact Us styles */
+               .contact-us {
             background-color: #282828;
         }
 
@@ -276,17 +187,129 @@
             color: white;
             font-size: 16px
         }
+
+        .footerdeet {
+            padding-left: 120px;
+        }
+        .proshowDiv{
+            height:520px;
+        }
+        .w130{
+            width: 100%;
+            }
+
+        @media (min-width: 780px) {
+            .x {
+                margin-left: 0;
+                color: white;
+                transform: skewX(-15deg);
+                flex-wrap: wrap;
+            }
+
+            .headings {
+                transform: skewX(15deg);
+            }
+
+            li {
+                margin-left: 0px;
+                margin-right: 12px;
+            }
+        }
+        @media(max-width: 1200px){
+            .circle, .vl{
+                display: none;
+            }
+            .proshowDiv{
+                height: auto;
+            }
+        }
+        @media(min-width:1200px){
+            main{
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .hellobro {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1030;
+                min-height: 10vh;
+            }
+
+            .topnavwidth {
+                width: 102%;
+            }
+
+            .regbtn {
+                margin-top: -5px;
+            }
+            .mb-day {
+                text-align: center;
+                margin-top: 20%;
+                margin-left: 10%;
+                font-size: 25px;
+                display: block;
+                font-weight: 500;
+            }  
+
+            .vl,
+            .circle {
+                display: none;
+            }
+
+            .timeline>p {
+                display: none;
+            }
+
+            .w130 {
+                width: 100%;
+            }
+
+            .card {
+                margin: auto;
+            }
+
+            .headingname {
+                cursor: default;
+                user-select: none;
+            }
+
+            .coming-soon {
+                font-size: 30px;
+            }
+
+            /* footer styles */
+            .footer-logo {
+                /* height: 8vh; */
+                width: auto;
+                margin-left: 10px;
+            }
+
+            .rb {
+                border-right: 0 !important;
+            }
+        }
+        @media(max-width: 575px) {
+            .footerdeet {
+                padding-left: 50px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="sec-one">
+    <div class="sec-one" style="height: 45vh;border-bottom: 4px solid #0090C5;">
         <!-- Adding coming soon -->
-        <div style="text-align: center;width: 100vw;">
+        <!-- <div style="text-align: center;width: 100vw;">
             <div style="margin: auto auto;position: absolute;top: 45%;left:50%;transform: translate(-50%,-50%);">
                 <div class="coming-soon">Coming Soon!</div>
             </div>
-        </div>
+        </div> -->
+
+        <!-- Navbar -->
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -331,7 +354,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p class="headings">Team Riviera</p>
+                                        <p class="headings">Patrons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -346,7 +369,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -374,17 +397,17 @@
                 <button
                     style="transform :scale(0.75);border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
-        <!-- <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
+
+        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
                     <h1 style="cursor: default; user-select: none;">ProShows</h1>
                 </div>
-
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!-- Reg Modal -->
@@ -402,119 +425,132 @@
     </div>
 
 
-    <!-- <div class="proshowDetails" class="container-fluid"> -->
-    <!-- <div class="sec-one-cont"> -->
-    <!-- <div class="col-sm-12 " style="height: 650px;"> -->
-    <!-- <main>
-                <div class="container-fluid">
-                    <div class="row">
-                        <p class="mb-day">DAY 1 </p>
-                        <div class="col-sm-10 col-lg-5 timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sonu Nigam</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+    <div class="proshowDetails" class="container-fluid">
+        <div class="sec-one-cont container-fluid">
+            <div class="row">
+                <div class="col-sm-12 proshowDiv">
+                    <main>
+                        <div class="container-fluid">
+                            <div class="row w130">
+                                <p class="mb-day">DAY 1 </p>
+                                <div class="col-sm-10 col-lg-5 col-md-5 timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/proshows/sid.jpg" class="card-img-top" alt="Sid">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sid Sriram</h5>
+                                            <p class="card-text">Ever been to a concert where the energy is electrifying?
+                                                If not, then this musical beast with his 14 Best Playback Singer Awards will blow your mind!
+                                                We are proud to present you the artist for Day 1 of Riviera2020 ProShows - Sid Sriram</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 col-lg-5 col-md-5 timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/proshows/zakir.jpg" class="card-img-top" alt="Zakir Khan">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Zakir Khan</h5>
+                                            <p class="card-text">With his name synonymous with Comedy, we, with are hearts ready to melt are ready for this beautiful soul.
+                                               &nbsp; We are proud to present you the artist for Day 1 of Riviera2020 ProShows - Zakir Khan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-lg-2 col-md-2 timeline">
+                                    <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
+                                    <div class="vl"></div>
+                                    <div class="circle">
+                                        <div
+                                            style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-10 col-lg-5 timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ayushmann Khurrana</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+                            <!-- <div class="row w130">
+                                <p class="mb-day">DAY 2</p>
+                                <div class="col-sm-10 col-lg-5  timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sonu Nigam</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make
+                                                up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-lg-2 timeline">
-                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
-                            <div class="vl"></div>
-                            <div class="circle">
-                                <div style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="mb-day">DAY 2</p>
-                        <div class="col-sm-10 col-lg-5  timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sonu Nigam</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+                                <div class="col-sm-10 col-lg-5  timeline">
+                                    <div class="card" style="width: 20rem;">
+                                        <img src="../assets/images/proshow1.png" class="card-img-top"
+                                            alt="Ayushmann Khurrana">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ayushmann Khurrana</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make
+                                                up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-10 col-lg-5  timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ayushmann Khurrana</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+                                <div class="col-sm-2 timeline">
+                                    <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
+                                    <div class="vl"></div>
+                                    <div class="circle">
+                                        <div
+                                            style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="col-sm-2 timeline">
-                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
-                            <div class="vl"></div>
-                            <div class="circle">
-                                <div style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-        <!-- Footer -->
-
-        <!-- <div class="contact-us" style="padding-bottom: 80px;">
-            <div class="container-fluid">
-                <div class="row" style="text-align: center">
-                    <p
-                        style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
-                        Contact Us</p><br>
+                    </main>
                 </div>
             </div>
-            <div class="container-fluid" style="padding-top: 70px;">
-                <div class="row">
-                    <div class="col-12 col-lg-6 rb"
-                        style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
-                        <img src="../assets/images/logo.png" class="footer-logo">
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-3 col-lg-2">
-                                <i class="fas fa-map-marker-alt footer-icons"></i>
-                            </div>
-                            <div class="col-9 col-lg-8">
-                                <div class="content">
-                                    <p>Vellore Institute of Technology</p>
-                                    <p>Vellore Campus</p>
-                                    <p>Vellore - 632014</p>
-                                    <p>TamilNadu, India</p>
-                                </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="contact-us" style="padding-bottom: 80px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb"
+                    style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="../assets/images/logo.png" class="footer-logo">
+                </div>
+                <div class="col-12 col-lg-6 footerdeet">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
                             </div>
                         </div>
-                        <div class="row" style="margin-top: 30px;">
-                            <div class="col-3 col-lg-2">
-                                <i class="far fa-envelope footer-icons"></i>
-                            </div>
-                            <div class="col-9 col-lg-8 content">
-                                <p>emailaddress@xyz.abc</p>
-                            </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <a style="text-decoration: none;"
+                                href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+    </div>
+
+
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

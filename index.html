@@ -176,9 +176,9 @@
         }
 
         @media (min-width: 780px) {
-            .nav-desk {
+            /* .nav-desk {
                 height: 50px;
-            }
+            } */
 
             .x {
                 margin-left: 0;
@@ -192,7 +192,8 @@
             }
 
             li {
-                padding-left: 42px;
+                padding-left: 6px;
+                padding-right: 6px;
             }
 
             .mainInfo {
@@ -235,13 +236,21 @@
                 border-right: 0 !important;
             }
         }
+        .footerdeet{
+            padding-left: 120px;
+        }
+        @media(max-width: 575px) {
+            .footerdeet{
+            padding-left: 50px;
+        } 
+        }
     </style>
 </head>
 
 <body>
     <div style="height: 100vh" class="sec-one">
 
-        <div class="container">
+        <div class="container" style="max-width: 1200px;">
             <div class="x">
                 <!--Navbar-->
                 <nav class="navbar navbar-expand-lg navbar-dark hellobro">
@@ -283,12 +292,22 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./view/teamriviera.html">
-                                    <p class="headings m10">Team Riviera</p>
+                                    <p class="headings m10">Patrons</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./view/ambassador.html">
                                     <p class="headings">Campus Ambassador</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./view/devorg.html">
+                                    <p class="headings">Developers & Organizers</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./view/sponsors.html">
+                                    <p class="headings">Sponsors & Partners</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -338,7 +357,7 @@
                 <div style="font-weight: 800; margin-top: 10px; font-size: 20px;cursor: default; user-select: none;">
                     12th - 15th February</div>
                 <button style="border: 2px solid #FFFFFF;color: white;border-radius: 6px" type="button"
-                    class="btn btn-primary-outline" data-toggle="modal" data-target="#reg">Register</button>
+                    class="btn btn-primary-outline" data-toggle="modal" onclick="window.location.href = 'view/proshow.html'">Register</button>
             </div>
         </div>
 
@@ -468,7 +487,7 @@
         <div class="container-fluid">
             <div class="row" style="text-align: center">
                 <p
-                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    style="text-align: center;margin:20px auto 0;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
                     Contact Us</p><br>
             </div>
         </div>
@@ -477,7 +496,7 @@
                 <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="./assets/images/logo.png" class="footer-logo">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 footerdeet">
                     <div class="row">
                         <div class="col-3 col-lg-2">
                             <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -496,7 +515,7 @@
                             <i class="far fa-envelope footer-icons"></i>
                         </div>
                         <div class="col-9 col-lg-8 content">
-                            <p>emailaddress@xyz.abc</p>
+                            <a style="text-decoration: none; color: white;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>

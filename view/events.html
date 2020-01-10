@@ -73,6 +73,7 @@
             margin-right: 15vh;
             margin-bottom: 2vh;
             min-width: 145px;
+            color: #FFFFFF !important;
             /* position: absolute;
             top: 50%;
             left: 50%;
@@ -109,13 +110,13 @@
             color: white;
         }
 
-        a {
+        /* a {
             color: white;
-        }
+        } */
 
-        a:hover {
+        /* a:hover {
             color: white;
-        }
+        } */
 
         p {
             margin-top: auto;
@@ -230,6 +231,32 @@
         /* .m10{
             margin-top: 10px;
         } */
+        /* Contact Us styles */
+        .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+
+        .content p {
+            color: white;
+            font-size: 16px
+        }
+
+        .footerdeet {
+            padding-left: 120px;
+        }
+
         @media (min-width: 780px) {
 
 
@@ -337,7 +364,7 @@
 
             /* footer styles */
             .footer-logo {
-                height: 8vh;
+                /* height: 8vh; */
                 width: auto;
                 margin-left: 10px;
             }
@@ -382,7 +409,8 @@
             .sportsdetails {
                 text-align: left;
             }
-            .card-body .btn{
+
+            .card-body .btn {
                 padding: 0.5rem 0.3rem;
                 font-size: 0.6rem;
             }
@@ -393,15 +421,21 @@
             display: none;
             color: #FFFFFF;
         }
-        .sec-one-cont .collapse{
+
+        .sec-one-cont .collapse {
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
         }
-        .sec-one-cont .collapsing{
+
+        .sec-one-cont .collapsing {
             margin-right: 50px;
             margin-left: 50px;
             background-color: #282828;
+        }
+
+        .eventinfo img {
+            padding-left: 0px !important;
         }
 
         .card-body {
@@ -424,7 +458,7 @@
             background-color: #0090C5;
         }
 
-        .card-body div button {
+        .card-body button {
             columns: #0090c5;
             border: 2px solid #0090C5;
             border-radius: 5px;
@@ -433,13 +467,16 @@
             display: inline-block;
             height: 3.2rem;
             width: 75%;
+            padding: 0.84rem 0rem;
+            color: #FFFFFF !important;
         }
 
         .fa-circle {
             border: 2px solid #0090c5;
             border-radius: 100%;
         }
-        .buttonholder{
+
+        .buttonholder {
             float: left;
             text-align: center;
             background-color: #282828;
@@ -451,25 +488,14 @@
             display: inline-block;
         }
 
-        /* Contact Us styles */
-        .contact-us {
-            background-color: #282828;
-        }
 
-        .footer-icons {
-            color: white;
-            transform: scale(2);
-            margin-left: 40px;
-            margin-top: 7px;
-        }
-
-        .footer-logo {
-            height: 15vh;
-            width: auto;
-        }
-        .content p {
-            color: white;
-            font-size: 16px
+        @media(max-width: 575px) {
+            .footerdeet {
+                padding-left: 50px;
+            }
+            .card-body button{
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -520,7 +546,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p class="headings ">Team Riviera</p>
+                                        <p class="headings ">Patrons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -535,7 +561,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -580,7 +606,7 @@
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
@@ -669,16 +695,17 @@
         <div class="container-fluid">
             <div class="row" style="text-align: center">
                 <p
-                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
                     Contact Us</p><br>
             </div>
         </div>
         <div class="container-fluid" style="padding-top: 70px;">
             <div class="row">
-                <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                <div class="col-12 col-lg-6 rb"
+                    style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="../assets/images/logo.png" class="footer-logo">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 footerdeet">
                     <div class="row">
                         <div class="col-3 col-lg-2">
                             <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -697,24 +724,24 @@
                             <i class="far fa-envelope footer-icons"></i>
                         </div>
                         <div class="col-9 col-lg-8 content">
-                            <p>emailaddress@xyz.abc</p>
+                            <a style="text-decoration: none;"
+                                href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Latest compiled and minified JavaScript -->
     <script>
-        //Dropdown select value
+        // Dropdown select value
 
-        // $(".dropdown-menu>a").click(function () {
-        //     var selText = $(this).text();
-        //     console.log(selText)
-        //     $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
-        //         ' <span class="caret"></span>');
-        // });
+        $(".dropdown-menu>a").click(function () {
+            var selText = $(this).text();
+            console.log(selText)
+            $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
+                ' <span class="caret"></span>');
+        });
     </script>
     <script type="text/javascript">
         var limitnum = 3;
@@ -723,6 +750,16 @@
         var showCheck = 0;
         var e = 0;
         var categoryFlag = 0;
+        var currflag = 0;
+        //====================================Expand Collapse toggler====================================================
+
+        $(document).on("click",".redbg", function(){
+            if($(this).html()=="Expand"){
+                $(this).html("Collapse");
+            }else{
+                $(this).html("Expand");
+            }
+        });
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
@@ -755,8 +792,7 @@
                         }
                         output += `
                         <div class="row eventinfo";>
-                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
-                            </img>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                             <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
                                 <h2 style="text-align: left">${user.name}</h2>
                                 <div class="row detbelow">
@@ -780,12 +816,11 @@
                         </div>
             
                         <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
-                            <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://vtop.vit.ac.in/vtop/initialProcess';" type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
-                                    </div>
-                                    <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://web.vit.ac.in/riviera/';" type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
-                                    </div>    
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
                             <p id="desc_${user.event_id}">${user.description}</p>
-                                    
                         </div>
           `;
                     });
@@ -810,7 +845,8 @@
                 selectAll();
                 clubFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=club&query=" + query + "&limit=" +
+                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=club&query=" + query +
+                        "&limit=" +
                         limit + "&offset=0", {
                             method: "get",
                             headers: {
@@ -865,10 +901,10 @@
                         </div>
             
                         <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
-                            <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://vtop.vit.ac.in/vtop/initialProcess';" type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
-                                    </div>
-                                    <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://web.vit.ac.in/riviera/';" type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
-                                    </div>    
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
                             <p id="desc_${user.event_id}">${user.description}</p>
                                     
                         </div>
@@ -951,10 +987,10 @@
                         </div>
             
                         <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
-                            <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://vtop.vit.ac.in/vtop/initialProcess';" type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
-                                    </div>
-                                    <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://web.vit.ac.in/riviera/';" type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
-                                    </div>    
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>  
                             <p id="desc_${user.event_id}">${user.description}</p>
                                     
                         </div>
@@ -1019,7 +1055,8 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=category&query=" + cat + "&limit=" +
+            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=category&query=" + cat +
+                    "&limit=" +
                     limit + "&offset=0", {
                         method: "get",
                         headers: {
@@ -1075,10 +1112,10 @@
                         </div>
             
                         <div id="collapse_${user.event_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.event_id}">
-                            <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://vtop.vit.ac.in/vtop/initialProcess';" type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal</button>
-                                    </div>
-                                    <div class="col-6 buttonholder"><button onclick="window.location.href = 'https://web.vit.ac.in/riviera/';" type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External</button>
-                                    </div>    
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
                             <p id="desc_${user.event_id}">${user.description}</p>
                                     
                         </div>

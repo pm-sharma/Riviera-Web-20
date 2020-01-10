@@ -73,11 +73,13 @@
             .headings {
                 transform: skewX(15deg);
             }
-
-            li,
             .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
+            }
+            li{
+                margin-left: 0px;
+                margin-right: 12px;
             }
 
             .details {
@@ -197,7 +199,7 @@
 
         /*Infusion table css*/
         .infusionMid {
-            background-color: #000;
+            background-color:#121212;
             color: white;
             text-align: center;
         }
@@ -211,7 +213,7 @@
             color: white;
             border: 4px solid #0090C5;
             border-radius: 10px;
-            background-color: #000;
+            background-color:#121212;
             margin: 0px;
             display: inline-block;
             height: 6rem;
@@ -281,6 +283,14 @@
             color: white;
             font-size: 16px
         }
+        .footerdeet{
+            padding-left: 120px;
+        }
+        @media(max-width: 575px) {
+            .footerdeet{
+            padding-left: 50px;
+        } 
+        }
     </style>
 </head>
 
@@ -330,7 +340,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p class="headings">Team Riviera</p>
+                                        <p class="headings">Patrons</p>
                                     </a>
                                 </li>
                                 <li style="background-color: #0090C5;color: white" class="nav-item">
@@ -345,7 +355,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
 
@@ -374,7 +384,7 @@
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
@@ -548,7 +558,7 @@
     <td>Alfreds Futterkiste</td>
   </tr> -->
 
-    <div class="container-fluid infusionContent" style="background: black;padding-top:20px">
+    <div class="container-fluid infusionContent" style="background-color: #121212 ;padding-top:20px">
 
         <div class="container-fluid">
             <div class="row" style="text-align: center">
@@ -595,7 +605,7 @@
             <div class="container-fluid">
                 <div class="row" style="text-align: center">
                     <p
-                        style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                        style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
                         Contact Us</p><br>
                 </div>
             </div>
@@ -605,7 +615,7 @@
                         style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                         <img src="../assets/images/logo.png" class="footer-logo">
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6 footerdeet">
                         <div class="row">
                             <div class="col-3 col-lg-2">
                                 <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -624,7 +634,7 @@
                                 <i class="far fa-envelope footer-icons"></i>
                             </div>
                             <div class="col-9 col-lg-8 content">
-                                <p>emailaddress@xyz.abc</p>
+                                <a style="text-decoration: none;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                             </div>
                         </div>
                     </div>

@@ -75,8 +75,8 @@
             }
 
             li {
-                margin-left: 22px;
-                margin-right: 22px;
+                margin-left: 0px;
+                margin-right: 12px;
             }
 
             .regdiv {
@@ -242,6 +242,14 @@
             color: white;
             font-size: 16px
         }
+        .footerdeet{
+            padding-left: 120px;
+        }
+        @media(max-width: 575px) {
+            .footerdeet{
+            padding-left: 50px;
+        } 
+        }
     </style>
 </head>
 
@@ -291,7 +299,7 @@
                                 </li>
                                 <li style="background-color: #0090C5;color: white" class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p style=" color: white; padding-right: 10px;" class="headings ">Team Riviera
+                                        <p style=" color: white; padding-right: 10px;" class="headings ">Patrons
                                         </p>
                                     </a>
                                 </li>
@@ -307,7 +315,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -334,7 +342,7 @@
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
         <!-- Reg Modal -->
@@ -353,8 +361,7 @@
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
-                    <h1 class="headingsmid" style="cursor: default; user-select: none;"><span class="headingname">Team
-                            Riviera</span></h1>
+                    <h1 class="headingsmid" style="cursor: default; user-select: none;"><span class="headingname">Patrons</span></h1>
                 </div>
 
             </div>
@@ -582,6 +589,7 @@
             </div>
         </div>
         <div class="row" style="padding : 5vh 15vw;text-align: center; height : auto">
+            
             <div class="col-12 col-lg-3 hov" style="margin-top : 20px; margin-bottom : 20px;">
                 <div class="cor-circle">
                     <img src="../assets/vit-img/team/CV Sudheer.JPG" style="height : 180px; width : auto">
@@ -601,6 +609,7 @@
                 </div>
 
             </div>
+            
             <div class="col-12 col-lg-3 hov" style="margin-top : 20px; margin-bottom : 20px">
 
 
@@ -626,9 +635,10 @@
 
 
                 <div class="cor-circle">
-                    <img src="../assets/vit-img/team/Sharmila.JPG" style="height : 180px; width : auto"> </div>
+                    <img src="../assets/vit-img/team/Dr. N. V. Thiyagachanthan.jpg"
+                        style="height : 180px; width : auto"> </div>
                 <div class="cor-name">
-                    Prof. N. Sharmila
+                    Prof. N. V. Thiyagachanthan
                 </div>
 
             </div>
@@ -636,10 +646,9 @@
 
 
                 <div class="cor-circle">
-                    <img src="../assets/vit-img/team/Dr. N. V. Thiyagachanthan.jpg"
-                        style="height : 180px; width : auto"> </div>
+                    <img src="../assets/vit-img/team/Sharmila.JPG" style="height : 180px; width : auto"> </div>
                 <div class="cor-name">
-                    Dr. N. V. Thiyagachanthan
+                    Prof. N. Sharmila
                 </div>
 
             </div>
@@ -707,7 +716,7 @@
         <div class="container-fluid">
             <div class="row" style="text-align: center">
                 <p
-                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
                     Contact Us</p><br>
             </div>
         </div>
@@ -717,7 +726,7 @@
                     style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="../assets/images/logo.png" class="footer-logo">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 footerdeet">
                     <div class="row">
                         <div class="col-3 col-lg-2">
                             <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -736,7 +745,7 @@
                             <i class="far fa-envelope footer-icons"></i>
                         </div>
                         <div class="col-9 col-lg-8 content">
-                            <p>emailaddress@xyz.abc</p>
+                            <a style="color: white;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>

@@ -76,6 +76,7 @@
             margin-right: 15vh;
             margin-bottom: 2vh;
             min-width: 145px;
+            color: #FFFFFF !important;
         }
 
         /* .navbar-nav>.active>a {
@@ -225,16 +226,18 @@
             .headings {
                 transform: skewX(15deg);
             }
-
-            li,
             .sportsdetails {
                 margin-left: 22px;
                 margin-right: 22px;
             }
+            li{
+                margin-left: 0px;
+                margin-right: 12px;
+            }
 
             .details {
                 margin: 0 15px;
-                margin-right: 60px;
+                margin-right: 40px;
             }
 
         }
@@ -284,7 +287,14 @@
             .filter {
                 min-width: 250px;
             }
-
+            .collapse,
+            .collapsing {
+                margin-right: 20px !important;
+                margin-left: 20px !important;
+            }
+            .fa-circle {
+                display: none;
+            }
             .search {
                 min-height: 50px;
                 /* min-width: 25vh; */
@@ -323,6 +333,7 @@
             border: #FFFFFF solid;
             color: #FFFFFF;
             border-radius: 6px;
+            margin-bottom: 25px;
         }
 
         /* .m10{
@@ -334,11 +345,12 @@
 
         @media(max-width: 575px) {
             .sportsdetails {
-                text-align: center;
+                text-align: left;
             }
 
             .details {
                 margin-right: 1.5rem;
+                width: 100%;
             }
 
             .redbg {
@@ -348,11 +360,80 @@
             .col-sm-4 {
                 text-align: center;
             }
+            .card-body .btn{
+                padding: 0.5rem 0.3rem;
+                font-size: 0.6rem;
+            }
+        }
+        .footerdeet{
+            padding-left: 120px;
+        }
+        @media(max-width: 575px) {
+            .footerdeet{
+            padding-left: 50px;
+        } 
+        .card-body button{
+                width: 100%;
+            }
+        }
+        button:hover {
+            color: white !important;
+        }
+
+        .btn:focus {
+            background-color: #0090C5;
         }
 
         #loader {
             display: none;
             color: white;
+        }
+        .sec-one-cont .collapse{
+            margin-right: 50px;
+            margin-left: 50px;
+            background-color: #282828;
+        }
+        .sec-one-cont .collapsing{
+            margin-right: 50px;
+            margin-left: 50px;
+            background-color: #282828;
+        }
+        .card-body {
+            background-color: #282828;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        /* a{
+            text-decoration: none;
+            color: white !important;
+        } */
+        .card-body div button {
+            columns: #0090c5;
+            border: 2px solid #0090C5;
+            border-radius: 5px;
+            background-color: #282828;
+            margin: 0px;
+            display: inline-block;
+            height: 3.2rem;
+            width: 75%;
+            padding: 0.84rem 0rem;
+            color: #FFFFFF !important;
+        }
+
+        .fa-circle {
+            border: 2px solid #0090c5;
+            border-radius: 100%;
+        }
+        .buttonholder{
+            float: left;
+            text-align: center;
+            background-color: #282828;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .buttonholder button {
+            display: inline-block;
         }
 
         /* Contact Us styles */
@@ -376,6 +457,7 @@
             color: white;
             font-size: 16px
         }
+
     </style>
 </head>
 
@@ -425,7 +507,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p class="headings ">Team Riviera</p>
+                                        <p class="headings ">Patrons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -440,7 +522,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p class="headings ">Developers and Organisers</p>
+                                        <p class="headings ">Developers and Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -484,7 +566,7 @@
             <div style="float: right;">
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
-                    type="button" class="btn regbtn btn-primary-outline">Register</button>
+                    type="button" class="btn regbtn btn-primary-outline" onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
@@ -545,7 +627,7 @@
         <div class="container-fluid">
             <div class="row" style="text-align: center">
                 <p
-                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
                     Contact Us</p><br>
             </div>
         </div>
@@ -555,7 +637,7 @@
                     style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="../assets/images/logo.png" class="footer-logo">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 footerdeet">
                     <div class="row">
                         <div class="col-3 col-lg-2">
                             <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -574,7 +656,7 @@
                             <i class="far fa-envelope footer-icons"></i>
                         </div>
                         <div class="col-9 col-lg-8 content">
-                            <p>emailaddress@xyz.abc</p>
+                            <a style="color: white;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>
@@ -588,7 +670,7 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script>
-        //Dropdown select value
+        // Dropdown select value
 
         $(".dropdown-menu>a").click(function () {
             console.log('hi')
@@ -603,6 +685,14 @@
         var clubFlag = 0;
         var filterFlag = 0;
         var temip = 0;
+        // ========================Function to toggle expand and collapse===========================
+        $(document).on("click",".redbg", function(){
+            if($(this).html()=="Expand"){
+                $(this).html("Collapse");
+            }else{
+                $(this).html("Expand");
+            }
+        });
         // ========================function to display all sports=================================
         function selectAll() {
             $("#loader").css("display", "block");
@@ -625,6 +715,7 @@
                         console.log(len)
                         let x = 0;
                         let url1 = '';
+                        let date = '';
                         for (let p = 0; p < len; p++) {
                             if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
                                 x = 1;
@@ -632,37 +723,42 @@
                                 url1 += user.url[p];
                             }
                         }
+
+                        if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                         output += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;TBA</div>
-                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
+                        <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.sports_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.event_name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                                <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
+                                                <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;${date}</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.sports_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Expand</a>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
+            
+                        <div id="collapse_${user.sports_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.sports_id}">
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
+                            <p id="desc_${user.event_id}">${user.description_and_rules}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.sports_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+        
           `;
                     });
                     $("#loader").css("display", "none");
@@ -708,6 +804,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date = '';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -716,37 +813,38 @@
                                     url1 += user.url[p];
                                 }
                             }
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
+                            <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.sports_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.event_name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                                <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
+                                                <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;${date}</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.sports_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Expand</a>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
+            
+                        <div id="collapse_${user.sports_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.sports_id}">
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
+                            <p id="desc_${user.event_id}">${user.description_and_rules}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.sports_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                         });
                         $("#loader").css("display", "none");
@@ -779,6 +877,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date = '';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -787,38 +886,38 @@
                                     url1 += user.url[p];
                                 }
                             }
-
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
+                            <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.sports_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.event_name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                                <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
+                                                <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;${date}</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.sports_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Expand</a>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
+            
+                        <div id="collapse_${user.sports_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.sports_id}">
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
+                            <p id="desc_${user.event_id}">${user.description_and_rules}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.sports_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                         });
                         $("#loader").css("display", "none");
@@ -840,6 +939,7 @@
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
+                            let date ='';
                             let url1 = '';
                             for (let p = 0; p < len; p++) {
                                 if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
@@ -849,37 +949,38 @@
                                 }
                             }
 
+                            if(user.male_date != null){
+                            date = user.male_date;
+                        }else if(user.female_date != null){
+                            date = user.female_date;
+                        }else{
+                            date = "TBA";
+                        }
                             output1 += `
-          <div class="row eventinfo">
-            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
-                <div class="col-lg-9 col-md-7 col-sm-7" style="padding-top:10px">
-                    <h2 style="text-align: left">${user.event_name}</h2>
-                    <div class="row detbelow">
-                        <div class="sportsdetails col-sm-12 col-lg-7">
-                            <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                            <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>TBA</div>
-                            <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>TBA</div>
-                            <!-- <div class="details" style="display: inline-block">&#8377; TBA</div> -->
+                            <div class="row eventinfo";>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
+                            <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.sports_id}" style="padding-top:10px">
+                                <h2 style="text-align: left">${user.event_name}</h2>
+                                <div class="row detbelow">
+                                        <div class="sportsdetails col-sm-12 col-lg-7">
+                                                <div class="details" style="display: inline-block;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
+                                                <div class="details" style="display: inline-block;"><i class="far fa-clock"></i>&nbsp;&nbsp;TBA</div>
+                                                <div class="details" style="display: inline-block"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;${date}</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a role="button" class="redbg" data-toggle="collapse" data-parent="#output" href="#collapse_${user.sports_id}" aria-expanded="true" aria-controls="collapse_${user.event_id}">Expand</a>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="redbg" data-toggle="modal" data-target="#${user.sports_id}"> Register </div>
+            
+                        <div id="collapse_${user.sports_id}"  class="card-body panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_${user.sports_id}">
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://vtop.vit.ac.in/vtop/initialProcess"><button type="button" class="btn internalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>Internal registration</button>
+                                    </a></div>
+                            <div class="col-6 buttonholder"><a target="_blank" href="https://web.vit.ac.in/riviera/"><button type="button" class="btn externalbtn"><i class="fas fa-circle" style="margin-right:10px;"></i>External registration</button>
+                                    </a></div>    
+                            <p id="desc_${user.event_id}">${user.description_and_rules}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Reg Event Modal -->
-        <div class="modal fade show" id="${user.sports_id}" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div> -->
-                    <div class="modal-body">
-                        <p style="color:black">Registrations will open soon! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
           `;
                         });
                         $("#loader").css("display", "none");

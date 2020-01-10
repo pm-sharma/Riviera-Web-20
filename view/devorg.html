@@ -60,6 +60,27 @@
 
 
     <style>
+        /* Contact Us styles */
+        .contact-us {
+            background-color: #282828;
+        }
+
+        .footer-icons {
+            color: white;
+            transform: scale(2);
+            margin-left: 40px;
+            margin-top: 7px;
+        }
+
+        .footer-logo {
+            height: 15vh;
+            width: auto;
+        }
+
+        .content p {
+            color: white;
+            font-size: 16px
+        }
         @media (min-width: 780px) {
 
 
@@ -75,8 +96,8 @@
             }
 
             li {
-                margin-left: 22px;
-                margin-right: 22px;
+                margin-left: 0px;
+                margin-right: 12px;
             }
 
             .regdiv {
@@ -106,6 +127,17 @@
 
             .regdiv {
                 float: right
+            }
+
+            /* footer styles */
+            .footer-logo {
+                height: 8vh;
+                width: auto;
+                margin-left: 10px;
+            }
+
+            .rb {
+                border-right: 0 !important;
             }
         }
 
@@ -160,7 +192,7 @@
             padding-bottom: 60px;
         }
 
-        
+
 
         body {
             overflow-x: hidden
@@ -172,9 +204,12 @@
         .nav-link {
             padding-right: 0 !important;
         }
-        .title{
+
+        .title {
             text-align: center;
         }
+
+        
     </style>
 </head>
 
@@ -222,9 +257,9 @@
                                         <p class="headings m10">Proshows</p>
                                     </a>
                                 </li>
-                                <li  class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="./teamriviera.html">
-                                        <p  class="headings ">Team Riviera
+                                        <p class="headings ">Patrons
                                         </p>
                                     </a>
                                 </li>
@@ -240,7 +275,8 @@
                                 </li>
                                 <li class="nav-item" style="background-color: #0090C5;color: white">
                                     <a class="nav-link" href="./devorg.html">
-                                        <p style=" color: white; padding-right: 10px;" class="headings ">Developers and Organisers</p>
+                                        <p style=" color: white; padding-right: 10px;" class="headings ">Developers and
+                                            Organizers</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
@@ -267,7 +303,7 @@
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = './proshow.html'">Register</button>
             </div>
         </div>
         <!-- Reg Modal -->
@@ -286,7 +322,8 @@
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
-                    <h1 class="headingsmid" style="cursor: default; user-select: none;"><span class="headingname">Developers and Organisers</span></h1>
+                    <h1 class="headingsmid" style="cursor: default; user-select: none;"><span
+                            class="headingname">Developers and Organizers</span></h1>
                 </div>
 
             </div>
@@ -296,106 +333,18 @@
 
 
 
-    <div id="maincontent">
+    <div id="maincontent" class="container-fluid">
         <div class="title">
             <p style="font-size : 30px; color :white; border-bottom: 2px solid #0090C5; display: inline-block;">
-                    Organisers
+                Organizers
             </p>
         </div>
-        <div class="tiles">
+        <div class="tiles container-fluid">
 
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/GOPAVARAM MEGHANA.jpg" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Gopavaram Meghana
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9655333901</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>gc.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Neeraja Nair.JPG" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Neeraja Nair
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>8136901625</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>proshow.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/SUNNY KUMAR.jpg" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Sunny kumar
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9472973575</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>gc.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/ITHA ARAVINDA KOUSIK.jpg" style="height : 180px; width : auto;">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Itha aravinda kousik
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>8074753537</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>hall.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/ADNAAN KHAN.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Adnaan Khan.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
@@ -417,15 +366,124 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/SHRINKHLA.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Anirudh Varma.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Shrinkhla
+                            Anirudh Varma
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>8866780280</span>
+                            <span>8801602014</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Aswath M.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Aswath M
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9003952001</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <span>marketing.riviera@vit.ac.in</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/C V A N Sai Teja.jpg" style="height : 180px; width : auto;">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            C V A N Sai Teja
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9703130578</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <span>sgc.riviera@vit.ac.in </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Gopavaram Meghana.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Gopavaram Meghana
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9655333901</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <span>gc.riviera@vit.ac.in</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/HARIOM HUDIYA.jpeg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Hariom Kishan Hudiya 
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>7530000608</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:sponsorship.riviera@vit.ac.in">sponsorship.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Harsh Kishore.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Harsh Kishore
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>7033693123</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
@@ -435,99 +493,12 @@
                     </div>
                 </div>
             </div>
+            
 
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/SWAPNIL KUMAR.jpg" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Swapnil Kumar
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7530001668</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>swapnilkumar.2016@vitstudent.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Arushi Goel.jpg" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Arushi Goel
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9655999451</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>sports.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/IMG_5637.HEIC" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Soumyamitra Agrawal
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9924024101</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>Soumyamitra.agrawal2016@vitstudent.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/SHUBHAM KUMAR.heic" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Shubham kumar
-                        </p>
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7530003343</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>shubham.kumar2016a@vitstudent.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/HIMANSHU.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Himanshu.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
@@ -549,19 +520,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/HARSH KISHORE.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Itha Aravinda Kousik.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Harsh Kishore
+                            Itha aravinda kousik
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7033693123</span>
+                            <span>8074753537</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>sales.riviera@vit.ac.in</span>
+                            <span>hall.riviera@vit.ac.in</span>
                         </div>
 
                     </div>
@@ -571,15 +542,81 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Vaibhav Jha.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/K T Gopalan.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Vaibhav Jha
+                            K T Gopalan
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7904770142</span>
+                            <span>9677042881</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <span>proshowos.riviera@vit.ac.in</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Kusumitha S.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Kusumitha Shrinivasan
+                            <div class="eachDeet">
+                                <i class="fas fa-phone" style="margin-right:10px;"></i>
+                                <span>9535151666</span>
+                            </div>
+                            <div class="eachDeet">
+                                <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                                <span>international.riviera@vit.ac.in</span>
+                            </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Namisha Mehta.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Namisha Mehta
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9629190436</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <span>iso.riviera@vit.ac.in</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Neeraja Nair.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Neeraja Nair
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>8136901625</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
@@ -587,25 +624,26 @@
                         </div>
 
                     </div>
+                    
                 </div>
             </div>
 
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/C V A N Sai Teja.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Nipun Malik.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            C V A N Sai Teja 
+                            Nipun Malik
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9703130578</span>
+                            <span>8076627162</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>sgc.riviera@vit.ac.in </span>
+                            <span>registration.riviera1@vit.ac.in</span>
                         </div>
 
                     </div>
@@ -633,10 +671,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/PIYUSH GUPTA.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Piyush Gupta.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
@@ -648,7 +687,7 @@
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>piyush.gupta2016@vitstudent.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:piyush.gupta2016@vitstudent.ac.in">piyush.gupta2016@vitstudent.ac.in</a>
                         </div>
 
                     </div>
@@ -657,19 +696,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/HARSH KISHORE.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/PGS ADITYA.jpeg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Hariom Kishan Hudiya 
+                            PGS Aditya
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7530000608</span>
+                            <span>7989804570</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>Sponsorship.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:marketing.riviera@vit.ac.in">marketing.riviera@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -678,19 +717,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Vineet Vashi.JPG" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Ruthvik Bhupati.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Vineet Vashi
+                            Ruthvik Bhupathi
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7010932559</span>
+                            <span>9789544366</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>proshow.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:Sponsorship.riviera@vit.ac.in">Sponsorship.riviera@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -699,19 +738,104 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/NAMISHA MEHTA.HEIC" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Sarthak Dilawari.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Namisha Mehta
+                            Sarthak Dilawari
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9629190436</span>
+                            <span>9911051519</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>iso.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:proshow.riviera@vit.ac.in">proshow.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Shrinkhla.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Shrinkhla
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>8866780280</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:sales.riviera@vit.ac.in">sales.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Shubham Kumar.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Shubham kumar
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>7530003343</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:shubham.kumar2016a@vitstudent.ac.in">shubham.kumar2016a@vitstudent.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Siddhesh Kubal.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Siddhesh Kubal
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9092221781</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:sports.riviera@vit.ac.in">sports.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Soumyamitra-agarwal.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Soumyamitra-agarwal
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9924024101</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:Soumyamitra.agrawal2016@vitstudent.ac.in">Soumyamitra.agrawal2016@vitstudent.ac.in</a>
                         </div>
 
                     </div>
@@ -724,7 +848,7 @@
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Srikanth Parvatam 
+                            Srikanth Parvatam
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
@@ -732,7 +856,7 @@
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>purchase.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:purchase.riviera@vit.ac.in">purchase.riviera@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -741,19 +865,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Sarthak Dilawari.jpeg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Sunny Kumar.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Sarthak Dilawari
+                            Sunny kumar
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9911051519</span>
+                            <span>9472973575</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>proshow.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:gc.riviera@vit.ac.in">gc.riviera@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -762,19 +886,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/Ruthvik Bhupathi.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Swapnil Kumar.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Ruthvik Bhupathi
+                            Swapnil Kumar
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9789544366</span>
+                            <span>7530001668</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>Sponsorship.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:swapnilkumar.2016@vitstudent.ac.in">swapnilkumar.2016@vitstudent.ac.in</a>
                         </div>
 
                     </div>
@@ -783,19 +907,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/ASWATH M.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Vaibhav Jha.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Aswath M
+                            Vaibhav Jha
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9003952001</span>
+                            <span>7904770142</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>marketing.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:proshow.riviera@vit.ac.in">proshow.riviera@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -804,19 +928,19 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/organisers/P.G.S ADITYA.jpg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Varun Garg.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Padala Ganesh Sai Aditya
+                            Varun Garg
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>7989804570</span>
+                            <span>9643414088</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>marketing.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:registration.riviera1@vit.ac.in">registration.riviera1@vit.ac.in</a>
                         </div>
 
                     </div>
@@ -825,49 +949,94 @@
             <div class="eachTile col-lg-6 col-md-6 col-sm-12">
                 <div class="divider">
                     <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/vit-img/pmsharma.jpeg" style="height : 180px; width : auto; ">
+                        <img src="../assets/organisers/Vineet Vashi.jpg" style="height : 180px; width : auto; ">
                     </div>
                     <div class="deets col-lg-6 col-12">
                         <p class="eachDeet">
-                            Kusumitha Shrinivasan
-                        <div class="eachDeet">
-                            <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>9535151666</span>
-                        </div>
-                        <div class="eachDeet">
-                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>international.riviera@vit.ac.in</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
-                <div class="divider">
-                    <div class="cor-circle col-lg-6 col-12">
-                        <img src="../assets/vit-img/pmsharma.jpeg" style="height : 180px; width : auto; ">
-                    </div>
-                    <div class="deets col-lg-6 col-12">
-                        <p class="eachDeet">
-                            Anirudh Varma
+                            Vineet Vashi
                         </p>
                         <div class="eachDeet">
                             <i class="fas fa-phone" style="margin-right:10px;"></i>
-                            <span>8801602014</span>
+                            <span>7010932559</span>
                         </div>
                         <div class="eachDeet">
                             <i class="fas fa-envelope" style="margin-right:10px;"></i>
-                            <span>design.riviera@vit.ac.in</span>
+                            <a style="color: #FFFFFF;" href="mailto:proshow.riviera@vit.ac.in">proshow.riviera@vit.ac.in</a>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+            <div class="eachTile col-lg-6 col-md-6 col-sm-12">
+                <div class="divider">
+                    <div class="cor-circle col-lg-6 col-12">
+                        <img src="../assets/organisers/Vishal Rautela.jpg" style="height : 180px; width : auto; ">
+                    </div>
+                    <div class="deets col-lg-6 col-12">
+                        <p class="eachDeet">
+                            Vishal Rautela
+                        </p>
+                        <div class="eachDeet">
+                            <i class="fas fa-phone" style="margin-right:10px;"></i>
+                            <span>9894269581</span>
+                        </div>
+                        <div class="eachDeet">
+                            <i class="fas fa-envelope" style="margin-right:10px;"></i>
+                            <a style="color: #FFFFFF;" href="mailto:marketing.riviera@vit.ac.in">marketing.riviera@vit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="contact-us" style="padding-bottom: 80px; margin-top: 20px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:20px auto 0;;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb"
+                    style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="../assets/images/logo.png" class="footer-logo">
+                </div>
+                <div class="col-12 col-lg-6 footerdeet">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <a style="color: white;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-</script>
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
