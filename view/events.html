@@ -734,6 +734,15 @@
         var e = 0;
         var categoryFlag = 0;
         var currflag = 0;
+        //====================================Expand Collapse toggler====================================================
+
+        $(document).on("click",".redbg", function(){
+            if($(this).html()=="Expand"){
+                $(this).html("Collapse");
+            }else{
+                $(this).html("Expand");
+            }
+        });
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {

@@ -665,19 +665,27 @@
     <script>
         //Dropdown select value
 
-        $(".dropdown-menu>a").click(function () {
-            console.log('hi')
-            var selText = $(this).text();
-            console.log(selText)
-            $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
-                ' <span class="caret"></span>');
-        });
+        // $(".dropdown-menu>a").click(function () {
+        //     console.log('hi')
+        //     var selText = $(this).text();
+        //     console.log(selText)
+        //     $(this).parents('.dropdown').find('.dropdown-toggle').html(selText +
+        //         ' <span class="caret"></span>');
+        // });
     </script>
     <script type="text/javascript">
         var limitnum = 5;
         var clubFlag = 0;
         var filterFlag = 0;
         var temip = 0;
+        // ========================Function to toggle expand and collapse===========================
+        $(document).on("click",".redbg", function(){
+            if($(this).html()=="Expand"){
+                $(this).html("Collapse");
+            }else{
+                $(this).html("Expand");
+            }
+        });
         // ========================function to display all sports=================================
         function selectAll() {
             $("#loader").css("display", "block");
