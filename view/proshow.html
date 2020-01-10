@@ -195,7 +195,7 @@
             height:520px;
         }
         .w130{
-            width: 130%;
+            width: 100%;
             }
 
         @media (min-width: 780px) {
@@ -213,6 +213,19 @@
             li {
                 margin-left: 0px;
                 margin-right: 12px;
+            }
+        }
+        @media(max-width: 1200px){
+            .circle, .vl{
+                display: none;
+            }
+            .proshowDiv{
+                height: auto;
+            }
+        }
+        @media(min-width:1200px){
+            main{
+                max-width: 1000px;
             }
         }
 
@@ -233,6 +246,14 @@
             .regbtn {
                 margin-top: -5px;
             }
+            .mb-day {
+                text-align: center;
+                margin-top: 20%;
+                margin-left: 10%;
+                font-size: 25px;
+                display: block;
+                font-weight: 500;
+            }  
 
             .vl,
             .circle {
@@ -241,15 +262,6 @@
 
             .timeline>p {
                 display: none;
-            }
-
-            .mb-day {
-                text-align: center;
-                margin-top: 20%;
-                margin-left: 10%;
-                font-size: 25px;
-                display: block;
-                font-weight: 500;
             }
 
             .w130 {
@@ -278,9 +290,6 @@
 
             .rb {
                 border-right: 0 !important;
-            }
-            .proshowDiv{
-                height: 950px;
             }
         }
         @media(max-width: 575px) {
