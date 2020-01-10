@@ -54,7 +54,11 @@ var filesToCache = [
     './assets/vit-img/team/provc1-min.jpg',
     './assets/vit-img/team/SAMUEL1-min.jpg',
     './assets/vit-img/team/Raghuram-min.JPG',
-    './assets/vit-img/team/Ramesh(1)-min.JPG'
+    './assets/vit-img/team/Ramesh(1)-min.JPG',
+    './assets/proshows/sid.jpg',
+    './assets/proshows/zakir.jpg',
+    
+
   ];
   
   self.addEventListener('install', function(e) {
