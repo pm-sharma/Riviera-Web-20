@@ -368,8 +368,14 @@
         .footerdeet{
             padding-left: 120px;
         }
+        .sportsImg{
+            padding-left: 0px;
+        }
         @media(max-width: 575px) {
-            .footerdeet{
+        .sportsImg{
+            padding-right: 0px;
+        }    
+        .footerdeet{
             padding-left: 50px;
         } 
         .card-body button{
@@ -724,7 +730,9 @@
                             }
                         }
 
-                        if(user.male_date != null){
+                        if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -813,7 +821,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -886,7 +896,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -948,8 +960,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
