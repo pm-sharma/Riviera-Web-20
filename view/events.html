@@ -403,7 +403,9 @@
             margin-left: 50px;
             background-color: #282828;
         }
-
+        .eventinfo img{
+            padding-left: 0px !important;
+        }
         .card-body {
             background-color: #282828;
             box-shadow: none;
@@ -580,7 +582,7 @@
                 <button
                     style="transform :scale(0.75); border: 2px solid #FFFFFF;color: #FFFFFF;border-radius: 32px;margin-top: 5px;"
                     type="button" class="btn regbtn btn-primary-outline" data-toggle="modal"
-                    data-target="#reg">Register</button>
+                    onclick="window.location.href = 'view/proshow.html'">Register</button>
             </div>
         </div>
         <div style="margin: auto auto;color:white;text-align: center;width: 100vw;">
@@ -678,7 +680,7 @@
                 <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="../assets/images/logo.png" class="footer-logo">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6" style="padding-left: 60px;">
                     <div class="row">
                         <div class="col-3 col-lg-2">
                             <i class="fas fa-map-marker-alt footer-icons"></i>
@@ -723,6 +725,7 @@
         var showCheck = 0;
         var e = 0;
         var categoryFlag = 0;
+        var currflag = 0;
 
         //============================================DISPLAY ALL EVENTS==================================================
         function selectAll() {
@@ -755,8 +758,7 @@
                         }
                         output += `
                         <div class="row eventinfo";>
-                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;">
-                            </img>
+                            <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;"></img>
                             <div class="col-lg-9 col-md-7 col-sm-7" role="tab" id="heading_${user.event_id}" style="padding-top:10px">
                                 <h2 style="text-align: left">${user.name}</h2>
                                 <div class="row detbelow">
