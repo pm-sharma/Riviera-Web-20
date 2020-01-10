@@ -126,10 +126,6 @@
             margin-right: 50px;
         }
 
-        .row {
-            width: 130%;
-        }
-
         .vl {
             border-left: 6px solid #0090C5;
             height: 280px;
@@ -276,25 +272,29 @@
             color: white;
             font-size: 16px
         }
-        .footerdeet{
+
+        .footerdeet {
             padding-left: 120px;
         }
+
         @media(max-width: 575px) {
-            .footerdeet{
-            padding-left: 50px;
-        } 
+            .footerdeet {
+                padding-left: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="sec-one">
+    <div class="sec-one" style="height: 45vh;border-bottom: 4px solid #0090C5;">
         <!-- Adding coming soon -->
-        <div style="text-align: center;width: 100vw;">
+        <!-- <div style="text-align: center;width: 100vw;">
             <div style="margin: auto auto;position: absolute;top: 45%;left:50%;transform: translate(-50%,-50%);">
                 <div class="coming-soon">Coming Soon!</div>
             </div>
-        </div>
+        </div> -->
+
+        <!-- Navbar -->
         <div style="position : relative ; ">
             <div class="container topnavwidth" style="position: absolute; left : 0; transform : translateX(-2%)">
                 <div class="x">
@@ -385,14 +385,14 @@
                     data-target="#reg">Register</button>
             </div>
         </div>
-        <!-- <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
+
+        <div style="margin: auto auto;color:white;text-align: center;width: 100vw;height: 100vh; ">
             <div style="margin: auto auto; padding-top : 150px ">
                 <div>
                     <h1 style="cursor: default; user-select: none;">ProShows</h1>
                 </div>
-
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!-- Reg Modal -->
@@ -410,119 +410,131 @@
     </div>
 
 
-    <!-- <div class="proshowDetails" class="container-fluid"> -->
-    <!-- <div class="sec-one-cont"> -->
-    <!-- <div class="col-sm-12 " style="height: 650px;"> -->
-    <!-- <main>
-                <div class="container-fluid">
-                    <div class="row">
-                        <p class="mb-day">DAY 1 </p>
-                        <div class="col-sm-10 col-lg-5 timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sonu Nigam</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+    <div class="proshowDetails" class="container-fluid">
+        <div class="sec-one-cont">
+            <div class="col-sm-12 " style="height: 520px;">
+                <main>
+                    <div class="container-fluid">
+                        <div class="row" style="width: 130%;">
+                            <p class="mb-day">DAY 1 </p>
+                            <div class="col-sm-10 col-lg-5 timeline">
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../assets/proshows/sid.jpg" class="card-img-top" alt="Sid">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sid </h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-10 col-lg-5 timeline">
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../assets/proshows/zakir.jpg" class="card-img-top" alt="Zakir Khan">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Zakir Khan</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-lg-2 timeline">
+                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
+                                <div class="vl"></div>
+                                <div class="circle">
+                                    <div
+                                        style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-10 col-lg-5 timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ayushmann Khurrana</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+                        <!-- <div class="row" style="width:130%">
+                            <p class="mb-day">DAY 2</p>
+                            <div class="col-sm-10 col-lg-5  timeline">
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sonu Nigam</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-2 col-lg-2 timeline">
-                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 1</p>
-                            <div class="vl"></div>
-                            <div class="circle">
-                                <div style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)"></div>
+                            <div class="col-sm-10 col-lg-5  timeline">
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../assets/images/proshow1.png" class="card-img-top"
+                                        alt="Ayushmann Khurrana">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ayushmann Khurrana</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-sm-2 timeline">
+                                <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
+                                <div class="vl"></div>
+                                <div class="circle">
+                                    <div
+                                        style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
-                    <div class="row">
-                        <p class="mb-day">DAY 2</p>
-                        <div class="col-sm-10 col-lg-5  timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Sonu Nigam">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sonu Nigam</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-10 col-lg-5  timeline">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../assets/images/proshow1.png" class="card-img-top" alt="Ayushmann Khurrana">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ayushmann Khurrana</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 timeline">
-                            <p style="text-align: center;margin-top: 20%;font-size: 25px;">DAY 2</p>
-                            <div class="vl"></div>
-                            <div class="circle">
-                                <div style="height: 10px;width:10px;border-radius:50%;background-color: #0090C5;top:54%;left: 50%;position: absolute;transform: translate(-50%,-50%)"></div>
-                            </div>
-                        </div>
-                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="contact-us" style="padding-bottom: 80px;">
+        <div class="container-fluid">
+            <div class="row" style="text-align: center">
+                <p
+                    style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
+                    Contact Us</p><br>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 70px;">
+            <div class="row">
+                <div class="col-12 col-lg-6 rb"
+                    style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                    <img src="../assets/images/logo.png" class="footer-logo">
                 </div>
-            </main> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-        <!-- Footer -->
-
-        <!-- <div class="contact-us" style="padding-bottom: 80px;">
-            <div class="container-fluid">
-                <div class="row" style="text-align: center">
-                    <p
-                        style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;color:white;font-size: 40px">
-                        Contact Us</p><br>
+                <div class="col-12 col-lg-6 footerdeet">
+                    <div class="row">
+                        <div class="col-3 col-lg-2">
+                            <i class="fas fa-map-marker-alt footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8">
+                            <div class="content">
+                                <p>Vellore Institute of Technology</p>
+                                <p>Vellore Campus</p>
+                                <p>Vellore - 632014</p>
+                                <p>TamilNadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-3 col-lg-2">
+                            <i class="far fa-envelope footer-icons"></i>
+                        </div>
+                        <div class="col-9 col-lg-8 content">
+                            <a style="text-decoration: none;"
+                                href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container-fluid" style="padding-top: 70px;">
-                <div class="row">
-                    <div class="col-12 col-lg-6 rb"
-                        style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
-                        <img src="../assets/images/logo.png" class="footer-logo">
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-3 col-lg-2">
-                                <i class="fas fa-map-marker-alt footer-icons"></i>
-                            </div>
-                            <div class="col-9 col-lg-8">
-                                <div class="content">
-                                    <p>Vellore Institute of Technology</p>
-                                    <p>Vellore Campus</p>
-                                    <p>Vellore - 632014</p>
-                                    <p>TamilNadu, India</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top: 30px;">
-                            <div class="col-3 col-lg-2">
-                                <i class="far fa-envelope footer-icons"></i>
-                            </div>
-                            <div class="col-9 col-lg-8 content">
-                                <p>emailaddress@xyz.abc</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        </div>
+    </div>
+
+
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
