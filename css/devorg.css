@@ -90,3 +90,11 @@
         margin-left: 15px;
     }
 }
+.footerdeet{
+    padding-left: 120px;
+}
+@media(max-width: 575px) {
+    .footerdeet{
+    padding-left: 50px;
+} 
+}
