@@ -51,8 +51,6 @@
     margin-bottom: 20px;
     text-align: left;
     max-width: 180px;
-    overflow: auto;
-    -ms-overflow-style: none;
     white-space: nowrap;
 }
 .eachDeet::-webkit-scrollbar {
@@ -79,6 +77,12 @@
         margin-left: 20%;
         margin-right: 20%;
         
+    }
+}
+@media (max-width: 1200px){
+    .eachDeet{
+        overflow: auto;
+    -ms-overflow-style: none;
     }
 }
 @media (max-width: 340px){
