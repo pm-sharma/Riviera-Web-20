@@ -57,45 +57,43 @@ var filesToCache = [
     './assets/vit-img/team/Ramesh(1)-min.JPG',
     './assets/proshows/sid.jpg',
     './assets/proshows/zakir.jpg',
-    './assets/organisers/ADNAAN KHAN.jpg',
-    './assets/organisers/Anirudh Varma.jpg',
+    './assets/organisers/adnaan_khan.jpg',
+    './assets/organisers/anirudh_varma.jpg',
     './assets/organisers/Arushi Goel.jpg',
-    './assets/organisers/Aswath M.jpg',
+    './assets/organisers/aswath_m.jpg',
     './assets/organisers/C V A N Sai Teja.jpg',
-    './assets/organisers/GOPAVARAM MEGHANA.jpg',
-    './assets/organisers/HARIOM HUDIYA.jpeg',
-    './assets/organisers/HARSH KISHORE.jpg',
-    './assets/organisers/HIMANSHU.jpg',
-    './assets/organisers/ITHA ARAVINDA KOUSIK.jpg',
+    './assets/organisers/gopavaram_meghana.jpg',
+    './assets/organisers/hariom_hudeya.jpg',
+    './assets/organisers/harsh_kishore.jpg',
+    './assets/organisers/himanshu.jpg',
+    './assets/organisers/itha_aravinda_kousik.jpg',
     './assets/organisers/K T Gopalan.jpg',
     './assets/organisers/Kusumitha S.jpg',
     './assets/organisers/Namisha Mehta.jpg',
-    './assets/organisers/Neeraja Nair.jpg',
-    './assets/organisers/NIPUN MALIK.jpg',
+    './assets/organisers/neeraja_nair.jpg',
+    './assets/organisers/nipun_malik.jpg',
     './assets/organisers/Nitya Bhargava.jpg',
-    './assets/organisers/PGS ADITYA.jpeg',
-    './assets/organisers/PIYUSH GUPTA.jpg',
+    './assets/organisers/pgs_aditya.jpg',
+    './assets/organisers/piyush_gupta.jpg',
     './assets/organisers/Ruthvik Bhupati.jpg',
     './assets/organisers/Sarthak Dilawari.jpg',
-    './assets/organisers/SHRINKHLA.jpg',
+    './assets/organisers/shrinkhla.jpg',
     './assets/organisers/Shubham Kumar.jpg',
-    './assets/organisers/Siddhesh Kubal.JPG',
+    './assets/organisers/siddhesh_kubal.jpg',
     './assets/organisers/Soumyamitra-agarwal.jpg',
     './assets/organisers/Srikanth Parvatam.jpg',
-    './assets/organisers/SUNNY KUMAR.jpg',
-    './assets/organisers/SWAPNIL KUMAR.jpg',
+    './assets/organisers/sunny_kumar.jpg',
+    './assets/organisers/swapnil_kumar.jpg',
     './assets/organisers/Vaibhav Jha.jpg',
-    './assets/organisers/VARUN GARG.jpg',
-    './assets/organisers/Vineet Vashi.jpg',
-    './assets/organisers/VISHAL RAUTELA.jpg',
-
-
+    './assets/organisers/varun_garg.jpg',
+    './assets/organisers/vineet_vashi.jpg',
+    './assets/organisers/vishal_rautela.jpg',
   ];
   
   self.addEventListener('install', function(e) {
     console.log('[ServiceWorker] Install');
     e.waitUntil(
-      caches.open('riviera2k20').then(function(cache) {
+      caches.open('riviera2k20').then(cache => {
         console.log('[ServiceWorker] Caching app shell');
         return cache.addAll(filesToCache);
       })                                                                                                                                                                                                                    
