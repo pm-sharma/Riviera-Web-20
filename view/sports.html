@@ -368,8 +368,14 @@
         .footerdeet{
             padding-left: 120px;
         }
+        .sportsImg{
+            padding-left: 0px;
+        }
         @media(max-width: 575px) {
-            .footerdeet{
+        .sportsImg{
+            padding-right: 0px;
+        }    
+        .footerdeet{
             padding-left: 50px;
         } 
         .card-body button{
@@ -428,7 +434,7 @@
             float: left;
             text-align: center;
             background-color: #282828;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             margin-top: 10px;
         }
 
@@ -588,7 +594,7 @@
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle filter" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        All
+                        All Sports
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#!" id="selectAll">All Sports</a>
@@ -724,7 +730,9 @@
                             }
                         }
 
-                        if(user.male_date != null){
+                        if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -813,7 +821,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -886,7 +896,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
@@ -948,8 +960,9 @@
                                     url1 += user.url[p];
                                 }
                             }
-
-                            if(user.male_date != null){
+                            if(user.male_date != null && user.female_date != null){
+                            date = user.male_date + "/" + user.female_date;
+                        }else if(user.male_date != null){
                             date = user.male_date;
                         }else if(user.female_date != null){
                             date = user.female_date;
