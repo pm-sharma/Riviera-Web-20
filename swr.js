@@ -57,14 +57,43 @@ var filesToCache = [
     './assets/vit-img/team/Ramesh(1)-min.JPG',
     './assets/proshows/sid.jpg',
     './assets/proshows/zakir.jpg',
-    
-
+    './assets/organisers/adnaan_khan.jpg',
+    './assets/organisers/anirudh_varma.jpg',
+    './assets/organisers/Arushi Goel.jpg',
+    './assets/organisers/aswath_m.jpg',
+    './assets/organisers/C V A N Sai Teja.jpg',
+    './assets/organisers/gopavaram_meghana.jpg',
+    './assets/organisers/hariom_hudeya.jpg',
+    './assets/organisers/harsh_kishore.jpg',
+    './assets/organisers/himanshu.jpg',
+    './assets/organisers/itha_aravinda_kousik.jpg',
+    './assets/organisers/K T Gopalan.jpg',
+    './assets/organisers/Kusumitha S.jpg',
+    './assets/organisers/Namisha Mehta.jpg',
+    './assets/organisers/neeraja_nair.jpg',
+    './assets/organisers/nipun_malik.jpg',
+    './assets/organisers/Nitya Bhargava.jpg',
+    './assets/organisers/pgs_aditya.jpg',
+    './assets/organisers/piyush_gupta.jpg',
+    './assets/organisers/Ruthvik Bhupati.jpg',
+    './assets/organisers/Sarthak Dilawari.jpg',
+    './assets/organisers/shrinkhla.jpg',
+    './assets/organisers/Shubham Kumar.jpg',
+    './assets/organisers/siddhesh_kubal.jpg',
+    './assets/organisers/Soumyamitra-agarwal.jpg',
+    './assets/organisers/Srikanth Parvatam.jpg',
+    './assets/organisers/sunny_kumar.jpg',
+    './assets/organisers/swapnil_kumar.jpg',
+    './assets/organisers/Vaibhav Jha.jpg',
+    './assets/organisers/varun_garg.jpg',
+    './assets/organisers/vineet_vashi.jpg',
+    './assets/organisers/vishal_rautela.jpg',
   ];
   
   self.addEventListener('install', function(e) {
     console.log('[ServiceWorker] Install');
     e.waitUntil(
-      caches.open('riviera2k20').then(function(cache) {
+      caches.open('riviera2k20').then(cache => {
         console.log('[ServiceWorker] Caching app shell');
         return cache.addAll(filesToCache);
       })                                                                                                                                                                                                                    

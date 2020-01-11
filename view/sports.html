@@ -371,6 +371,11 @@
         .sportsImg{
             padding-left: 0px;
         }
+        @media(max-width: 1200px) and (min-width: 992px){
+            .redbg{
+                margin-right: 10px;
+            }
+        }
         @media(max-width: 575px) {
         .sportsImg{
             padding-right: 0px;
@@ -704,7 +709,7 @@
             $("#loader").css("display", "block");
             filterFlag = 0;
             limit = limitnum.toString();
-            fetch("https://rivera-backend.herokuapp.com/api/v1/login/sportDisplay/?limit=" + limit + "&offset=0", {
+            fetch("https://riviera.vit.ac.in/api/v1/login/sportDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
                     headers: {
                         'Content-Type': 'application/json'
@@ -790,7 +795,7 @@
                 selectAll();
                 clubFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/sportDisplay/?type=name&query=" + query + "&limit=" +
+                fetch("https://riviera.vit.ac.in/api/v1/login/sportDisplay/?type=name&query=" + query + "&limit=" +
                         limit + "&offset=0", {
                             method: "get",
                             headers: {
@@ -872,7 +877,7 @@
             filterFlag = 1;
             limit = limitnum.toString();
             if (i == 0) {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/sportDisplay/?type=category&query=pre&limit=16&offset=0", {
+                fetch("https://riviera.vit.ac.in/api/v1/login/sportDisplay/?type=category&query=pre&limit=16&offset=0", {
                         method: "get",
                         headers: {
                             'Content-Type': 'application/json'
@@ -936,7 +941,7 @@
                         document.getElementById('output').innerHTML = output1;
                     });
             } else if (i == 1) {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/sportDisplay/?type=category&query=Riviera&limit=16&offset=0", {
+                fetch("https://riviera.vit.ac.in/api/v1/login/sportDisplay/?type=category&query=Riviera&limit=16&offset=0", {
                         method: "get",
                         headers: {
                             'Content-Type': 'application/json'

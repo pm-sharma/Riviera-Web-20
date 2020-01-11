@@ -292,7 +292,7 @@
         }
         @media(max-width: 1200px) and (min-width: 992px){
             .redbg{
-                margin-right: 10vh;
+                margin-right: 0px;
             }
         }
         @media(max-width: 779px) and (min-width: 576px){
@@ -782,7 +782,7 @@
             $("#loader").css("display", "block");
             categoryFlag = 0;
             limit = limitnum.toString();
-            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?limit=" + limit + "&offset=0", {
+            fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
                     headers: {
                         'Content-Type': 'application/json'
@@ -861,7 +861,7 @@
                 selectAll();
                 clubFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=club&query=" + query +
+                fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=club&query=" + query +
                         "&limit=" +
                         limit + "&offset=0", {
                             method: "get",
@@ -947,7 +947,7 @@
                 selectAll();
                 eventFlag = 0;
             } else {
-                fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=event&query=" + query1 +
+                fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=event&query=" + query1 +
                         "&limit=" + limit + "&offset=0", {
                             method: "get",
                             headers: {
@@ -1071,7 +1071,7 @@
                     cat = "informal";
                     break;
             }
-            fetch("https://rivera-backend.herokuapp.com/api/v1/login/eventDisplay/?type=category&query=" + cat +
+            fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=category&query=" + cat +
                     "&limit=" +
                     limit + "&offset=0", {
                         method: "get",
