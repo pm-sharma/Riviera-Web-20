@@ -800,14 +800,19 @@
                     },
                 })
                 .then((response) => {
+                    
                     return response.json()
+                    
                 })
                 .then(data => {
                     let output = '';
-                    // console.log(data)
-                    data.forEach(function (user) {
+                    if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
+                    data.data.forEach(function (user) {
                         let len = user.url.length;
-                        console.log(len)
                         let x = 0;
                         let url1 = '';
                         for (let p = 0; p < (len - 2); p++) {
@@ -853,8 +858,6 @@
                     });
                     $("#loader").css("display", "none");
                     document.getElementById('output').innerHTML = output;
-                    // function to display show more button only after fetch has loaded        
-                    $("#showMore").css("display", "inline-block");
 
                 });
         }
@@ -871,6 +874,7 @@
             if (query == "") {
                 selectAll();
                 clubFlag = 0;
+                limitnum=0;
             } else {
                 fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=club&query=" + query +
                         "&limit=" +
@@ -884,13 +888,14 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 3) {
-                            $("#showMore").css("display", "none");
-                        } else {
-                            $("#showMore").css("display", "inline-block");
-                        }
+                        console.log(data.max_limit)
+                        if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
                         let output1 = '';
-                        data.forEach(function (user) {
+                        data.data.forEach(function (user) {
                             let len = user.url.length;
                             let x = 0;
                             let url1 = '';
@@ -957,6 +962,7 @@
             if (query1 == "") {
                 selectAll();
                 eventFlag = 0;
+                limitnum=0;
             } else {
                 fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=event&query=" + query1 +
                         "&limit=" + limit + "&offset=0", {
@@ -969,13 +975,13 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 3) {
-                            $("#showMore").css("display", "none");
-                        } else {
-                            $("#showMore").css("display", "inline-block");
-                        }
                         let output1 = '';
-                        data.forEach(function (user) {
+                        if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
+                    data.data.forEach(function (user) {
                             let len = user.url.length;
                             let x = 0;
                             let url1 = '';
@@ -1094,13 +1100,13 @@
                     return response.json()
                 })
                 .then(data => {
-                    if (data.length < 3) {
+                    let output1 = '';
+                    if(data.data.length==data.max_limit){
                         $("#showMore").css("display", "none");
-                    } else {
+                    }else{
                         $("#showMore").css("display", "inline-block");
                     }
-                    let output1 = '';
-                    data.forEach(function (user) {
+                    data.data.forEach(function (user) {
                         let len = user.url.length;
                         console.log(len)
                         let x = 0;

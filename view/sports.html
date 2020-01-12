@@ -726,8 +726,13 @@
                 })
                 .then(data => {
                     // console.log(data)
+                    if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
                     let output = '';
-                    data.forEach(function (user) {
+                    data.data.forEach(function (user) {
                         let len = user.url.length;
                         console.log(len)
                         let x = 0;
@@ -812,14 +817,14 @@
                         return response.json()
                     })
                     .then(data => {
-                        if (data.length < 5) {
-                            $("#showMore").css("display", "none");
-                        } else {
-                            $("#showMore").css("display", "inline-block");
-                        }
-                        console.log(data)
+                        if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
+                        // console.log(data)
                         let output1 = '';
-                        data.forEach(function (user) {
+                        data.data.forEach(function (user) {
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
@@ -894,7 +899,12 @@
                     })
                     .then(data => {
                         let output1 = '';
-                        data.forEach(function (user) {
+                        if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
+                        data.data.forEach(function (user) {
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
@@ -957,8 +967,13 @@
                         return response.json()
                     })
                     .then(data => {
+                        if(data.data.length==data.max_limit){
+                        $("#showMore").css("display", "none");
+                    }else{
+                        $("#showMore").css("display", "inline-block");
+                    }
                         let output1 = '';
-                        data.forEach(function (user) {
+                        data.data.forEach(function (user) {
                             let len = user.url.length;
                             console.log(len)
                             let x = 0;
