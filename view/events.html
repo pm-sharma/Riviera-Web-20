@@ -793,6 +793,7 @@
             $("#loader").css("display", "block");
             categoryFlag = 0;
             limit = limitnum.toString();
+            console.log(`[LIMIT] ${limit}`)
             fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?limit=" + limit + "&offset=0", {
                     method: "get",
                     headers: {
@@ -806,6 +807,7 @@
                 })
                 .then(data => {
                     let output = '';
+                    console.log(data.max_limit)
                     if(data.data.length==data.max_limit){
                         $("#showMore").css("display", "none");
                     }else{
@@ -874,7 +876,6 @@
             if (query == "") {
                 selectAll();
                 clubFlag = 0;
-                limitnum=0;
             } else {
                 fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=club&query=" + query +
                         "&limit=" +
@@ -888,13 +889,14 @@
                         return response.json()
                     })
                     .then(data => {
-                        console.log(data.max_limit)
+                        let output1 = '';
+                    console.log(data.max_limit)
                         if(data.data.length==data.max_limit){
                         $("#showMore").css("display", "none");
                     }else{
                         $("#showMore").css("display", "inline-block");
                     }
-                        let output1 = '';
+                        console.log(data.data)
                         data.data.forEach(function (user) {
                             let len = user.url.length;
                             let x = 0;
@@ -947,7 +949,7 @@
                     });
             }
         }
-        $("#clubval").keyup(function () {
+        $("#clubval").keyup(function() {
             listbyClub();
         });
 
@@ -962,7 +964,6 @@
             if (query1 == "") {
                 selectAll();
                 eventFlag = 0;
-                limitnum=0;
             } else {
                 fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=event&query=" + query1 +
                         "&limit=" + limit + "&offset=0", {
@@ -974,14 +975,17 @@
                     .then((response) => {
                         return response.json()
                     })
-                    .then(data => {
-                        let output1 = '';
-                        if(data.data.length==data.max_limit){
+                    .then(data2 => {
+                        let output2 = '';
+                        console.log(data2.max_limit)
+                        
+                        if(data2.data.length==data2.max_limit){
                         $("#showMore").css("display", "none");
                     }else{
                         $("#showMore").css("display", "inline-block");
                     }
-                    data.data.forEach(function (user) {
+                    data2.data.forEach(function (user) {
+                        console.log("this is working!")
                             let len = user.url.length;
                             let x = 0;
                             let url1 = '';
@@ -993,7 +997,7 @@
                                 }
                             }
 
-                            output1 += `
+                            output2 += `
                             <div class="row eventinfo";>
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;text-align: center;">
                             </img>
@@ -1030,11 +1034,11 @@
           `;
                         });
                         $("#loader").css("display", "none");
-                        document.getElementById('output').innerHTML = output1;
+                        document.getElementById('output').innerHTML = output2;
                     });
             }
         }
-        $("#eventval").keyup(function () {
+        $("#eventval").keyup(function() {
             listbyEvent();
         });
         //============================================Filter========================================================

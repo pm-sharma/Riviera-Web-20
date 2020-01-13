@@ -6,7 +6,7 @@
 }
 .tiles{
     display: inline-block;
-    width: 80%;
+    width: 90%;
     text-align: center;
 }
 .eachTile{
@@ -27,6 +27,11 @@
     float: left;
     text-align: left;
 }
+@media(min-width: 768px) and (max-width: 991px){
+    .divider{
+        padding-left: 70px !important;
+    }
+}
 @media (min-width: 1200px){
     .cor-circle{
         width: 40%;
@@ -38,7 +43,7 @@
 }
 .cor-circle img{
     height: auto;
-    width: 9rem !important;
+    width: 10rem !important;
     overflow: hidden;
 }
 .divider{
@@ -50,7 +55,7 @@
 .eachDeet{
     margin-bottom: 20px;
     text-align: left;
-    max-width: 180px;
+    max-width: 190px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -74,9 +79,19 @@
     }
     .deets{
         text-align: center;
-        margin-left: 20%;
-        margin-right: 20%;
+        /* margin-left: 20%; */
+        /* margin-right: 20%; */
+        display: inline-block;
         
+    }
+    .eachDeet{
+        margin: auto auto !important;
+        /* display: inline-block; */
+        float: none;
+        padding-bottom: 10px;
+    }
+    .deets p{
+        text-align: center;
     }
 }
 @media (max-width: 340px){
