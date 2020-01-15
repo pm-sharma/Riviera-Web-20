@@ -305,6 +305,9 @@
         .container{
             background-color: #121212;
         }
+        .error{
+            display: none;
+        }
     </style>
 </head>
 
@@ -615,21 +618,25 @@
         <div class="row1" style="text-align: center">
             <p style="text-align: center;margin:auto auto;border-bottom: 2px solid #0090C5;font-size: 40px">Apply for Campus Ambassador</p><br>
         </div>
-        <form method="POST" action="https://rivera-backend.herokuapp.com/api/v1/login/campusAmbassador/" role="form">
+        <form role="form" id="myform">
             <div class="form-group">
               <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+              <label class="error" for="name" id="name_error">This field is required.</label>
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" id="college_name" placeholder="College Name" name="college_name">
+                <label class="error" for="college_name" id="college_name_error">This field is required.</label>
             </div>
             <div class="form-group">
               <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+              <label class="error" for="email" id="email_error">This field is required.</label>
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" id="phone_number" placeholder="Phone" name="phone_number">
+                <label class="error" for="phone_number" id="phone_error">This field is required.</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="zone1" value="Zone-1" name="kind">
+                <input class="form-check-input" type="radio" id="zone1" value="Zone-1" name="kind" checked>
                 <label class="form-check-label" for="zone1">Zone-1</label>
               </div>
               <div class="form-check form-check-inline">
@@ -639,7 +646,10 @@
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" id="zone3" value="Zone-3" name="kind">
                 <label class="form-check-label" for="zone3">Zone-3</label>
-              </div>    
+              </div>
+              <div class="form-group">   
+                <label class="error" for="kind" id="zone_error">Please select a zone</label>
+              </div>
               <button type="submit" class="btn abtn">Submit</button>
         </form>
     </div>
@@ -707,6 +717,49 @@
         scrollTop: $("#getOverHere").offset().top
         }, 800);
 });
+    </script>
+    <script>
+        $(function() {
+            $(".abtn").click(function(form) {
+                $('.error').hide();
+  	  var name = $("input#name").val();
+  		if (name == "") {
+        $("label#name_error").css("display", "inline-block");
+        $("input#name").focus();
+        return false;
+      }
+  		var email = $("input#email").val();
+  		if (email == "") {
+        $("label#email_error").css("display", "inline-block");
+        $("input#email").focus();
+        return false;
+      }
+  		var phone_number = $("input#phone_number").val();
+  		if (phone_number == "") {
+        $("label#phone_error").css("display", "inline-block");
+        $("input#phone_number").focus();
+        return false;
+      }
+      var college_name = $("input#college_name").val();
+  		if (college_name == "") {
+        $("label#college_name_error").css("display", "inline-block");
+        $("input#college_name").focus();
+        return false;
+      }
+    });
+
+    $('#myform').on('submit',function (e) {
+        $.ajax({
+        type: 'post',
+        url: 'https://rivera-backend.herokuapp.com/api/v1/login/campusAmbassador/',
+        data: $('#myform').serialize(),
+        success: function () {
+            alert("Response Recorded");
+        }
+    });
+    e.preventDefault();
+    });
+            });
     </script>
 </body>
 
