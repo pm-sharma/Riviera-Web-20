@@ -57,6 +57,8 @@ var filesToCache = [
     './assets/vit-img/team/Ramesh(1)-min.JPG',
     './assets/proshows/sid.jpg',
     './assets/proshows/zakir.jpg',
+    './assets/proshows/benny.jpg',
+    './assets/proshows/shreya-ghoshal.jpg',
     './assets/organisers/adnaan_khan.jpg',
     './assets/organisers/anirudh_varma.jpg',
     './assets/organisers/Arushi Goel.jpg',
