@@ -76,6 +76,38 @@
             font-family: montserrat;
         }
 
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #111111;
+            z-index: 99;
+        }
+
+        #status {
+            width: 25vw;
+            height: auto;
+            position: absolute;
+            left: 37%;
+            top: 40%;
+
+        }
+        #status img{
+            width: 100%;
+            height: 100%;
+        }
+
+        #riviera-loading {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            font-size: 32px;
+            font-weight: 600;
+        }
 
         /* .navbar-nav>.active>a {
             color: aqua;
@@ -123,9 +155,10 @@
         /* body {
             overflow: hidden
         } */
-        .navbar-nav{
+        .navbar-nav {
             width: 100%;
         }
+
         .regbtn:hover {
             transform: scale(1.1);
         }
@@ -177,22 +210,25 @@
             height: 15vh;
             width: auto;
         }
-        @media(min-width: 780px) and (max-width: 1200px){
+
+        @media(min-width: 780px) and (max-width: 1200px) {
             .nav-item {
                 padding-left: 7px;
                 padding-right: 6px;
             }
+
             /* .headings{
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             } */
         }
-        @media(min-width: 1200px){
+
+        @media(min-width: 1200px) {
             li {
                 padding-left: 10px;
                 padding-right: 6px;
-            }            
+            }
         }
 
         @media (min-width: 780px) {
@@ -221,7 +257,6 @@
                 left: 50%;
                 transform: translate(-50%, -50%)
             }
-
         }
 
         @media (max-width: 780px) {
@@ -247,20 +282,48 @@
                 width: auto;
                 margin-left: 10px;
             }
-            .rb{
+
+            .rb {
                 border-right: 0 !important;
             }
+
+            /* #status {
+                left: 15%;
+            } */
+
+            #riviera-loading {
+                left: 40%;
+            }
         }
-        .footerdeet{
+
+        .footerdeet {
             padding-left: 120px;
         }
+
         @media(max-width: 575px) {
-            .footerdeet{
-            padding-left: 50px;
-        } 
-        .footer-logo{
-            height: 12vh;
+            .footerdeet {
+                padding-left: 50px;
+            }
+
+            .footer-logo {
+                height: 12vh;
+            }
+
+            /* #status {
+                left: 7%;
+            } */
+
+            #riviera-loading {
+                left: 32%;
+            }
         }
+        @media only screen and (device-width: 768px) {
+          #status{
+              left: 25%;
+          }
+          #riviera-loading{
+              left: 40%;
+          }
         }
     </style>
 </head>
@@ -375,11 +438,23 @@
                 <div style="font-weight: 800; margin-top: 10px; font-size: 20px;cursor: default; user-select: none;">
                     12th - 15th February</div>
                 <button style="border: 2px solid #FFFFFF;color: white;border-radius: 6px" type="button"
-                    class="btn btn-primary-outline" data-toggle="modal" onclick="window.location.href = 'view/proshow.html'">Register</button>
+                    class="btn btn-primary-outline" data-toggle="modal"
+                    onclick="window.location.href = 'view/proshow.html'">Register</button>
             </div>
         </div>
 
     </div>
+
+
+    <!-- Preloader -->
+
+    <div id="preloader">
+        <div id="status">
+            <img src="./assets/images/logo.png"/>
+        </div>
+        <!-- <div id="riviera-loading"> Riviera 2020 </div> -->
+    </div>
+
 
     <!-- Reg Modal -->
     <div class="modal fade" id="reg" role="dialog">
@@ -426,16 +501,7 @@
             </div>
         </div>
         <div class="row content" style="margin : 0 5vw;padding: 15px">
-            <p style="text-align: justify;">Riviera - the annual ISO certified sports, and cultural fest of VIT
-              	, with all its splendor and eminence - is the biggest in South India one that boasts of the
-                most prominent entertainers in the Indian entertainment scenario. Since its inception in 2000, Riviera
-                has grown not only in terms of student participation but also the quality and the quantity of events,
-                media coverage and international recognition has reached insurmountable heights. The aim is not only to
-                nurture
-                leadership qualities among students, but also to bring oneness among the student communities. This 4-day
-                saga witnesses over 38,000 students from 700 universities and colleges from 30 countries in Asia, Europe
-                and Africa. From swimming to cricket, from comedy shows to music concerts, from literary events to
-                gaming competitions, from marathon to cultural parade, Riviera has it all!</p><br>
+            <p style="text-align: justify;">Riviera, the international cultural & sports extravaganza of VIT, with all its splendor and eminence, is the biggest fest in South India. Organized every year by the Vellore Institute of Technology, an Institution of Eminence (IoE), this ISO certified event is ranked as the 5th best cultural fest in India by top-notch sources. It has grown not only in terms of student participation but also the quality and the quantity of events, media coverage and international recognition has reached insurmountable heights. We come back, year after year, not only with the aim to nurture leadership qualities among students, but also to bring oneness among the student communities. This 4-day saga witnesses over 38,000 students from 700 universities and colleges from 30 countries in Asia, Europe and Africa. From swimming to cricket, from comedy shows to music concerts, from literary events to gaming competitions, from marathon to cultural parade, Riviera has it all!</p><br>
             <br>
         </div>
 
@@ -511,7 +577,8 @@
         </div>
         <div class="container-fluid" style="padding-top: 70px;">
             <div class="row">
-                <div class="col-12 col-lg-6 rb" style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
+                <div class="col-12 col-lg-6 rb"
+                    style="display: flex; justify-content: center;border-right: 1px solid #0090C5; margin-bottom: 20px;">
                     <img src="./assets/images/logo.png" class="footer-logo">
                 </div>
                 <div class="col-12 col-lg-6 footerdeet">
@@ -533,7 +600,8 @@
                             <i class="far fa-envelope footer-icons"></i>
                         </div>
                         <div class="col-9 col-lg-8 content">
-                            <a style="text-decoration: none; color: white;" href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
+                            <a style="text-decoration: none; color: white;"
+                                href="mailto:design.riviera@vit.ac.in">design.riviera@vit.ac.in</a>
                         </div>
                     </div>
                 </div>
@@ -558,6 +626,14 @@
                 .then(data => {
                     console.log(data)
                 })
+        })
+        $(window).on('load', function () { 
+            $('#status').fadeOut();
+            $('#riviera-loading').fadeOut(); 
+            $('#preloader').delay(550).fadeOut('slow'); 
+            $('body').delay(550).css({
+                'overflow': 'visible'
+            });
         })
     </script>
 </body>
