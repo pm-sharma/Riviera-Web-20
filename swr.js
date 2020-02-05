@@ -59,6 +59,7 @@ var filesToCache = [
     './assets/proshows/zakir.jpg',
     './assets/proshows/benny.jpg',
     './assets/proshows/shreya-ghoshal.jpg',
+    './assets/proshows/ola ras.jpg',
     './assets/organisers/adnaan_khan.jpg',
     './assets/organisers/anirudh_varma.jpg',
     './assets/organisers/Arushi Goel.jpg',
