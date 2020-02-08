@@ -278,6 +278,7 @@
             .sportsdetails {
                 margin-left: 0px;
                 margin-right: 12px;
+                padding-bottom: 10px;
             }
 
             .details {
@@ -320,6 +321,11 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+            .sportsImg{
+                max-width: 265px;
+                height: auto;
+                max-height: 265px;
             }
         }
 
@@ -685,6 +691,8 @@
                         <a class="dropdown-item" href="#" id="adven">Adventure Sport</a>
                         <a class="dropdown-item" href="#" id="cyber">Cyber Engage</a>
                         <a class="dropdown-item" href="#" id="informal">Informals</a>
+                        <a class="dropdown-item" href="#" id="cultural">Cultural</a>
+
                     </div>
                 </div>
             </div>
@@ -1091,6 +1099,9 @@
                 case 13:
                     cat = "informal";
                     break;
+                case 14:
+                    cat = "cultural";
+                    break;
             }
             fetch("https://riviera.vit.ac.in/api/v1/login/eventDisplay/?type=category&query=" + cat +
                     "&limit=" +
@@ -1221,6 +1232,10 @@
         $("#informal").click(function () {
             e = 13;
             filter(13);
+        })
+        $("#cultural").click(function () {
+            e = 14;
+            filter(14);
         })
 
         //===========================================PAGINATION=====================================================
