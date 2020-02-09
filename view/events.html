@@ -846,7 +846,7 @@
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -931,7 +931,7 @@
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>${user.date}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -1020,7 +1020,7 @@
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -1121,6 +1121,7 @@
                     }else{
                         $("#showMore").css("display", "inline-block");
                     }
+                    
                     data.data.forEach(function (user) {
                         let len = user.url.length;
                         console.log(len)
@@ -1148,7 +1149,7 @@
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> TBA</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
