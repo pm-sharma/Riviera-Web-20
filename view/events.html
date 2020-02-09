@@ -515,6 +515,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
         }
+        .centerp{
+        text-align: center;
+        color: white;
+        }
 
         @media(max-width: 575px) {
             .footerdeet {
@@ -842,7 +846,7 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
@@ -927,7 +931,7 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
@@ -952,8 +956,12 @@
                         </div>
           `;
                         });
+                        
                         $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output1;
+                        if(data.data.length==0){
+                                $("#output").html('<p class="centerp">No such event exists</p>')
+                            }
                     });
             }
         }
@@ -1016,7 +1024,7 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
@@ -1043,6 +1051,9 @@
                         });
                         $("#loader").css("display", "none");
                         document.getElementById('output').innerHTML = output2;
+                        if(data2.data.length==0){
+                                $("#output").html('<p class="centerp">No such event exists</p>')
+                            }
                     });
             }
         }
@@ -1145,7 +1156,7 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>TBA</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
@@ -1172,6 +1183,9 @@
                     });
                     $("#loader").css("display", "none");
                     document.getElementById('output').innerHTML = output1;
+                    if(data.data.length==0){
+                                $("#output").html('<p class="centerp">No such event exists</p>')
+                            }
                 });
         }
         //====================================Filter selector=====================================================
