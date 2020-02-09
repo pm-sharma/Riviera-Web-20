@@ -519,6 +519,9 @@
         text-align: center;
         color: white;
         }
+        .details{
+            padding: 0px;
+        }
 
         @media(max-width: 575px) {
             .footerdeet {
@@ -827,15 +830,29 @@
                     }
                     data.data.forEach(function (user) {
                         let len = user.url.length;
-                        let x = 0;
                         let url1 = '';
-                        for (let p = 0; p < (len - 2); p++) {
-                            if (p == 0 || p == 1) {
-                                x = 1;
-                            } else {
-                                url1 += user.url[p];
+                            let dates = '';
+                            let times = '';
+                            for (let p = 2; p < (len - 2); p++) {
+                                    url1 += user.url[p];
+                                
                             }
-                        }
+                            if(user.date[0] == '['){
+                                console.log('yes');
+                                for (let p = 2; p < (user.date.length - 2); p++) {
+                                    dates += user.date[p];
+                                    
+                                    
+                                }
+                                for (let p = 2; p < (user.time.length - 2); p++) {
+                                    times += user.time[p];
+                                }
+
+                            }
+                            else{
+                                dates = user.date;
+                                times = user.time;
+                            }
                         output += `
                         <div class="row eventinfo";>
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;text-align: center;"></img>
@@ -846,11 +863,11 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -911,14 +928,26 @@
                         console.log(data.data)
                         data.data.forEach(function (user) {
                             let len = user.url.length;
-                            let x = 0;
                             let url1 = '';
-                            for (let p = 0; p < (len - 2); p++) {
-                                if (p == 0 || p == 1) {
-                                    x = 1;
-                                } else {
+                            let dates = '';
+                            let times = '';
+                            for (let p = 2; p < (len - 2); p++) {
                                     url1 += user.url[p];
+                                
+                            }
+                            if(user.date[0] == '['){
+                                console.log('yes');
+                                for (let p = 2; p < (user.date.length - 2); p++) {
+                                    dates += user.date[p];
+                                    
+                                    
                                 }
+                                for (let p = 2; p < (user.time.length - 2); p++) {
+                                    times += user.time[p];
+                                }
+                            }else{
+                                dates = user.date;
+                                times = user.time;
                             }
                             output1 += `
                         <div class="row eventinfo";>
@@ -931,11 +960,11 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>${user.date}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>${dates}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -1003,16 +1032,27 @@
                     data2.data.forEach(function (user) {
                         console.log("this is working!")
                             let len = user.url.length;
-                            let x = 0;
                             let url1 = '';
-                            for (let p = 0; p < len; p++) {
-                                if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
-                                    x = 1;
-                                } else {
+                            let dates = '';
+                            let times = '';
+                            for (let p = 2; p < (len - 2); p++) {
                                     url1 += user.url[p];
-                                }
+                                
                             }
-
+                            if(user.date[0] == '['){
+                                console.log('yes');
+                                for (let p = 2; p < (user.date.length - 2); p++) {
+                                    dates += user.date[p];
+                                    
+                                    
+                                }
+                                for (let p = 2; p < (user.time.length - 2); p++) {
+                                    times += user.time[p];
+                                }
+                            }else{
+                                dates = user.date;
+                                times = user.time;
+                            }
                             output2 += `
                             <div class="row eventinfo";>
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;text-align: center;">
@@ -1024,11 +1064,11 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
@@ -1135,16 +1175,27 @@
                     
                     data.data.forEach(function (user) {
                         let len = user.url.length;
-                        console.log(len)
-                        let x = 0;
                         let url1 = '';
-                        for (let p = 0; p < len; p++) {
-                            if (p == 0 || p == 1 || p == (len - 2) || p == (len - 1)) {
-                                x = 1;
-                            } else {
-                                url1 += user.url[p];
+                            let dates = '';
+                            let times = '';
+                            for (let p = 2; p < (len - 2); p++) {
+                                    url1 += user.url[p];
+                                
                             }
-                        }
+                            if(user.date[0] == '['){
+                                console.log('yes');
+                                for (let p = 2; p < (user.date.length - 2); p++) {
+                                    dates += user.date[p];
+                                    
+                                    
+                                }
+                                for (let p = 2; p < (user.time.length - 2); p++) {
+                                    times += user.time[p];
+                                }
+                            }else{
+                                dates = user.date;
+                                times = user.time;
+                            }
                         output1 += `
                         <div class="row eventinfo";>
                             <img class="col-lg-3 col-md-5 col-sm-5 sportsImg" src="${url1}" alt="Event image" style="height: auto;text-align: center;">
@@ -1156,11 +1207,11 @@
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
                                                 <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
+                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
                                                 <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
