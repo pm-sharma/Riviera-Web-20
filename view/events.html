@@ -284,6 +284,7 @@
             .details {
                 margin: 0 10px;
                 /* margin-right: 60px; */
+            padding: 0px;
             }
 
         }
@@ -519,9 +520,7 @@
         text-align: center;
         color: white;
         }
-        .details{
-            padding: 0px;
-        }
+        
 
         @media(max-width: 575px) {
             .footerdeet {
@@ -774,6 +773,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Latest compiled and minified JavaScript -->
     <script>
         // Dropdown select value
@@ -822,7 +822,7 @@
                 })
                 .then(data => {
                     let output = '';
-                    console.log(data.max_limit)
+                    // console.log(data.max_limit)
                     if(data.data.length==data.max_limit){
                         $("#showMore").css("display", "none");
                     }else{
@@ -838,20 +838,23 @@
                                 
                             }
                             if(user.date[0] == '['){
-                                console.log('yes');
-                                for (let p = 2; p < (user.date.length - 2); p++) {
-                                    dates += user.date[p];
-                                    
-                                    
-                                }
-                                for (let p = 2; p < (user.time.length - 2); p++) {
-                                    times += user.time[p];
-                                }
-
-                            }
-                            else{
-                                dates = user.date;
-                                times = user.time;
+                                user.date = user.date.replace("[","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("]","");
+                                // console.log('look here', user.date)
+                                user.time = user.time.replace("[","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("]","");
                             }
                         output += `
                         <div class="row eventinfo";>
@@ -862,13 +865,13 @@
                                         <div class="sportsdetails col-sm-12 col-lg-7">
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -919,13 +922,13 @@
                     })
                     .then(data => {
                         let output1 = '';
-                    console.log(data.max_limit)
+                    // console.log(data.max_limit)
                         if(data.data.length==data.max_limit){
                         $("#showMore").css("display", "none");
                     }else{
                         $("#showMore").css("display", "inline-block");
                     }
-                        console.log(data.data)
+                        // console.log(data.data)
                         data.data.forEach(function (user) {
                             let len = user.url.length;
                             let url1 = '';
@@ -936,18 +939,23 @@
                                 
                             }
                             if(user.date[0] == '['){
-                                console.log('yes');
-                                for (let p = 2; p < (user.date.length - 2); p++) {
-                                    dates += user.date[p];
-                                    
-                                    
-                                }
-                                for (let p = 2; p < (user.time.length - 2); p++) {
-                                    times += user.time[p];
-                                }
-                            }else{
-                                dates = user.date;
-                                times = user.time;
+                                user.date = user.date.replace("[","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("]","");
+                                // console.log('look here', user.date)
+                                user.time = user.time.replace("[","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("]","");
                             }
                             output1 += `
                         <div class="row eventinfo";>
@@ -959,13 +967,13 @@
                                         <div class="sportsdetails col-sm-12 col-lg-7">
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>${dates}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i>${user.date}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -1022,7 +1030,7 @@
                     })
                     .then(data2 => {
                         let output2 = '';
-                        console.log(data2.max_limit)
+                        // console.log(data2.max_limit)
                         
                         if(data2.data.length==data2.max_limit){
                         $("#showMore").css("display", "none");
@@ -1030,7 +1038,7 @@
                         $("#showMore").css("display", "inline-block");
                     }
                     data2.data.forEach(function (user) {
-                        console.log("this is working!")
+                        // console.log("this is working!")
                             let len = user.url.length;
                             let url1 = '';
                             let dates = '';
@@ -1040,18 +1048,23 @@
                                 
                             }
                             if(user.date[0] == '['){
-                                console.log('yes');
-                                for (let p = 2; p < (user.date.length - 2); p++) {
-                                    dates += user.date[p];
-                                    
-                                    
-                                }
-                                for (let p = 2; p < (user.time.length - 2); p++) {
-                                    times += user.time[p];
-                                }
-                            }else{
-                                dates = user.date;
-                                times = user.time;
+                                user.date = user.date.replace("[","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("]","");
+                                // console.log('look here', user.date)
+                                user.time = user.time.replace("[","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("]","");
                             }
                             output2 += `
                             <div class="row eventinfo";>
@@ -1063,13 +1076,13 @@
                                         <div class="sportsdetails col-sm-12 col-lg-7">
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -1183,18 +1196,23 @@
                                 
                             }
                             if(user.date[0] == '['){
-                                console.log('yes');
-                                for (let p = 2; p < (user.date.length - 2); p++) {
-                                    dates += user.date[p];
-                                    
-                                    
-                                }
-                                for (let p = 2; p < (user.time.length - 2); p++) {
-                                    times += user.time[p];
-                                }
-                            }else{
-                                dates = user.date;
-                                times = user.time;
+                                user.date = user.date.replace("[","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("'","");
+                                user.date = user.date.replace("]","");
+                                // console.log('look here', user.date)
+                                user.time = user.time.replace("[","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("'","");
+                                user.time = user.time.replace("]","");
                             }
                         output1 += `
                         <div class="row eventinfo";>
@@ -1206,13 +1224,13 @@
                                         <div class="sportsdetails col-sm-12 col-lg-7">
                                             <div class="row">
                                                 <div class="details col-lg-3" style="display: inline-block;font-weight:500;"><i class="fas fa-star" style="margin-right:10px;"></i>${user.category}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${times}</div>
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="fas fa-user-friends" style="margin-right:10px;"></i>${user.club}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;"><i class="far fa-clock" style="margin-right:10px;"></i>${user.time}</div>
                                             </div>
                                             <div class="row detbelow">
                                                 <div class="details col-lg-3" style="display: inline-block;"><i class="fas fa-users" style="margin-right:10px;"></i>${user.team_size}</div>
-                                                <div class="details col-lg-5" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${dates}</div>
-                                                <div class="details col-lg-2" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
+                                                <div class="details col-lg-4" style="display: inline-block;"><i class="far fa-calendar-alt" style="margin-right:10px;"></i> ${user.date}</div>
+                                                <div class="details col-lg-3" style="display: inline-block;">&#8377;${user.total_event_cost}</div>   
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
